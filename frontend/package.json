@@ -1,0 +1,26 @@
+{
+  "name": "ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "watch": "vue-tsc && vite build --watch",
+    "build": "vue-tsc -b && vite build && npm run custom-pack",
+    "custom-pack": "rm -f frontend.tgz && tar -czvf frontend.tgz -C dist .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "block-config": "1.0.0",
+    "@milaboratory/helpers": "^1.3.10",
+    "@milaboratory/platforma-uikit": "^0.2.0",
+    "@milaboratory/sdk-vue": "^0.0.4",
+    "vue": "^3.4.32"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4",
+    "vue-tsc": "^2.0.21"
+  }
+}

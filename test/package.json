@@ -1,0 +1,22 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "Block tests",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "dependencies": {
+    "block-config": "1.0.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@milaboratory/sdk-test": "^1.3.1",
+    "@types/node": "^20.14.11",
+    "vitest": "^2.0.3",
+    "typescript": "^5.5.3"
+  }
+}

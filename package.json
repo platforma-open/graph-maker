@@ -1,0 +1,26 @@
+{
+  "name": "block-hello-world",
+  "version": "1.0.0",
+  "description": "Block monorepo",
+  "type": "module",
+  "workspaces": [
+    "backend",
+    "config",
+    "frontend",
+    "test"
+  ],
+  "scripts": {
+    "build:template": "cd backend && npm run build",
+    "build:config": "cd config && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:test": "cd test && npm run build",
+    "watch:ui": "cd frontend && npm run watch",
+    "build": "npm run build:template && npm run build:config",
+    "publish": "pl-reg upload-package",
+    "watch:frontend": "npm run watch -w frontend",
+    "test": "npm run build && cd test && npm run test"
+  },
+  "devDependencies": {
+    "@milaboratory/pl-block-registry": "^1.3.6"
+  }
+}

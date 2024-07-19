@@ -1,0 +1,10 @@
+schema/dist
+template/dist
+ui/dist
+backend/dist
+config/dist
+frontend/dist
+.pl_auth.json
+test/work
+test/.test_auth.json
+node_modules/

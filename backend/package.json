@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Tengo-based template",
+  "scripts": {
+    "build": "pl-tengo build"
+  },
+  "devDependencies": {
+    "@milaboratory/tengo-template-builder": "^1.8.2",
+    "@milaboratory/tengo-milib": "1.1.1",
+    "@milaboratory/tengo-mistd": "1.2.0"
+  }
+}

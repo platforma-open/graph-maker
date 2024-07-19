@@ -1,0 +1,11 @@
+organization: milaboratories
+package: graph-maker
+meta:
+  title: Graph Maker
+  description:
+  tags: 
+    - "example"
+files:
+  config.json: config/dist/config.json
+  backend.plj.gz: backend/dist/tengo/tpl/main.plj.gz
+  frontend.tgz: frontend/frontend.tgz

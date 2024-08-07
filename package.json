@@ -1,5 +1,5 @@
 {
-  "name": "block-hello-world",
+  "name": "block-graph-maker",
   "version": "1.0.0",
   "description": "Block monorepo",
   "type": "module",
@@ -15,7 +15,7 @@
     "build:frontend": "cd frontend && npm run build",
     "build:test": "cd test && npm run build",
     "watch:ui": "cd frontend && npm run watch",
-    "build": "npm run build:template && npm run build:config",
+    "build": "npm run build:template && npm run build:config && npm run build:frontend",
     "publish": "pl-reg upload-package",
     "watch:frontend": "npm run watch -w frontend",
     "test": "npm run build && cd test && npm run test"

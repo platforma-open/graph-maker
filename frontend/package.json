@@ -11,10 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "block-config": "1.0.0",
+    "@milaboratory/graph-maker": "^0.0.39",
     "@milaboratory/helpers": "^1.3.10",
     "@milaboratory/platforma-uikit": "^0.2.0",
     "@milaboratory/sdk-vue": "^0.0.4",
+    "block-config": "1.0.0",
     "vue": "^3.4.32"
   },
   "devDependencies": {

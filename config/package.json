@@ -9,7 +9,7 @@
     "build": "tsup && vite build && block-builder build-configs"
   },
   "dependencies": {
-    "@milaboratory/sdk-ui": "^0.12.5"
+    "@milaboratory/sdk-ui": "^0.12.7"
   },
   "devDependencies": {
     "@milaboratory/block-builder": "^1.2.2",

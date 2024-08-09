@@ -1,8 +1,15 @@
-import { BlockArgs, BlockOutputs, platforma } from 'block-config';
+import { platforma } from 'block-config';
 import { defineApp } from '@milaboratory/sdk-vue';
+import MainPage from './MainPage.vue';
+import GraphPage from './GraphPage.vue';
 
-export const BlockApp = defineApp<BlockArgs, BlockOutputs>(platforma, () => {
+export const sdkPlugin = defineApp(platforma, () => {
   return {
-    routes: {}
+    routes: {
+      '/': MainPage,
+      '/graph': GraphPage
+    }
   };
 });
+
+export const useApp = sdkPlugin.useApp;

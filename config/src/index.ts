@@ -1,49 +1,43 @@
 import {
-  InferHrefType,
-  PColumn,
-  PFrameDef,
-  PlatformaConfiguration,
-  TreeNodeAccessor,
-  getImmediate,
-  isPColumn,
-  type InferOutputsType
+  BlockModel,
+  type InferOutputsType,
+  type InferHrefType, PColumn, TreeNodeAccessor, isPColumn
 } from '@milaboratory/sdk-ui';
+
+export type GraphState = { id: string; label: string; settings: unknown };
+
+export type BlockUiState = {
+  graphs: GraphState[]
+};
 
 export type BlockArgs = {};
 
-export const platforma = PlatformaConfiguration.create<BlockArgs>('Heavy')
+export const platforma = BlockModel.create<BlockArgs, BlockUiState>('Heavy')
   .initialArgs({})
 
-  .sections(getImmediate([{ type: 'link', href: '/', label: 'Main' }]))
-
-  // .output('csvProgress', getImportProgress(getResourceField(MainOutputs, 'csvImport')))
-
-  // .output('paramsProgress', getImportProgress(getResourceField(MainOutputs, 'paramsImport')))
+  .sections((ctx) => {
+    const graphRoutes = (ctx.uiState?.graphs ?? []).map((gs) => ({
+      type: 'link' as const,
+      href: `/graph?id=${gs.id}` as const,
+      label: gs.label
+    }));
+    return [
+      ...graphRoutes,
+      {
+        type: 'link',
+        href: '/',
+        label: '+ New Graph'
+      }
+    ];
+  })
 
   .output('pFrame', (render) => {
     const collection = render.resultPool.getDataFromResultPool();
     if (collection === undefined || !collection.isComplete) return undefined;
 
     const pColumns = collection.entries.map(({ obj }) => obj).filter(isPColumn);
-    return render.createPFrame(pColumns);
+    return render.createPFrame(pColumns as PColumn<TreeNodeAccessor>[]);
   })
-
-  // .output('pTable', (render) => {
-  //   const collection = render.mainOutput?.resolve('resource')?.parsePObjectCollection();
-  //   if (collection === undefined) return undefined;
-  //   const pObjects = Object.entries(collection).map(([, obj]) => {
-  //     if (!isPColumn(obj)) throw new Error(`not a PColumn (kind = ${obj.spec.kind})`);
-  //     return obj;
-  //   });
-  //   return render.createPTable({
-  //     src: {
-  //       type: 'inner',
-  //       entries: pObjects.map((c) => ({ type: 'column', column: c }))
-  //     },
-  //     filters: [],
-  //     sorting: []
-  //   });
-  // })
 
   .done();
 

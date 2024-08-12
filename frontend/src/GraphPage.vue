@@ -48,10 +48,6 @@ const settings = computed<GraphMakerSettings | null>(() => {
   } as GraphMakerSettings;
 });
 
-watch(() => settings.value, (v) => {
-  console.log('watch', v)
-}, {immediate: true});
-
 const updateSettings = (nextSettings: GraphMakerSettings) => {
   console.log(nextSettings, 'next settings');
   app.updateUiState(ui => {
@@ -61,10 +57,7 @@ const updateSettings = (nextSettings: GraphMakerSettings) => {
       }
       return {
         ...item,
-        settings: {
-          ...(item.settings as Partial<GraphMakerSettings>),
-          optionsState: nextSettings.optionsState
-        }
+        settings: {...nextSettings}
       }
     });
     return ui;
@@ -97,7 +90,6 @@ const removeSection = async () => {
 
 <template>
   <div class="container" :key="app.queryParams.id">
-    <button @click="removeSection">delete this section</button>
     <graph-maker
       v-if="platforma.pFrameDriver && frameRef && settings"
       :settings="settings as GraphMakerSettings"
@@ -106,7 +98,7 @@ const removeSection = async () => {
       @settings-update="updateSettings"
     />
 
-
+    <button @click="removeSection" style="width: 200px;">delete this section</button>
   </div>
   <fieldset>
     <legend>Frame Specs</legend>
@@ -115,12 +107,6 @@ const removeSection = async () => {
 </template>
 
 <style lang="css">
-.alert-error {
-  background-color: red;
-  color: #fff;
-  padding: 12px;
-}
-
 .container {
   display: flex;
   flex-direction: column;

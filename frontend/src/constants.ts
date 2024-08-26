@@ -1,19 +1,36 @@
+// @ts-ignore
 import box from './assets/box.svg';
+// @ts-ignore
 import box_jitteredDots from './assets/box_jitteredDots.svg';
+// @ts-ignore
 import violin from './assets/violin.svg';
+// @ts-ignore
 import violin_binnedDots from './assets/violin_binnedDots.svg';
+// @ts-ignore
 import binnedDots from './assets/binnedDots.svg';
+// @ts-ignore
 import jitteredDots from './assets/jitteredDots.svg';
+// @ts-ignore
 import bar from './assets/bar.svg';
+// @ts-ignore
 import stackedBar from './assets/stackedBar.svg';
+// @ts-ignore
 import line from './assets/line.svg';
+// @ts-ignore
 import line_jitteredDots from './assets/line_jitteredDots.svg';
+// @ts-ignore
 import line_binnedDots from './assets/line_binnedDots.svg';
+// @ts-ignore
 import line_errorbar from './assets/line_errorbar.svg';
+// @ts-ignore
 import sina from './assets/sina.svg';
+// @ts-ignore
 import dots from './assets/dots.svg';
+// @ts-ignore
 import curve_dots from './assets/curve_dots.svg';
+// @ts-ignore
 import heatmap from './assets/heatmap.svg';
+// @ts-ignore
 import dendrogram from './assets/dendrogram.svg';
 import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
 
@@ -50,11 +67,21 @@ export const CHART_TYPES = [{
 }, {
   group: 'Dendrogram',
   items: [{ image: dendrogram, title: 'Dendrogram', id: 'dendrogram' }]
-}];
+}] as {
+  group: string,
+  items: {
+    image: string,
+    title: string,
+    id: string
+  }[]
+}[];
 
 export function getChartTypeByTemplate(template: string): GraphMakerSettings['chartType'] {
-  if (template === 'heatmap' || template === 'dendrogram') {
-    return template as GraphMakerSettings['chartType'];
+  if (template === 'heatmap') {
+    return 'heatmap';
+  }
+  if (template === 'dendrogram') {
+    return 'dendro';
   }
   if (template === 'dots' || template === 'curve' || template === 'curve_dots') {
     return 'scatterplot';

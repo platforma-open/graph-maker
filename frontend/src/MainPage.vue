@@ -4,24 +4,27 @@ import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/ty
 import { AddGraph, TextField } from '@milaboratory/platforma-uikit';
 import { CHART_TYPES, getChartTypeByTemplate } from './constants.ts';
 import { computed, ref } from 'vue';
+import { BlockUiState } from 'block-config';
 
 const app = useApp();
 
-const newId = computed(() => app.ui ? String(app.ui.graphs.length + 1) : '1');
+const newId = computed(() => {
+  if (app.ui && app.ui.graphs.length) {
+    return String(Math.max(...app.ui.graphs.map(g => Number(g.id))) + 1);
+  }
+  return '1';
+});
 const graphTitle = ref<string>('My graph ' + newId.value);
 
 const addSection = async (chartType: GraphMakerSettings['chartType'], template: GraphMakerSettings['template']) => {
   const id = newId.value;
-  await app.updateUiState(ui => {
+  await app.updateUiState((ui: BlockUiState) => {
     if (!ui) {
-      ui = {
-        graphs: []
-      };
+      ui = { graphs: [] } as BlockUiState;
     }
-    ui.graphs = [...ui.graphs, {id, label: graphTitle.value, settings: {chartType, template}}];
+    ui.graphs = [...ui.graphs, { id, label: graphTitle.value, settings: { chartType, template } }];
     return ui;
   });
-  console.log(app.ui, 'after update')
   await app.navigateTo(`/graph?id=${id}`);
 };
 
@@ -34,8 +37,8 @@ function onSelect(v: GraphMakerSettings['template']) {
 </script>
 
 <template>
-  <div class="container">
-    <text-field label="Graph title" v-model="graphTitle" />
+  <div class="container_main_page">
+    <text-field label="Graph title" v-model="graphTitle" style="width: 300px;" />
     <add-graph
       @selected="(v) => onSelect(v as GraphMakerSettings['template'])"
       :items="CHART_TYPES"
@@ -44,14 +47,11 @@ function onSelect(v: GraphMakerSettings['template']) {
 </template>
 
 <style lang="css">
-button {
-  padding: 12px 0;
-}
-
-.container {
+.container_main_page {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
+  width: max-content;
   gap: 24px;
+  align-items: center;
 }
 </style>

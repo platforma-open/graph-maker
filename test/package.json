@@ -1,22 +1,20 @@
 {
-  "name": "tests",
+  "name": "@milaboratory/milaboratories..test",
+  "private": true,
   "version": "1.0.0",
   "description": "Block tests",
   "type": "module",
   "scripts": {
     "test": "vitest"
   },
-  "files": [
-    "dist/**/*"
-  ],
-  "dependencies": {
-    "block-config": "1.0.0"
-  },
+  "files": [],
   "keywords": [],
+  "dependencies": {
+    "this-block": "workspace:@milaboratory/milaboratories.block-beta-graph-maker@*"
+  },
   "devDependencies": {
-    "@milaboratory/sdk-test": "^1.3.1",
-    "@types/node": "^20.14.11",
-    "vitest": "^2.0.3",
-    "typescript": "^5.5.3"
+    "@milaboratory/sdk-test": "catalog:",
+    "vitest": "catalog:",
+    "typescript": "catalog:"
   }
 }

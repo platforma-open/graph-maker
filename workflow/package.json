@@ -1,0 +1,13 @@
+{
+  "name": "@milaboratory/milaboratories.block-beta-graph-maker.workflow",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Tengo-based template",
+  "scripts": {
+    "build": "rm -rf dist && pl-tengo check && pl-tengo build"
+  },
+  "devDependencies": {
+    "@milaboratories/tengo-template-builder": "catalog:",
+    "@milaboratory/tengo-sdk": "catalog:"
+  }
+}

@@ -1,20 +1,21 @@
 {
-  "name": "block-config",
+  "name": "@milaboratory/milaboratories.block-beta-graph-maker.model",
   "version": "1.0.0",
   "description": "Block config",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup && vite build && block-builder build-configs"
+    "build": "tsup && vite build && block-tools build-model"
   },
   "dependencies": {
-    "@milaboratory/sdk-ui": "^0.12.7"
+    "@milaboratory/sdk-ui": "catalog:"
   },
   "devDependencies": {
-    "@milaboratory/block-builder": "^1.2.2",
-    "typescript": "^5.5.3",
-    "tsup": "8.1.2"
+    "@milaboratory/pl-block-tools": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "tsup": "catalog:"
   },
   "tsup": {
     "entry": [

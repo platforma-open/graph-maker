@@ -4,7 +4,7 @@ import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/ty
 import { AddGraph, TextField } from '@milaboratory/platforma-uikit';
 import { CHART_TYPES, getChartTypeByTemplate } from './constants.ts';
 import { computed, ref } from 'vue';
-import { BlockUiState } from 'block-config';
+import { UiState } from '@milaboratory/milaboratories.block-beta-graph-maker.model';
 
 const app = useApp();
 
@@ -18,9 +18,9 @@ const graphTitle = ref<string>('My graph ' + newId.value);
 
 const addSection = async (chartType: GraphMakerSettings['chartType'], template: GraphMakerSettings['template']) => {
   const id = newId.value;
-  await app.updateUiState((ui: BlockUiState) => {
+  await app.updateUiState((ui: UiState) => {
     if (!ui) {
-      ui = { graphs: [] } as BlockUiState;
+      ui = { graphs: [] } as UiState;
     }
     ui.graphs = [...ui.graphs, { id, label: graphTitle.value, settings: { chartType, template } }];
     return ui;

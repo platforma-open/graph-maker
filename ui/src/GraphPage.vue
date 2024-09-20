@@ -3,7 +3,7 @@ import '@milaboratory/platforma-uikit/lib/dist/style.css';
 import '@milaboratory/graph-maker/dist/style.css';
 import { computed } from 'vue';
 import { useApp } from './app';
-import { BlockUiState, platforma } from 'block-config';
+import { UiState, model } from '@milaboratory/milaboratories.block-beta-graph-maker.model';
 import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
 import { GraphMaker } from '@milaboratory/graph-maker';
 
@@ -57,7 +57,7 @@ const updateSettings = (nextSettings: GraphMakerSettings) => {
 const removeSection = async () => {
   await app.updateUiState(ui => {
     if (!ui) {
-      ui = { graphs: [] } as BlockUiState;
+      ui = { graphs: [] } as UiState;
     }
     ui.graphs = ui.graphs.filter(it => it.id !== app.queryParams.id);
     return ui;
@@ -79,7 +79,7 @@ const graphTitle = computed(() => {
 function updateGraphTitle(nextLabel: string) {
   app.updateUiState(ui => {
     if (!ui) {
-      ui = { graphs: [] } as BlockUiState;
+      ui = { graphs: [] } as UiState;
     }
     ui.graphs = ui.graphs.map((item) => {
       if (item.id !== app.queryParams.id) {
@@ -99,11 +99,11 @@ function updateGraphTitle(nextLabel: string) {
 <template>
   <div class="container_graph_page" :key="app.queryParams.id">
     <graph-maker
-      v-if="platforma.pFrameDriver && frameRef && settings"
+      v-if="model.pFrameDriver && frameRef && settings"
       :graph-title="graphTitle"
       :settings="settings as GraphMakerSettings"
       :p-frame-handle="frameRef"
-      :p-frame-driver="platforma.pFrameDriver"
+      :p-frame-driver="model.pFrameDriver"
       @settings-update="updateSettings"
       @graph-title-update="updateGraphTitle"
     />

@@ -1,18 +1,18 @@
 import {
   BlockModel,
   type InferOutputsType,
-  type InferHrefType, PColumn, TreeNodeAccessor, isPColumn
+  PColumn, TreeNodeAccessor, isPColumn
 } from '@milaboratory/sdk-ui';
 
 export type GraphState = { id: string; label: string; settings: unknown };
 
-export type BlockUiState = {
+export type UiState = {
   graphs: GraphState[]
 };
 
 export type BlockArgs = {};
 
-export const platforma = BlockModel.create<BlockArgs, BlockUiState>('Heavy')
+export const model = BlockModel.create<BlockArgs, UiState>("Heavy")
   .initialArgs({})
 
   .sections((ctx) => {
@@ -41,6 +41,4 @@ export const platforma = BlockModel.create<BlockArgs, BlockUiState>('Heavy')
 
   .done();
 
-export type BlockOutputs = InferOutputsType<typeof platforma>;
-
-export type NavigationHref = InferHrefType<typeof platforma>;
+export type BlockOutputs = InferOutputsType<typeof model>;

@@ -1,9 +1,9 @@
 schema/dist
 template/dist
 ui/dist
-backend/dist
-config/dist
-frontend/dist
+workflow/dist
+model/dist
+ui/dist
 .pl_auth.json
 test/work
 test/.test_auth.json

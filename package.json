@@ -1,26 +1,49 @@
 {
-  "name": "block-graph-maker",
+  "name": "@milaboratory/milaboratories.block-beta-graph-maker",
   "version": "1.0.0",
-  "description": "Block monorepo",
-  "type": "module",
-  "workspaces": [
-    "backend",
-    "config",
-    "frontend",
-    "test"
-  ],
   "scripts": {
-    "build:template": "cd backend && npm run build",
-    "build:config": "cd config && npm run build",
-    "build:frontend": "cd frontend && npm run build",
-    "build:test": "cd test && npm run build",
-    "watch:ui": "cd frontend && npm run watch",
-    "build": "npm run build:template && npm run build:config && npm run build:frontend",
-    "publish": "pl-reg upload-package",
-    "watch:frontend": "npm run watch -w frontend",
-    "test": "npm run build && cd test && npm run test"
+    "build": "rm -rf ./dist && block-tools pack",
+    "build-all": "pnpm run -r build"
+  },
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "dependencies": {
+    "@milaboratory/milaboratories.block-beta-graph-maker.model": "workspace:*",
+    "@milaboratory/milaboratories.block-beta-graph-maker.ui": "workspace:*",
+    "@milaboratory/milaboratories.block-beta-graph-maker.workflow": "workspace:*",
+    "@milaboratory/sdk-ui": "0.12.10"
+  },
+  "block": {
+    "components": {
+      "workflow": "@milaboratory/milaboratories.block-beta-graph-maker.workflow/dist/tengo/tpl/main.plj.gz",
+      "model": "@milaboratory/milaboratories.block-beta-graph-maker.model/dist/model.json",
+      "ui": "@milaboratory/milaboratories.block-beta-graph-maker.ui/dist"
+    },
+    "meta": {
+      "title": "Graph maker",
+      "logo": "file:logos/block-logo.png",
+      "url": "https://github.com/platforma/my-block",
+      "docs": "https://github.com/platforma/my-block/docs",
+      "support": "mailto:support@organization.com",
+      "description": "",
+      "longDescription": "file:./docs/description.md",
+      "changelog": "file:CHANGELOG.md",
+      "tags": [
+        "dna",
+        "tcr"
+      ],
+      "organization": {
+        "name": "MiLaboratories Inc",
+        "url": "https://organization.com",
+        "logo": "file:logos/organization-logo.png"
+      }
+    }
   },
   "devDependencies": {
-    "@milaboratory/pl-block-registry": "^1.3.6"
-  }
+    "@changesets/cli": "catalog:",
+    "@milaboratory/pl-block-tools": "catalog:"
+  },
+  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
 }

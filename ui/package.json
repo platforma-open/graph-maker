@@ -1,0 +1,27 @@
+{
+  "name": "@milaboratory/milaboratories.block-beta-graph-maker.ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "watch": "vue-tsc && vite build --watch",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@milaboratory/graph-maker": "catalog:",
+    "@milaboratory/helpers": "catalog:",
+    "@milaboratory/platforma-uikit": "catalog:",
+    "@milaboratory/sdk-vue": "catalog:",
+    "@milaboratory/milaboratories.block-beta-graph-maker.model": "workspace:*",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@stdlib/number-float64-base-normalize": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

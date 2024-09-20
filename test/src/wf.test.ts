@@ -1,13 +1,36 @@
-import { blockTest } from '@milaboratory/sdk-test';
-import { wrapOutputs } from '@milaboratory/sdk-ui';
-import { BlockArgs, BlockOutputs } from 'block-config';
+import { blockTest } from "@milaboratory/sdk-test";
+import { blockSpec, loadBlockDescription } from "this-block";
 
-blockTest('Run template', { timeout: 15000 }, async ({ rawPrj: prj, helpers, ml, myBlockSpec }) => {
-  const blockId = await prj.addBlock('Block', myBlockSpec);
-  await prj.runBlock(blockId);
-  await helpers.awaitBlockDone(blockId);
-  const blockState = prj.getBlockState(blockId);
-  const result = await blockState.awaitStableValue();
-  const outputs = wrapOutputs(result.outputs! as BlockOutputs);
-  console.dir(outputs, { depth: 5 });
-});
+blockTest(
+  "Run template",
+  async ({ rawPrj: project, ml, helpers }) => {
+    const blockId = await project.addBlock("Block", blockSpec);
+
+    console.log("test");
+
+    console.log(await loadBlockDescription());
+
+    const overview = await project.overview.getValue();
+
+    // console.dir(overview, {depth: 5});
+
+    const blockOverview = overview?.blocks.find((b) => b.id === blockId)!;
+
+    if (blockOverview.updatedBlockPack) {
+      console.log("updated block");
+
+      console.dir(blockOverview.updatedBlockPack, { depth: 5 });
+      await project.updateBlockPack(blockId, blockOverview.updatedBlockPack!);
+    }
+
+    const f = await helpers.getLocalFileHandle("./assets/test_file.json");
+
+    await project.setBlockArgs(blockId, { fileHandle: f });
+    await project.runBlock(blockId);
+    await helpers.awaitBlockDone(blockId);
+
+    const blockState = await project.getBlockState(blockId);
+
+    console.dir(await blockState.awaitStableValue(), { depth: 5 });
+  }
+);

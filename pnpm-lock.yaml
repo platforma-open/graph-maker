@@ -13,8 +13,8 @@ catalogs:
       specifier: ^1.14.5
       version: 1.14.5
     '@milaboratory/graph-maker':
-      specifier: ^0.0.41
-      version: 0.0.41
+      specifier: ^1.0.0
+      version: 1.0.0
     '@milaboratory/helpers':
       specifier: ^1.4.0
       version: 1.6.0
@@ -124,7 +124,7 @@ importers:
     dependencies:
       '@milaboratory/graph-maker':
         specifier: 'catalog:'
-        version: 0.0.41(typescript@5.6.2)
+        version: 1.0.0(typescript@5.6.2)
       '@milaboratory/helpers':
         specifier: 'catalog:'
         version: 1.6.0
@@ -771,8 +771,8 @@ packages:
   '@milaboratory/computable@2.1.2':
     resolution: {integrity: sha512-TfL5KiRqm2G7BpzVUo3nVCWZvbLCNxqmK++4HPACmvgkj/agH6a2AB/2yBbUfhceTxLYZO7GC3UrN7KtXsCC8Q==, tarball: https://npm.pkg.github.com/download/@milaboratory/computable/2.1.2/5bfbcbe117a2b7517d4081c62a49b0804d233d69}
 
-  '@milaboratory/graph-maker@0.0.41':
-    resolution: {integrity: sha512-Di5D7B1gqY0IDafq3wxWXpI1LXAYFolrd0ZTbXwgNPTL/j7UG2lxNODcgEYr95CnmThUidHfE93JfoOMbJJbAw==, tarball: https://npm.pkg.github.com/download/@milaboratory/graph-maker/0.0.41/b04393d2dda02baadc9a727c8918630ea061e58e}
+  '@milaboratory/graph-maker@1.0.0':
+    resolution: {integrity: sha512-HcjMDBsRX5agJGjblsZr3Lw6kMC/9giT9diYgxpgfJxgnW6BGzKldI8IOHSWgLxvx7mgEfW5i+z2WIvjV2LVhA==, tarball: https://npm.pkg.github.com/download/@milaboratory/graph-maker/1.0.0/73cdeebaa525166770cc756f55e8bbfced09a31f}
 
   '@milaboratory/helpers@1.6.0':
     resolution: {integrity: sha512-CTqeCocLJLktizVxxUfoQENFLg4stDJ6WGx217rVT/GAIio9/qx656oIFnhGoxXw/3/1PP9xi82OA2EwvvZ+SQ==, tarball: https://npm.pkg.github.com/download/@milaboratory/helpers/1.6.0/01a0eabf7dc3b98863ddb7b70a14c09cd46b0f7c}
@@ -819,6 +819,10 @@ packages:
 
   '@milaboratory/platforma-uikit@1.0.12':
     resolution: {integrity: sha512-fUVs/kJrzc9BJNNV1l389YQJZhv85nX50NzNJ6Q5WCXOWowJro82ovzxrFf9nvq+xAJ4WpaRYS5XwgP7UQ8A2A==, tarball: https://npm.pkg.github.com/download/@milaboratory/platforma-uikit/1.0.12/e815e425a105a56225c96b5306ec115e10849a83}
+    engines: {node: ^20.12.2, npm: ^10.5.2}
+
+  '@milaboratory/platforma-uikit@1.0.7':
+    resolution: {integrity: sha512-7pJEMi64Gl8vnVPN7kGY4cogro1tjVjvGwkf9DXMzesgEadIJ9od1OpYQNsMP+eUSEPOU/eDmROyc72cX7RAIQ==, tarball: https://npm.pkg.github.com/download/@milaboratory/platforma-uikit/1.0.7/a0aca924117ebf8c0e0e4c503fed70e45d7af0f9}
     engines: {node: ^20.12.2, npm: ^10.5.2}
 
   '@milaboratory/platforma-uikit@1.2.0':
@@ -2504,6 +2508,9 @@ packages:
     engines: {node: '>=0.10.0', npm: '>2.7.0'}
     os: [aix, darwin, freebsd, linux, macos, openbsd, sunos, win32, windows]
 
+  '@types/d3-hierarchy@3.1.7':
+    resolution: {integrity: sha512-tJFtNoYBtRtkNysX1Xq4sxtjK8YgoWUNpIiUee0/jHGRwqvzYxkq0hGVbbOGSz+JgFxxRu4K8nb3YpG3CMARtg==}
+
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -2613,6 +2620,15 @@ packages:
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
+
+  ag-charts-types@10.2.0:
+    resolution: {integrity: sha512-PUqH1QtugpYLnlbMdeSZVf5PpT1XZVsP69qN1JXhetLtQpVC28zaj7ikwu9CMA9N9b+dBboA9QcjUQUJZVUokQ==}
+
+  ag-grid-community@32.2.0:
+    resolution: {integrity: sha512-zr29DGo6U4JR6pSOgZrZWuN1CTWdpUCfZWWpF47us6MzdFWGN5gcdiXGw40wg9XMGacShNX1aW8o33S4yVkzMw==}
+
+  ag-grid-vue3@32.2.0:
+    resolution: {integrity: sha512-N41aH9xgfLpv6ZMCnhWfywYuX9BG+pI3L6ad5JL2fwo8JWw9tbu1n9LPtReP6LvqVQeiq8k/m5U2M4ZfT51bxA==}
 
   agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -4958,13 +4974,16 @@ snapshots:
       serialize-error: 11.0.3
       utility-types: 3.11.0
 
-  '@milaboratory/graph-maker@0.0.41(typescript@5.6.2)':
+  '@milaboratory/graph-maker@1.0.0(typescript@5.6.2)':
     dependencies:
       '@milaboratory/helpers': 1.6.0
       '@milaboratory/miplots4': 1.0.38
       '@milaboratory/pf-plots': 1.0.38
-      '@milaboratory/platforma-uikit': 1.0.12(typescript@5.6.2)
+      '@milaboratory/platforma-uikit': 1.0.7(typescript@5.6.2)
       '@milaboratory/sdk-model': 1.3.9
+      '@types/d3-hierarchy': 3.1.7
+      ag-grid-vue3: 32.2.0(typescript@5.6.2)
+      d3-hierarchy: 3.1.2
       d3-scale: 4.0.2
       vue: 3.5.6(typescript@5.6.2)
     transitivePeerDependencies:
@@ -5113,6 +5132,18 @@ snapshots:
       zod: 3.23.8
 
   '@milaboratory/platforma-uikit@1.0.12(typescript@5.6.2)':
+    dependencies:
+      '@milaboratory/helpers': 1.6.0
+      '@milaboratory/platforma-core': 0.1.5
+      js-yaml: 4.1.0
+      vue: 3.5.6(typescript@5.6.2)
+      vue-router: 4.4.5(vue@3.5.6(typescript@5.6.2))
+    optionalDependencies:
+      '@rollup/rollup-linux-x64-gnu': 4.9.5
+    transitivePeerDependencies:
+      - typescript
+
+  '@milaboratory/platforma-uikit@1.0.7(typescript@5.6.2)':
     dependencies:
       '@milaboratory/helpers': 1.6.0
       '@milaboratory/platforma-core': 0.1.5
@@ -7632,6 +7663,8 @@ snapshots:
       '@stdlib/utils-constructor-name': 0.0.8
       '@stdlib/utils-global': 0.0.7
 
+  '@types/d3-hierarchy@3.1.7': {}
+
   '@types/estree@1.0.5': {}
 
   '@types/estree@1.0.6': {}
@@ -7778,6 +7811,19 @@ snapshots:
   '@vue/shared@3.5.6': {}
 
   abbrev@1.1.1: {}
+
+  ag-charts-types@10.2.0: {}
+
+  ag-grid-community@32.2.0:
+    dependencies:
+      ag-charts-types: 10.2.0
+
+  ag-grid-vue3@32.2.0(typescript@5.6.2):
+    dependencies:
+      ag-grid-community: 32.2.0
+      vue: 3.5.6(typescript@5.6.2)
+    transitivePeerDependencies:
+      - typescript
 
   agent-base@6.0.2:
     dependencies:

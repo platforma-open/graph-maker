@@ -1,7 +1,7 @@
 import {
   BlockModel,
   type InferOutputsType,
-  PColumn, TreeNodeAccessor, isPColumn
+  PColumn, TreeNodeAccessor
 } from '@milaboratory/sdk-ui';
 
 export type GraphState = { id: string; label: string; settings: unknown };
@@ -12,7 +12,7 @@ export type UiState = {
 
 export type BlockArgs = {};
 
-export const model = BlockModel.create<BlockArgs, UiState>("Heavy")
+export const model = BlockModel.create<BlockArgs, UiState>('Heavy')
   .initialArgs({})
 
   .sections((ctx) => {
@@ -31,12 +31,12 @@ export const model = BlockModel.create<BlockArgs, UiState>("Heavy")
     ];
   })
 
-  .output('pFrame', (render) => {
-    const collection = render.resultPool.getDataFromResultPool();
-    if (collection === undefined || !collection.isComplete) return undefined;
-
-    const pColumns = collection.entries.map(({ obj }) => obj).filter(isPColumn);
-    return render.createPFrame(pColumns as PColumn<TreeNodeAccessor>[]);
+  .output('pFrame', (wf) => {
+    const pColumns:PColumn<TreeNodeAccessor>[] = [];
+    wf.resultPool.getDataFromResultPool().entries.forEach(({ obj }) => {
+      pColumns.push(...obj.data?.getPColumns() ?? []);
+    });
+    return wf.createPFrame(pColumns);
   })
 
   .done();

@@ -15,7 +15,7 @@ catalog:
   "@milaboratory/sdk-test": ^1.4.0
 
   "@milaboratory/platforma-uikit": 1.0.12
-  "@milaboratory/graph-maker": ^0.0.41
+  "@milaboratory/graph-maker": ^1.0.0
   "@milaboratory/sdk-vue": ^1.0.42
   "@milaboratory/helpers": ^1.4.0
   "@milaboratory/pframes-conv": ^0.4.25

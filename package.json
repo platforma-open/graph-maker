@@ -1,5 +1,5 @@
 {
-  "name": "@milaboratory/milaboratories.block-beta-graph-maker",
+  "name": "@platforma-open/milaboratories.block-beta-graph-maker",
   "version": "1.0.0",
   "scripts": {
     "build": "rm -rf ./dist && block-tools pack",
@@ -10,16 +10,15 @@
     "index.js"
   ],
   "dependencies": {
-    "@milaboratory/milaboratories.block-beta-graph-maker.model": "workspace:*",
-    "@milaboratory/milaboratories.block-beta-graph-maker.ui": "workspace:*",
-    "@milaboratory/milaboratories.block-beta-graph-maker.workflow": "workspace:*",
-    "@milaboratory/sdk-ui": "0.12.10"
+    "@platforma-open/milaboratories.block-beta-graph-maker.model": "workspace:*",
+    "@platforma-open/milaboratories.block-beta-graph-maker.ui": "workspace:*",
+    "@platforma-open/milaboratories.block-beta-graph-maker.workflow": "workspace:*"
   },
   "block": {
     "components": {
-      "workflow": "@milaboratory/milaboratories.block-beta-graph-maker.workflow/dist/tengo/tpl/main.plj.gz",
-      "model": "@milaboratory/milaboratories.block-beta-graph-maker.model/dist/model.json",
-      "ui": "@milaboratory/milaboratories.block-beta-graph-maker.ui/dist"
+      "workflow": "@platforma-open/milaboratories.block-beta-graph-maker.workflow/dist/tengo/tpl/main.plj.gz",
+      "model": "@platforma-open/milaboratories.block-beta-graph-maker.model/dist/model.json",
+      "ui": "@platforma-open/milaboratories.block-beta-graph-maker.ui/dist"
     },
     "meta": {
       "title": "Graph maker",
@@ -43,7 +42,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "catalog:",
-    "@milaboratory/pl-block-tools": "catalog:"
+    "@platforma-sdk/block-tools": "catalog:"
   },
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
 }

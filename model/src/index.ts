@@ -2,7 +2,7 @@ import {
   BlockModel,
   type InferOutputsType,
   PColumn, TreeNodeAccessor
-} from '@milaboratory/sdk-ui';
+} from '@platforma-sdk/model';
 
 export type GraphState = { id: string; label: string; settings: unknown };
 

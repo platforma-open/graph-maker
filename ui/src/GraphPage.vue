@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import '@milaboratory/platforma-uikit/lib/dist/style.css';
-import '@milaboratory/graph-maker/dist/style.css';
 import { computed } from 'vue';
 import { useApp } from './app';
-import { UiState, model } from '@milaboratory/milaboratories.block-beta-graph-maker.model';
+import { UiState, model } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
 import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
 import { GraphMaker } from '@milaboratory/graph-maker';
 

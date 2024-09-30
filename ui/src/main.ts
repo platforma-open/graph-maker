@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import { sdkPlugin } from './app';
-import '@milaboratory/platforma-uikit/styles';
-import '@milaboratory/sdk-vue/lib/dist/style.css'; // @todo (will also be sdk-vue/styles)
-import { BlockLayout } from '@milaboratory/sdk-vue';
+import '@milaboratories/uikit/dist/style.css';
+import '@milaboratory/graph-maker/dist/style.css';
+import '@platforma-sdk/ui-vue/dist/style.css';
+import { BlockLayout } from '@platforma-sdk/ui-vue';
 
 createApp(BlockLayout).use(sdkPlugin).mount('#app');

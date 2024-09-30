@@ -1,5 +1,5 @@
 {
-  "name": "@milaboratory/milaboratories..test",
+  "name": "@platforma-open/milaboratories..test",
   "private": true,
   "version": "1.0.0",
   "description": "Block tests",
@@ -10,10 +10,10 @@
   "files": [],
   "keywords": [],
   "dependencies": {
-    "this-block": "workspace:@milaboratory/milaboratories.block-beta-graph-maker@*"
+    "this-block": "workspace:@platforma-open/milaboratories.block-beta-graph-maker@*"
   },
   "devDependencies": {
-    "@milaboratory/sdk-test": "catalog:",
+    "@platforma-sdk/test": "catalog:",
     "vitest": "catalog:",
     "typescript": "catalog:"
   }

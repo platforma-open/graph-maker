@@ -1,5 +1,5 @@
-import { model } from '@milaboratory/milaboratories.block-beta-graph-maker.model';
-import { defineApp } from '@milaboratory/sdk-vue';
+import { model } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
+import { defineApp } from '@platforma-sdk/ui-vue';
 import MainPage from './MainPage.vue';
 import GraphPage from './GraphPage.vue';
 

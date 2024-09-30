@@ -1,4 +1,4 @@
-import { blockTest } from "@milaboratory/sdk-test";
+import { blockTest } from "@platforma-sdk/test";
 import { blockSpec, loadBlockDescription } from "this-block";
 
 blockTest(

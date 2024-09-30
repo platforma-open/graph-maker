@@ -4,6 +4,7 @@ import { useApp } from './app';
 import { UiState, model } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
 import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
 import { GraphMaker } from '@milaboratory/graph-maker';
+import {PlBlockPage} from '@milaboratories/uikit';
 
 const app = useApp<`/graph?id=${string}`>();
 
@@ -95,18 +96,20 @@ function updateGraphTitle(nextLabel: string) {
 </script>
 
 <template>
+  <pl-block-page>
   <div class="container_graph_page" :key="app.queryParams.id">
-    <graph-maker
-      v-if="model.pFrameDriver && frameRef && settings"
-      :graph-title="graphTitle"
-      :settings="settings as GraphMakerSettings"
-      :p-frame-handle="frameRef"
-      :p-frame-driver="model.pFrameDriver"
-      @settings-update="updateSettings"
-      @graph-title-update="updateGraphTitle"
-    />
-    <button @click="removeSection" class="remove_button_graph_page">delete this section</button>
+      <graph-maker
+        v-if="model.pFrameDriver && frameRef && settings"
+        :graph-title="graphTitle"
+        :settings="settings as GraphMakerSettings"
+        :p-frame-handle="frameRef"
+        :p-frame-driver="model.pFrameDriver"
+        @settings-update="updateSettings"
+        @graph-title-update="updateGraphTitle"
+      />
+      <button @click="removeSection" class="remove_button_graph_page">delete this section</button>
   </div>
+  </pl-block-page>
 </template>
 
 <style lang="css">

@@ -2,7 +2,7 @@
 import { useApp } from './app';
 import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
 import  AddGraph from './AddGraph.vue';
-import { PlTextField } from '@milaboratories/uikit';
+import { PlBlockPage, PlTextField } from '@milaboratories/uikit';
 import { CHART_TYPES, getChartTypeByTemplate } from './constants.ts';
 import { computed, ref } from 'vue';
 import { UiState } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
@@ -38,20 +38,22 @@ function onSelect(v: GraphMakerSettings['template']) {
 </script>
 
 <template>
-  <div class="container_main_page">
-    <pl-text-field label="Graph title" v-model="graphTitle" style="width: 300px;" />
-    <add-graph
-      @selected="(v) => onSelect(v as GraphMakerSettings['template'])"
-      :items="CHART_TYPES"
-    />
-  </div>
+  <pl-block-page>
+    <div class="container_main_page">
+      <pl-text-field label="Graph title" v-model="graphTitle" style="width: 300px;" />
+      <add-graph
+        @selected="(v) => onSelect(v as GraphMakerSettings['template'])"
+        :items="CHART_TYPES"
+      />
+    </div>
+  </pl-block-page>
 </template>
 
 <style lang="css">
 .container_main_page {
   display: flex;
   flex-direction: column;
-  width: max-content;
+  width: 100%;
   gap: 24px;
   align-items: center;
 }

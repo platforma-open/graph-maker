@@ -32,7 +32,7 @@ import curve_dots from './assets/curve_dots.svg';
 import heatmap from './assets/heatmap.svg';
 // @ts-ignore
 import dendrogram from './assets/dendrogram.svg';
-import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
+import { GraphMakerSettings } from '@milaboratories/graph-maker/dist/GraphMaker/types';
 
 export const CHART_TYPES = [{
   group: 'Discrete',

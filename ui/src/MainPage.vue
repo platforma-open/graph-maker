@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useApp } from './app';
-import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
+import { GraphMakerSettings } from '@milaboratories/graph-maker/dist/GraphMaker/types';
 import  AddGraph from './AddGraph.vue';
 import { PlBlockPage, PlTextField } from '@milaboratories/uikit';
 import { CHART_TYPES, getChartTypeByTemplate } from './constants.ts';

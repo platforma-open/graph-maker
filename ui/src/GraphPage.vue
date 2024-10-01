@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 import { useApp } from './app';
 import { UiState, model } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
-import { GraphMakerSettings } from '@milaboratory/graph-maker/dist/GraphMaker/types';
-import { GraphMaker } from '@milaboratory/graph-maker';
+import { GraphMakerSettings } from '@milaboratories/graph-maker/dist/GraphMaker/types';
+import { GraphMaker } from '@milaboratories/graph-maker';
 import {PlBlockPage} from '@milaboratories/uikit';
 
 const app = useApp<`/graph?id=${string}`>();

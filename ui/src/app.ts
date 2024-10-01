@@ -1,10 +1,10 @@
-import { model } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
+import { platforma } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
 import { defineApp } from '@platforma-sdk/ui-vue';
 import MainPage from './MainPage.vue';
 import GraphPage from './GraphPage.vue';
 
 
-export const sdkPlugin = defineApp(model, () => {
+export const sdkPlugin = defineApp(platforma, () => {
   return {
     routes: {
       '/': MainPage,

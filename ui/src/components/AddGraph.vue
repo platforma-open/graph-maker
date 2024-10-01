@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import './assets/add-graph.scss';
+import '../assets/add-graph.scss';
 import { type ComponentPublicInstance, onMounted, ref } from 'vue';
 import AddGraphItem from './AddGraphItem.vue';
 import { PlBtnGhost } from '@milaboratories/uikit';

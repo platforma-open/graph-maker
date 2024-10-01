@@ -12,7 +12,7 @@ export type UiState = {
 
 export type BlockArgs = {};
 
-export const model = BlockModel.create<BlockArgs, UiState>('Heavy')
+export const platforma = BlockModel.create<BlockArgs, UiState>('Heavy')
   .initialArgs({})
 
   .sections((ctx) => {
@@ -41,4 +41,4 @@ export const model = BlockModel.create<BlockArgs, UiState>('Heavy')
 
   .done();
 
-export type BlockOutputs = InferOutputsType<typeof model>;
+export type BlockOutputs = InferOutputsType<typeof platforma>;

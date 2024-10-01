@@ -30,10 +30,7 @@
       "description": "",
       "longDescription": "file:./docs/description.md",
       "changelog": "file:CHANGELOG.md",
-      "tags": [
-        "dna",
-        "tcr"
-      ],
+      "tags": [],
       "organization": {
         "name": "MiLaboratories Inc",
         "url": "https://organization.com",

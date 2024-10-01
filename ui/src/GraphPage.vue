@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useApp } from './app';
-import { UiState, model } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
+import { platforma } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
 import { GraphMakerSettings } from '@milaboratories/graph-maker/dist/GraphMaker/types';
 import { GraphMaker } from '@milaboratories/graph-maker';
-import {PlBlockPage} from '@milaboratories/uikit';
+import { PlBlockPage } from '@milaboratories/uikit';
 
 const app = useApp<`/graph?id=${string}`>();
 
-const frameRef = computed(() => app.getOutputFieldOkOptional('pFrame'));
+const ui = app.createUiModel(undefined, () => ({ graphs: [] }));
+
+const frameRef = computed(() => app.outputValues.pFrame);
 
 function createDefaultSettings(): GraphMakerSettings {
   return {
@@ -24,7 +26,7 @@ function createDefaultSettings(): GraphMakerSettings {
 }
 
 const settings = computed<GraphMakerSettings | null>(() => {
-  const saved = app.ui.graphs.find(it => it.id === app.queryParams.id)?.settings;
+  const saved = ui.model.graphs.find(it => it.id === app.queryParams.id)?.settings;
   if (!saved) {
     console.error(`Missed saved settings for ${app.queryParams.id}, graphs:`, app.ui.graphs);
     return null;
@@ -36,32 +38,22 @@ const settings = computed<GraphMakerSettings | null>(() => {
 });
 
 const updateSettings = (nextSettings: GraphMakerSettings) => {
-  app.updateUiState(ui => {
-    ui.graphs = ui.graphs.map((item) => {
-      if (item.id !== app.queryParams.id) {
-        return item;
+  ui.model.graphs = ui.model.graphs.map((item) => {
+    if (item.id !== app.queryParams.id) {
+      return item;
+    }
+    return {
+      ...item,
+      settings: {
+        ...item.settings as GraphMakerSettings,
+        ...nextSettings
       }
-      return {
-        ...item,
-        settings: {
-          ...item.settings as GraphMakerSettings,
-          ...nextSettings
-        }
-      };
-    });
-    return ui;
+    };
   });
 };
 
-const removeSection = async () => {
-  await app.updateUiState(ui => {
-    if (!ui) {
-      ui = { graphs: [] } as UiState;
-    }
-    ui.graphs = ui.graphs.filter(it => it.id !== app.queryParams.id);
-    return ui;
-  });
-  const lastId = app.ui.graphs.length ? app.ui.graphs[app.ui.graphs.length - 1]['id'] : undefined;
+const removeSection = () => {
+  const lastId = ui.model.graphs.length ? ui.model.graphs[app.ui.graphs.length - 1]['id'] : undefined;
   if (lastId) {
     app.navigateTo(`/graph?id=${lastId}`);
   } else {
@@ -71,25 +63,19 @@ const removeSection = async () => {
 };
 
 const graphTitle = computed(() => {
-  const graphState = app.ui.graphs.find((item) => item.id === app.queryParams.id);
+  const graphState = ui.model.graphs.find((item) => item.id === app.queryParams.id);
   return graphState?.label ?? '';
 });
 
 function updateGraphTitle(nextLabel: string) {
-  app.updateUiState(ui => {
-    if (!ui) {
-      ui = { graphs: [] } as UiState;
+  ui.model.graphs = ui.model.graphs.map((item) => {
+    if (item.id !== app.queryParams.id) {
+      return item;
     }
-    ui.graphs = ui.graphs.map((item) => {
-      if (item.id !== app.queryParams.id) {
-        return item;
-      }
-      return {
-        ...item,
-        label: nextLabel
-      };
-    });
-    return ui;
+    return {
+      ...item,
+      label: nextLabel
+    };
   });
 }
 
@@ -97,18 +83,18 @@ function updateGraphTitle(nextLabel: string) {
 
 <template>
   <pl-block-page>
-  <div class="container_graph_page" :key="app.queryParams.id">
+    <div class="container_graph_page" :key="app.queryParams.id">
       <graph-maker
-        v-if="model.pFrameDriver && frameRef && settings"
+        v-if="platforma.pFrameDriver && frameRef && settings"
         :graph-title="graphTitle"
         :settings="settings as GraphMakerSettings"
         :p-frame-handle="frameRef"
-        :p-frame-driver="model.pFrameDriver"
+        :p-frame-driver="platforma.pFrameDriver"
         @settings-update="updateSettings"
         @graph-title-update="updateGraphTitle"
       />
       <button @click="removeSection" class="remove_button_graph_page">delete this section</button>
-  </div>
+    </div>
   </pl-block-page>
 </template>
 

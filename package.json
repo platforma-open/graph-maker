@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.block-beta-graph-maker",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "build": "rm -rf ./dist && block-tools pack",
     "build-all": "pnpm run -r build",

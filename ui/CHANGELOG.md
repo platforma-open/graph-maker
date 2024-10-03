@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.block-beta-graph-maker.ui
 
+## 0.1.2
+
+### Patch Changes
+
+- 2ac892d: minor layout fixes
+
 ## 0.1.1
 
 ### Patch Changes

@@ -4,7 +4,6 @@ import { useApp } from './app';
 import { platforma } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
 import { GraphMakerSettings } from '@milaboratories/graph-maker/dist/GraphMaker/types';
 import { GraphMaker } from '@milaboratories/graph-maker';
-import { PlBlockPage } from '@milaboratories/uikit';
 
 const app = useApp<`/graph?id=${string}`>();
 
@@ -86,20 +85,18 @@ function updateGraphTitle(nextLabel: string) {
 </script>
 
 <template>
-  <pl-block-page>
-    <div class="container_graph_page" :key="app.queryParams.id">
-      <graph-maker
-        v-if="platforma.pFrameDriver && frameRef && settings"
-        :graph-title="graphTitle"
-        :settings="settings as GraphMakerSettings"
-        :p-frame-handle="frameRef"
-        :p-frame-driver="platforma.pFrameDriver"
-        @settings-update="updateSettings"
-        @graph-title-update="updateGraphTitle"
-      />
-      <button @click="removeSection" class="remove_button_graph_page">delete this section</button>
-    </div>
-  </pl-block-page>
+  <div class="container_graph_page" :key="app.queryParams.id">
+    <graph-maker
+      v-if="platforma.pFrameDriver && frameRef && settings"
+      :graph-title="graphTitle"
+      :settings="settings as GraphMakerSettings"
+      :p-frame-handle="frameRef"
+      :p-frame-driver="platforma.pFrameDriver"
+      @settings-update="updateSettings"
+      @graph-title-update="updateGraphTitle"
+    />
+    <button @click="removeSection" class="remove_button_graph_page">delete this section</button>
+  </div>
 </template>
 
 <style lang="css">
@@ -107,7 +104,10 @@ function updateGraphTitle(nextLabel: string) {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 900px;
   height: 1080px;
+  padding: 24px;
+  overflow: hidden;
 }
 
 .remove_button_graph_page {

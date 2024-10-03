@@ -13,15 +13,15 @@
     "@milaboratories/graph-maker": "catalog:",
     "@milaboratories/helpers": "catalog:",
     "@milaboratories/uikit": "catalog:",
-    "@platforma-sdk/ui-vue": "catalog:",
     "@platforma-open/milaboratories.block-beta-graph-maker.model": "workspace:*",
+    "@platforma-sdk/ui-vue": "catalog:",
     "vue": "catalog:"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "catalog:",
+    "sass": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vue-tsc": "catalog:",
-    "sass": "catalog:"
+    "vue-tsc": "catalog:"
   }
 }

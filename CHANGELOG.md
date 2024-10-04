@@ -1,5 +1,12 @@
 # @platforma-open/milaboratories.block-beta-graph-maker
 
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies [c6593cd]
+  - @platforma-open/milaboratories.block-beta-graph-maker.ui@0.1.3
+
 ## 1.1.2
 
 ### Patch Changes

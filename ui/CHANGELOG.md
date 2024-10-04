@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.block-beta-graph-maker.ui
 
+## 0.1.3
+
+### Patch Changes
+
+- c6593cd: update graph-maker interface
+
 ## 0.1.2
 
 ### Patch Changes

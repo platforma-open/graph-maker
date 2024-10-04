@@ -14,48 +14,45 @@ const frameRef = computed(() => app.outputValues.pFrame);
 function createDefaultSettings(): GraphMakerSettings {
   return {
     chartType: 'discrete' as GraphMakerSettings['chartType'],
+    title: '',
     optionsState: null,
     statisticsSettings: null,
     axesSettings: null,
     layersSettings: null,
     template: null,
-    dataBindAes: null,
-    labelsModifier: (id) => id
+    dataBindAes: null
   };
 }
 
-const settings = computed<GraphMakerSettings | null>(() => {
-  const saved = ui.model.graphs.find(it => it.id === app.queryParams.id)?.settings;
-  if (!saved) {
-    console.error(`Missed saved settings for ${app.queryParams.id}, graphs:`, app.ui.graphs);
-    return null;
-  }
-  return {
-    ...createDefaultSettings(),
-    ...saved
-  } as GraphMakerSettings;
-});
-
-const updateSettings = (nextSettings: GraphMakerSettings) => {
-  ui.model.graphs = ui.model.graphs.map((item) => {
-    if (item.id !== app.queryParams.id) {
-      return item;
+const settings = computed({
+  get() {
+    const graphState = ui.model.graphs.find(it => it.id === app.queryParams.id);
+    if (!graphState) {
+      console.error(`Missed saved settings for ${app.queryParams.id}, graphs:`, app.ui.graphs);
+      return null;
     }
     return {
-      ...item,
-      settings: {
-        ...item.settings as GraphMakerSettings,
-        ...nextSettings
-      }
-    };
-  });
-};
+      ...createDefaultSettings(),
+      ...(graphState.settings as GraphMakerSettings),
+      title: graphState.label
+    } as GraphMakerSettings;
+  },
+  set(nextSettings: GraphMakerSettings) {
+    ui.model.graphs = ui.model.graphs.map((item) => {
+      return item.id === app.queryParams.id ? {
+        id: item.id,
+        settings: nextSettings,
+        label: nextSettings.title
+      } : item;
+    });
+  }
+});
 
 const removeSection = async () => {
- await app.updateUiState(ui => {
+  await app.updateUiState(ui => {
     ui.graphs = ui.graphs.filter(it => it.id !== app.queryParams.id);
     return ui;
-  })
+  });
   const lastId = ui.model.graphs.length ? ui.model.graphs[ui.model.graphs.length - 1]['id'] : undefined;
   if (lastId) {
     app.navigateTo(`/graph?id=${lastId}`);
@@ -65,35 +62,15 @@ const removeSection = async () => {
   }
 };
 
-const graphTitle = computed(() => {
-  const graphState = ui.model.graphs.find((item) => item.id === app.queryParams.id);
-  return graphState?.label ?? '';
-});
-
-function updateGraphTitle(nextLabel: string) {
-  ui.model.graphs = ui.model.graphs.map((item) => {
-    if (item.id !== app.queryParams.id) {
-      return item;
-    }
-    return {
-      ...item,
-      label: nextLabel
-    };
-  });
-}
-
 </script>
 
 <template>
   <div class="container_graph_page" :key="app.queryParams.id">
     <graph-maker
       v-if="platforma.pFrameDriver && frameRef && settings"
-      :graph-title="graphTitle"
-      :settings="settings as GraphMakerSettings"
+      v-model="settings as GraphMakerSettings"
       :p-frame-handle="frameRef"
       :p-frame-driver="platforma.pFrameDriver"
-      @settings-update="updateSettings"
-      @graph-title-update="updateGraphTitle"
     />
     <button @click="removeSection" class="remove_button_graph_page">delete this section</button>
   </div>

@@ -30,7 +30,7 @@
       "description": "Versatile tool for creating powerful and interactive visualizations from complex data sets",
       "longDescription": "file:./docs/description.md",
       "changelog": "file:CHANGELOG.md",
-      "tags": [],
+      "tags": ["graphs", "dataviz"],
       "organization": {
         "name": "MiLaboratories Inc",
         "url": "https://milaboratories.com",

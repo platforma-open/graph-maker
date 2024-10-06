@@ -1,5 +1,5 @@
 {
-  "name": "@platforma-open/milaboratories.block-beta-graph-maker",
+  "name": "@platforma-open/milaboratories.graph-maker",
   "version": "1.1.3",
   "scripts": {
     "build": "rm -rf ./dist && block-tools pack",
@@ -11,30 +11,30 @@
     "index.js"
   ],
   "dependencies": {
-    "@platforma-open/milaboratories.block-beta-graph-maker.model": "workspace:*",
-    "@platforma-open/milaboratories.block-beta-graph-maker.ui": "workspace:*",
-    "@platforma-open/milaboratories.block-beta-graph-maker.workflow": "workspace:*"
+    "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
+    "@platforma-open/milaboratories.graph-maker.ui": "workspace:*",
+    "@platforma-open/milaboratories.graph-maker.workflow": "workspace:*"
   },
   "block": {
     "components": {
-      "workflow": "@platforma-open/milaboratories.block-beta-graph-maker.workflow/dist/tengo/tpl/main.plj.gz",
-      "model": "@platforma-open/milaboratories.block-beta-graph-maker.model/dist/model.json",
-      "ui": "@platforma-open/milaboratories.block-beta-graph-maker.ui/dist"
+      "workflow": "@platforma-open/milaboratories.graph-maker.workflow/dist/tengo/tpl/main.plj.gz",
+      "model": "@platforma-open/milaboratories.graph-maker.model/dist/model.json",
+      "ui": "@platforma-open/milaboratories.graph-maker.ui/dist"
     },
     "meta": {
       "title": "Graph maker",
       "logo": "file:logos/block-logo.png",
-      "url": "https://github.com/platforma/my-block",
-      "docs": "https://github.com/platforma/my-block/docs",
-      "support": "mailto:support@organization.com",
-      "description": "",
+      "url": "https://github.com/platforma-open/graph-maker",
+      "docs": "https://github.com/platforma-open/graph-maker",
+      "support": "mailto:support@milaboratories.com",
+      "description": "Versatile tool for creating powerful and interactive visualizations from complex data sets",
       "longDescription": "file:./docs/description.md",
       "changelog": "file:CHANGELOG.md",
       "tags": [],
       "organization": {
         "name": "MiLaboratories Inc",
-        "url": "https://organization.com",
-        "logo": "file:logos/organization-logo.png"
+        "url": "https://milaboratories.com",
+        "logo": "file:logos/milaboratories.png"
       }
     }
   },

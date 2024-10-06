@@ -5,7 +5,7 @@ import  AddGraph from './components/AddGraph.vue';
 import { PlBlockPage, PlTextField } from '@milaboratories/uikit';
 import { CHART_TYPES, getChartTypeByTemplate } from './constants.ts';
 import { computed, ref } from 'vue';
-import { UiState } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
+import { UiState } from '@platforma-open/milaboratories.graph-maker.model';
 
 const app = useApp();
 

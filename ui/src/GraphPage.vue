@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useApp } from './app';
-import { platforma } from '@platforma-open/milaboratories.block-beta-graph-maker.model';
+import { platforma } from '@platforma-open/milaboratories.graph-maker.model';
 import { GraphMakerSettings } from '@milaboratories/graph-maker/dist/GraphMaker/types';
 import { GraphMaker } from '@milaboratories/graph-maker';
 

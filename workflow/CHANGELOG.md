@@ -1,4 +1,4 @@
-# @platforma-open/milaboratories.block-beta-graph-maker.workflow
+# @platforma-open/milaboratories.graph-maker.workflow
 
 ## 1.1.0
 

@@ -22,7 +22,7 @@
       "ui": "@platforma-open/milaboratories.graph-maker.ui/dist"
     },
     "meta": {
-      "title": "Graph maker",
+      "title": "Graph Maker",
       "logo": "file:logos/block-logo.png",
       "url": "https://github.com/platforma-open/graph-maker",
       "docs": "https://github.com/platforma-open/graph-maker",

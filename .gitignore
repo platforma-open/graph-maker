@@ -9,3 +9,4 @@ test/work
 test/.test_auth.json
 node_modules/
 .idea
+block-pack

@@ -1,4 +1,4 @@
-# @platforma-open/milaboratories.block-beta-graph-maker.model
+# @platforma-open/milaboratories.graph-maker.model
 
 ## 1.1.1
 

@@ -1,5 +1,5 @@
 {
-  "name": "@platforma-open/milaboratories.block-beta-graph-maker.ui",
+  "name": "@platforma-open/milaboratories.graph-maker.ui",
   "private": true,
   "version": "0.1.3",
   "type": "module",
@@ -13,7 +13,7 @@
     "@milaboratories/graph-maker": "catalog:",
     "@milaboratories/helpers": "catalog:",
     "@milaboratories/uikit": "catalog:",
-    "@platforma-open/milaboratories.block-beta-graph-maker.model": "workspace:*",
+    "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
     "@platforma-sdk/ui-vue": "catalog:",
     "vue": "catalog:"
   },

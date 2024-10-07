@@ -1,5 +1,16 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.2.0
+
+### Minor Changes
+
+- 4315b83: rename packages and clean up
+
+### Patch Changes
+
+- Updated dependencies [4315b83]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.0
+
 ## 0.1.3
 
 ### Patch Changes

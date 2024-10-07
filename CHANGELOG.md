@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.2.2
+
+### Patch Changes
+
+- 06dee8f: bump graph-maker
+
 ## 1.2.0
 
 ### Minor Changes

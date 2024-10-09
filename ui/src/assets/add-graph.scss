@@ -1,119 +1,38 @@
-@mixin scrollbarTable($y: true, $x: false) {
-    @if $y {
-        overflow-y: auto;
-    }
-
-    @if $x {
-        overflow-x: auto;
-    }
-
+@mixin scrollbar($y: true, $x: false, $over: auto) {
     &::-webkit-scrollbar {
-        width: 7px;
-        height: 8px;
-        background-color: #e1e3eb;
+        width: 6px;
+        height: 5px;
+        padding-right: 5px;
+        background-color: transparent;
         display: block;
     }
 
     &::-webkit-scrollbar-thumb {
-        background: #fff;
-        border-radius: 9999px;
-        background-clip: padding-box;
-        border: 2px solid transparent;
-        border-right: 1px solid transparent;
+        background: var(--color-ic-02);
+        border-radius: 5px;
+    }
+
+    @if $y {
+        overflow-y: $over;
+    }
+
+    @if $x {
+        overflow-x: $over;
+    }
+
+    &:hover {
+        --color-ic-02: var(--border-color-focus);
     }
 }
 
 .add-graph {
     display: flex;
-    flex-direction: column;
-    height: 640px;
-    width: 880px;
+    width: 670px;
     overflow: auto;
-
-    border-radius: 12px;
-    border: 1px solid var(--color-border-default);
-    background: var(--bg-elevated-02);
-    box-shadow: 0px 6px 16px -2px rgba(57, 65, 102, 0.08);
     position: relative;
-
-    .ui-btn-ghost {
-        width: 36px;
-        height: 36px;
-        position: absolute;
-        right: 4px;
-        top: 4px;
-    }
-
-    &__wrapper {
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-        overflow: auto;
-    }
-
-    &__left {
-        width: 196px;
-        flex-shrink: 0;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-        padding-top: 0;
-        @include scrollbarTable;
-    }
-
-    &__right {
-        width: 100%;
-    // background-color: red;
-        overflow: auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        padding: 0 6px 6px;
-        @include scrollbarTable;
-    }
-
-    &__title {
-        color: var(--color-txt-01);
-        font-family: Manrope;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 32px;
-        letter-spacing: -0.56px;
-        padding: 24px 24px 40px;
-    }
-
-    &__group-item {
-        padding: 10px 10px 10px 24px;
-        font-family: Manrope;
-        font-size: 11px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 12px;
-        letter-spacing: 0.44px;
-        text-transform: uppercase;
-        cursor: pointer;
-        color: var(--color-txt-03);
-    }
-
-    &__group-item-active {
-        color: var(--color-txt-01);
-        background: linear-gradient(90deg, #E4FFD7 0%, rgba(255, 255, 255, 0.00) 100%);
-    }
-
-    &__btm-info {
-        color: var(--color-txt-01);
-        font-family: Manrope;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        padding-left: 24px;
-        padding-bottom: 24px;
-    }
-
-    &__divider {
-        flex-grow: 1;
-    }
+    flex-wrap: wrap;
+    gap: 6px;
+    @include scrollbar;
 }
 
 .add-graph-item {

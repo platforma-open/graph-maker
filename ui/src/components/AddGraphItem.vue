@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import '../assets/add-graph.scss';
+
 type Item = { image: string; title: string; id: string };
+
 const props = defineProps<{ item: Item; group: string }>();
+
 defineEmits<{
   (e: 'selected', id: string): void;
 }>();

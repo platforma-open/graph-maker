@@ -11,19 +11,6 @@ const ui = app.createUiModel(undefined, () => ({ graphs: [] }));
 
 const frameRef = computed(() => app.outputValues.pFrame);
 
-function createDefaultSettings(): GraphMakerSettings {
-  return {
-    chartType: 'discrete' as GraphMakerSettings['chartType'],
-    title: '',
-    optionsState: null,
-    statisticsSettings: null,
-    axesSettings: null,
-    layersSettings: null,
-    template: null,
-    dataBindAes: null
-  };
-}
-
 const settings = computed({
   get() {
     const graphState = ui.model.graphs.find(it => it.id === app.queryParams.id);
@@ -32,8 +19,8 @@ const settings = computed({
       return null;
     }
     return {
-      ...createDefaultSettings(),
       ...(graphState.settings as GraphMakerSettings),
+      allowDeleting: true,
       title: graphState.label
     } as GraphMakerSettings;
   },
@@ -68,26 +55,18 @@ const removeSection = async () => {
   <div class="container_graph_page" :key="app.queryParams.id">
     <graph-maker
       v-if="platforma.pFrameDriver && frameRef && settings"
-      v-model="settings as GraphMakerSettings"
+      v-model="settings"
       :p-frame-handle="frameRef"
       :p-frame-driver="platforma.pFrameDriver"
+      @delete-this-graph="removeSection"
     />
-    <button @click="removeSection" class="remove_button_graph_page">delete this section</button>
   </div>
 </template>
 
 <style lang="css">
 .container_graph_page {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
   min-width: 900px;
   height: 1080px;
-  padding: 24px;
   overflow: hidden;
-}
-
-.remove_button_graph_page {
-  width: 200px;
 }
 </style>

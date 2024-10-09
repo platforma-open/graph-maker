@@ -3,10 +3,7 @@ import '../assets/add-graph.scss';
 import AddGraphItem from './AddGraphItem.vue';
 import { CHART_TYPES } from '../constants.ts';
 
-defineEmits<{
-  (e: 'selected', id: string): void;
-}>();
-
+defineEmits(['selected']);
 
 </script>
 <template>

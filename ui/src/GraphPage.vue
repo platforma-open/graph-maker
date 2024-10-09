@@ -9,13 +9,13 @@ const app = useApp<`/graph?id=${string}`>();
 
 const ui = app.createUiModel(undefined, () => ({ graphs: [] }));
 
-const frameRef = computed(() => app.outputValues.pFrame);
+const frameRef = computed(() => app.model.outputs.pFrame);
 
 const settings = computed({
   get() {
     const graphState = ui.model.graphs.find(it => it.id === app.queryParams.id);
     if (!graphState) {
-      console.error(`Missed saved settings for ${app.queryParams.id}, graphs:`, app.ui.graphs);
+      console.error(`Missed saved settings for ${app.queryParams.id}, graphs:`, ui.model.graphs);
       return null;
     }
     return {

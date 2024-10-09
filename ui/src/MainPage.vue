@@ -59,7 +59,7 @@ function onTitleChange(e: Event) {
         <component class="chart_edit" :is="EditIcon" />
       </div>
       <div class="chart_caption">Choose a template</div>
-      <add-graph @select="onSelect"/>
+      <add-graph @selected="(v) => onSelect(v as GraphMakerSettings['template'])"/>
     </div>
   </pl-block-page>
 </template>

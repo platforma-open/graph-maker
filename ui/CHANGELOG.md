@@ -1,5 +1,12 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.2.1
+
+### Patch Changes
+
+- 6819c7c: update new graph page
+- 4ec0920: update new graph page
+
 ## 0.2.0
 
 ### Minor Changes

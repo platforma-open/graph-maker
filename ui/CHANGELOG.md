@@ -1,5 +1,13 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.2.2
+
+### Patch Changes
+
+- 6503b4f: update new graph page styles, fix pframe import
+- Updated dependencies [6503b4f]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.1
+
 ## 0.2.1
 
 ### Patch Changes

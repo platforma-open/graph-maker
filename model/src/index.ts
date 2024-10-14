@@ -1,7 +1,7 @@
 import {
   BlockModel,
   type InferOutputsType,
-  PColumn, TreeNodeAccessor
+  isPColumn, ValueType
 } from '@platforma-sdk/model';
 
 export type GraphState = { id: string; label: string; settings: unknown };
@@ -31,14 +31,18 @@ export const platforma = BlockModel.create<BlockArgs, UiState>('Heavy')
     ];
   })
 
-  .output('pFrame', (wf) => {
-    const pColumns:PColumn<TreeNodeAccessor>[] = [];
-    wf.resultPool.getDataFromResultPool().entries.forEach(({ obj }) => {
-      pColumns.push(...obj.data?.getPColumns() ?? []);
-    });
-    return wf.createPFrame(pColumns);
-  })
+  .output('pFrame', (ctx) => {
+    const collection = ctx.resultPool.getData();
 
+    if (collection === undefined || !collection.isComplete) return undefined;
+
+    const valueTypes = ['Int', 'Long', 'Float', 'Double', 'String', 'Bytes'] as ValueType[];
+    const columns = collection.entries
+      .map(({ obj }) => obj)
+      .filter(isPColumn)
+      .filter((column) => valueTypes.find((valueType) => valueType === column.spec.valueType));
+    return ctx.createPFrame(columns);
+  })
   .done();
 
 export type BlockOutputs = InferOutputsType<typeof platforma>;

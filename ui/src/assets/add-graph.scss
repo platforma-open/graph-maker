@@ -10,6 +10,9 @@
     &::-webkit-scrollbar-thumb {
         background: var(--color-ic-02);
         border-radius: 5px;
+        &:hover {
+            --color-ic-02: var(--border-color-focus);
+        }
     }
 
     @if $y {
@@ -18,10 +21,6 @@
 
     @if $x {
         overflow-x: $over;
-    }
-
-    &:hover {
-        --color-ic-02: var(--border-color-focus);
     }
 }
 
@@ -32,7 +31,9 @@
     position: relative;
     flex-wrap: wrap;
     gap: 6px;
-    @include scrollbar;
+    &:hover {
+        @include scrollbar;
+    }
 }
 
 .add-graph-item {
@@ -44,7 +45,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
 
     &:hover {
         border: 1px solid var(--color-border-default);

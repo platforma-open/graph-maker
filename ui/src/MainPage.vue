@@ -58,7 +58,6 @@ function onTitleChange(e: Event) {
         />
         <component class="chart_edit" :is="EditIcon" />
       </div>
-      <div class="chart_caption">Choose a template</div>
       <add-graph @selected="(v) => onSelect(v as GraphMakerSettings['template'])"/>
     </div>
   </pl-block-page>
@@ -70,13 +69,16 @@ function onTitleChange(e: Event) {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  min-width: max-content;
   overflow: hidden;
   gap: 16px;
+  align-items: center;
 }
 
 .chart_header {
   display: flex;
   margin-bottom: 16px;
+  width: 100%;
 }
 
 .chart_edit {
@@ -90,12 +92,6 @@ function onTitleChange(e: Event) {
 .chart_header.empty .chart_edit,
 .chart_header:focus-within .chart_edit {
   opacity: 1;
-}
-
-.chart_caption {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: bold;
 }
 
 .chart_title {

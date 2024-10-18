@@ -9,7 +9,7 @@ const app = useApp<`/graph?id=${string}`>();
 
 const ui = app.createUiModel(undefined, () => ({ graphs: [] }));
 
-const frameRef = computed(() => app.model.outputs.pFrame);
+const frameRef = app.model.outputs.pFrame;
 
 const settings = computed({
   get() {

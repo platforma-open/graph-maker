@@ -2,14 +2,11 @@
 import { computed } from 'vue';
 import { useApp } from './app';
 import { platforma } from '@platforma-open/milaboratories.graph-maker.model';
-import { GraphMakerSettings } from '@milaboratories/graph-maker/dist/GraphMaker/types';
-import { GraphMaker } from '@milaboratories/graph-maker';
+import { GraphMakerSettings, GraphMaker } from '@milaboratories/graph-maker';
 
 const app = useApp<`/graph?id=${string}`>();
 
 const ui = app.createUiModel(undefined, () => ({ graphs: [] }));
-
-const frameRef = app.model.outputs.pFrame;
 
 const settings = computed({
   get() {
@@ -54,10 +51,10 @@ const removeSection = async () => {
 <template>
   <div class="container_graph_page" :key="app.queryParams.id">
     <graph-maker
-      v-if="platforma.pFrameDriver && frameRef && settings"
+      v-if="settings"
       v-model="settings"
-      :p-frame-handle="frameRef"
-      :p-frame-driver="platforma.pFrameDriver"
+      :pFrame="app.model.outputs.pFrame"
+      :driver="platforma.pFrameDriver"
       @delete-this-graph="removeSection"
     />
   </div>

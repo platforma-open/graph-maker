@@ -10,8 +10,8 @@ catalogs:
       specifier: ^2.27.9
       version: 2.27.9
     '@milaboratories/graph-maker':
-      specifier: ^1.0.12
-      version: 1.0.12
+      specifier: ^1.0.14
+      version: 1.0.14
     '@milaboratories/helpers':
       specifier: ^1.6.5
       version: 1.6.5
@@ -121,7 +121,7 @@ importers:
     dependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.0.12(typescript@5.6.3)
+        version: 1.0.14(typescript@5.6.3)
       '@milaboratories/helpers':
         specifier: 'catalog:'
         version: 1.6.5
@@ -805,17 +805,17 @@ packages:
   '@milaboratories/computable@2.2.0':
     resolution: {integrity: sha512-uToELMkvlPYWcCkcFo7BgqOalh57aY1u84Vgiutzu6XaSpP+dqVyPNdVg0nUnQWZzDbsrH210DdYJHtksFGraA==}
 
-  '@milaboratories/graph-maker@1.0.12':
-    resolution: {integrity: sha512-E4Ah0WHSUTdC6oXOycN69CylEoSizsMci1FOuxnmS/zIbxkJsXD4GtREvY3womW66tPH8u3kw6pP/yqjmZD1/w==}
+  '@milaboratories/graph-maker@1.0.14':
+    resolution: {integrity: sha512-oVWAS/XkUHDwMYW8jVUchEstTdANwJdTeblcTvxmPpI0Vxh7nQlAnJVN/AuRl1RI6fcdN6yYYj0RVcH/tcPjnA==}
 
   '@milaboratories/helpers@1.6.5':
     resolution: {integrity: sha512-ACRCu+cIjdZuYBoCSHCkpFMD7RywS54p3rVvNGqx3QmPVeTzadkkXufoCknSnOCwgDLBp+c/sv6kdIJOIG8uZQ==}
 
-  '@milaboratories/miplots4@1.0.44':
-    resolution: {integrity: sha512-l7O1Bg8PNee/leImZr/IkUN43Eyefz7xUSjun9VEm82wq4Sm3KRwPtkqChBBDFrSaJARsvtPBgY6Pv3PM2od0Q==}
+  '@milaboratories/miplots4@1.0.45':
+    resolution: {integrity: sha512-R2Q6ERU3o+LPshXnj81ZzHxkkWNZEWrUxBTLfxBPxcCxxmrxf4OYv+2qDnKeOnthkSf+56x9yoNF2u39NvKXkg==}
 
-  '@milaboratories/pf-plots@1.0.45':
-    resolution: {integrity: sha512-EpYMVQ4FOIkhhaEfXT3P1oUqw3ZYzNfQdres4jWoHtZB6cnKjyr5vGvvjujKuhB1wwiCoQb4F0+EolapEc4MQA==}
+  '@milaboratories/pf-plots@1.0.47':
+    resolution: {integrity: sha512-wFl37ILdD/+10aVgodNyqzGn+IYSMHVLJW4rMRb7GqqfIxmqAnXbwRlVOUOMImgTCZ0S/w4w9dRoEDUXV0WBPw==}
 
   '@milaboratories/pframes-node@1.6.1':
     resolution: {integrity: sha512-Abc9UApwliFooicMVBX7Qgt2X51IaoIynYcx0cVODTHcxC7hBDNyNEcSa2xg9CdHyaMdLFXrEsTSjk+5ot+1PQ==}
@@ -5377,11 +5377,11 @@ snapshots:
       '@types/node': 20.16.11
       utility-types: 3.11.0
 
-  '@milaboratories/graph-maker@1.0.12(typescript@5.6.3)':
+  '@milaboratories/graph-maker@1.0.14(typescript@5.6.3)':
     dependencies:
       '@milaboratories/helpers': 1.6.5
-      '@milaboratories/miplots4': 1.0.44
-      '@milaboratories/pf-plots': 1.0.45
+      '@milaboratories/miplots4': 1.0.45
+      '@milaboratories/pf-plots': 1.0.47
       '@milaboratories/uikit': 1.2.22(typescript@5.6.3)
       '@platforma-sdk/model': 1.7.0
       '@types/d3-hierarchy': 3.1.7
@@ -5395,7 +5395,7 @@ snapshots:
 
   '@milaboratories/helpers@1.6.5': {}
 
-  '@milaboratories/miplots4@1.0.44':
+  '@milaboratories/miplots4@1.0.45':
     dependencies:
       '@stdlib/stats-anova1': 0.2.2
       '@stdlib/stats-kruskal-test': 0.2.2
@@ -5417,7 +5417,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@milaboratories/pf-plots@1.0.45':
+  '@milaboratories/pf-plots@1.0.47':
     dependencies:
       '@platforma-sdk/model': 1.7.0
       canonicalize: 2.0.0

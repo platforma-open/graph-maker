@@ -14,7 +14,7 @@ catalog:
   "@platforma-sdk/test": ^1.7.5
 
   "@milaboratories/uikit": ^1.2.21
-  "@milaboratories/graph-maker": ^1.0.12
+  "@milaboratories/graph-maker": ^1.0.14
   "@platforma-sdk/ui-vue": ^1.7.6
   "@milaboratories/helpers": ^1.6.5
   "@milaboratories/software-pframes-conv": ^1.5.6

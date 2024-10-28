@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "scripts": {
     "build": "rm -rf ./dist && block-tools pack",
     "build-all": "pnpm run -r build",

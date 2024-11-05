@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.2.6
+
+### Patch Changes
+
+- e9f2c1f: loading in graph-maker
+
 ## 0.2.5
 
 ### Patch Changes

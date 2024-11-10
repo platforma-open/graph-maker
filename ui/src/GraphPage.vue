@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useApp } from './app';
-import { platforma } from '@platforma-open/milaboratories.graph-maker.model';
 import { GraphMakerSettings, GraphMaker } from '@milaboratories/graph-maker';
 
 const app = useApp<`/graph?id=${string}`>();
@@ -54,7 +53,6 @@ const removeSection = async () => {
       v-if="settings"
       v-model="settings"
       :pFrame="app.model.outputs.pFrame"
-      :driver="platforma.pFrameDriver"
       @delete-this-graph="removeSection"
     />
   </div>

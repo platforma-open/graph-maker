@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.2.10
+
+### Patch Changes
+
+- fd983a7: Add marketplaceRanking 9000 (second after Samples and Data 10000)
+
 ## 1.2.9
 
 ### Patch Changes

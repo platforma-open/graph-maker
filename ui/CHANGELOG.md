@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.2.8
+
+### Patch Changes
+
+- 21fb9d7: fix heatmap dimensions (update graph-maker version)
+
 ## 0.2.7
 
 ### Patch Changes

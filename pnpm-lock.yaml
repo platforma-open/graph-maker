@@ -10,20 +10,17 @@ catalogs:
       specifier: ^2.27.9
       version: 2.27.9
     '@milaboratories/graph-maker':
-      specifier: ^1.0.21
-      version: 1.0.21
+      specifier: ^1.0.26
+      version: 1.0.26
     '@milaboratories/helpers':
       specifier: ^1.6.6
       version: 1.6.6
-    '@milaboratories/uikit':
-      specifier: ^2.0.11
-      version: 2.0.11
     '@platforma-sdk/block-tools':
       specifier: ^2.3.24
       version: 2.3.24
     '@platforma-sdk/model':
-      specifier: ^1.7.53
-      version: 1.7.53
+      specifier: ^1.8.19
+      version: 1.8.19
     '@platforma-sdk/tengo-builder':
       specifier: ^1.16.1
       version: 1.16.1
@@ -31,8 +28,8 @@ catalogs:
       specifier: ^1.7.53
       version: 1.7.53
     '@platforma-sdk/ui-vue':
-      specifier: ^1.7.53
-      version: 1.7.53
+      specifier: ^1.8.20
+      version: 1.8.21
     '@platforma-sdk/workflow-tengo':
       specifier: ^1.7.5
       version: 1.7.5
@@ -86,7 +83,7 @@ importers:
     dependencies:
       '@platforma-sdk/model':
         specifier: 'catalog:'
-        version: 1.7.53
+        version: 1.8.19
     devDependencies:
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
@@ -121,19 +118,16 @@ importers:
     dependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.0.21(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.6.3)
+        version: 1.0.26(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.6.3)
       '@milaboratories/helpers':
         specifier: 'catalog:'
         version: 1.6.6
-      '@milaboratories/uikit':
-        specifier: 'catalog:'
-        version: 2.0.11(typescript@5.6.3)
       '@platforma-open/milaboratories.graph-maker.model':
         specifier: workspace:*
         version: link:../model
       '@platforma-sdk/ui-vue':
         specifier: 'catalog:'
-        version: 1.7.53(typescript@5.6.3)
+        version: 1.8.21(typescript@5.6.3)
       vue:
         specifier: 'catalog:'
         version: 3.5.12(typescript@5.6.3)
@@ -992,8 +986,8 @@ packages:
   '@milaboratories/computable@2.2.1':
     resolution: {integrity: sha512-c9aCRqcsOLHd8GKu3yzy9FDWCc9XSURE44iEnQRWd4UfmcW/anTNbViCfANmG1VMlRXo91a19tkyOUhuecttcQ==}
 
-  '@milaboratories/graph-maker@1.0.21':
-    resolution: {integrity: sha512-ayiVOHeRqjaNUyoKa7DZxwLES3BZL2acK+PUBDQQM5dW0yy/lIwPXI1zu9Fx6Gi7CsjpXHuOUa0dek16jfybkw==}
+  '@milaboratories/graph-maker@1.0.26':
+    resolution: {integrity: sha512-QBLyH8bdzOBBPkzxCNgo/3ZkBKXfGs5OMmZVD6WxzyU03oEoQsqGdG6Nb5yeHglJK13RQ+AUO43Pt3Bpv1vCxQ==}
 
   '@milaboratories/helpers@1.6.6':
     resolution: {integrity: sha512-XDT4biNMNyovWZBr9Bho7NHIzJhMoNu2sBpVymc98YV2WylR5jQFhBOGU/Nsvk4CiHAWFW2MjLUle4sMWUWoBg==}
@@ -1056,8 +1050,8 @@ packages:
   '@milaboratories/ts-helpers@1.1.1':
     resolution: {integrity: sha512-frFq4u6Z0iePdtcA+Jj8h798RiHe+Ls5U+YpCQcx1Dk349RFs59HMNK7Y9xWTdxfSTna8+noEiBhqp2tV6Y4cA==}
 
-  '@milaboratories/uikit@2.0.11':
-    resolution: {integrity: sha512-S4NISyD4ztzEUwc0YhpJ8gcoaPwXAklPZjDJ1BgQR7WuPRQNYk0vYSVll2ekYqWmpRFxpi8ObFgO5lNUrkjYug==}
+  '@milaboratories/uikit@2.2.1':
+    resolution: {integrity: sha512-DkqgFjKJ87X4uEX6WeT9Zk7BbOeTx69Z/VXVu8hBJS+KNVSSZdg70YWPXH/v3OD4Jlls3V0eHCZLDXz+7OINNw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1166,8 +1160,8 @@ packages:
     resolution: {integrity: sha512-nFG8SE40p11WTH9oq2ozrA6PXO7zOccZKVEZPNnFE0uCW0luvhWNGqpMEmxGcZjU+1MpIFkiajevDeaQDPpvYw==}
     hasBin: true
 
-  '@platforma-sdk/model@1.7.53':
-    resolution: {integrity: sha512-sE4M2rnxdrQ4lYxOsQroCnXUqbJAtmGgrfC+YKbzKPC5C34UpmlheeuuRJMVnhe760C1+FIYOSgIHLyy6LkOag==}
+  '@platforma-sdk/model@1.8.19':
+    resolution: {integrity: sha512-fON5ziWz9Ozi5SyEELOlaSs+ftCz63gxWx3qcptqWs7FdQOaMFHoGM7eyYkPLYFH/tvJoKkXTLVCO0iJ041wkg==}
 
   '@platforma-sdk/tengo-builder@1.16.1':
     resolution: {integrity: sha512-jYksvztjVhBsL2MKQ1T2bkLtSUy0eABscoKpM0YH6LR6fgAyZ4K0fSL+jVnTXLfnU+M0nPoFQxRdicqWU8kofw==}
@@ -1176,8 +1170,8 @@ packages:
   '@platforma-sdk/test@1.7.53':
     resolution: {integrity: sha512-8kNMaCfbCKotL5NiYXY1qFNtiiUA4SdbYrLHMFE3gpyL0G4hYzigY9l2ce9kQvzjUOsqU++Z1lBWvRvWnVo0pg==}
 
-  '@platforma-sdk/ui-vue@1.7.53':
-    resolution: {integrity: sha512-pQ0N0275fNN075DO25KeeUG7hcoC76nD7EdBEx49ZlVTE9sJv1hv8kQ+8KvfyOdM9OpY/Ig4pxDtKj0d2LisrQ==}
+  '@platforma-sdk/ui-vue@1.8.21':
+    resolution: {integrity: sha512-1h6qM2z7YA4N9eIpZS1nC304YxX7ft9vbteNF31RBEXdfweDa1JyF3/QA7tFI4quMTKSrEZqji3o1P7xM1H38Q==}
 
   '@platforma-sdk/workflow-tengo@1.7.5':
     resolution: {integrity: sha512-b2s2Hwla+NABJ1ZfmxnYazdHrJvyf1CLH8gFV3jZQgUONxvXuip1mXI/Wkrkoin0Ul5HgYpQbMWFD+f3bvOSGA==}
@@ -6360,14 +6354,13 @@ snapshots:
       '@types/node': 20.16.15
       utility-types: 3.11.0
 
-  '@milaboratories/graph-maker@1.0.21(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.6.3)':
+  '@milaboratories/graph-maker@1.0.26(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.6.3)':
     dependencies:
       '@milaboratories/helpers': 1.6.6
       '@milaboratories/miplots4': 1.0.46(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
       '@milaboratories/pf-plots': 1.0.51
-      '@milaboratories/uikit': 2.0.11(typescript@5.6.3)
-      '@platforma-sdk/model': 1.7.53
-      '@platforma-sdk/ui-vue': 1.7.53(typescript@5.6.3)
+      '@platforma-sdk/model': 1.8.19
+      '@platforma-sdk/ui-vue': 1.8.21(typescript@5.6.3)
       '@types/d3-hierarchy': 3.1.7
       ag-grid-vue3: 32.3.2(typescript@5.6.3)
       d3-hierarchy: 3.1.2
@@ -6415,7 +6408,7 @@ snapshots:
 
   '@milaboratories/pf-plots@1.0.51':
     dependencies:
-      '@platforma-sdk/model': 1.7.53
+      '@platforma-sdk/model': 1.8.19
       canonicalize: 2.0.0
       lodash: 4.17.21
 
@@ -6496,7 +6489,7 @@ snapshots:
       '@milaboratories/resolve-helper': 1.0.1
       '@milaboratories/ts-helpers': 1.1.1
       '@platforma-sdk/block-tools': 2.3.22
-      '@platforma-sdk/model': 1.7.53
+      '@platforma-sdk/model': 1.8.19
       '@platforma-sdk/workflow-tengo': 1.7.5
       canonicalize: 2.0.0
       denque: 2.1.0
@@ -6557,7 +6550,7 @@ snapshots:
     dependencies:
       denque: 2.1.0
 
-  '@milaboratories/uikit@2.0.11(typescript@5.6.3)':
+  '@milaboratories/uikit@2.2.1(typescript@5.6.3)':
     dependencies:
       vue: 3.5.12(typescript@5.6.3)
     transitivePeerDependencies:
@@ -6694,9 +6687,9 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@platforma-sdk/model@1.7.53':
+  '@platforma-sdk/model@1.8.19':
     dependencies:
-      '@milaboratories/pl-model-common': 1.6.0
+      '@milaboratories/pl-model-common': 1.6.1
       utility-types: 3.11.0
       zod: 3.23.8
 
@@ -6714,7 +6707,7 @@ snapshots:
       '@milaboratories/pl-middle-layer': 1.14.19
       '@milaboratories/pl-tree': 1.4.10
       '@milaboratories/ts-helpers': 1.1.1
-      '@platforma-sdk/model': 1.7.53
+      '@platforma-sdk/model': 1.8.19
       vitest: 2.1.4(@types/node@22.7.5)(sass@1.80.6)
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -6735,7 +6728,7 @@ snapshots:
       - supports-color
       - terser
 
-  '@platforma-sdk/ui-vue@1.7.53(typescript@5.6.3)':
+  '@platforma-sdk/ui-vue@1.8.21(typescript@5.6.3)':
     dependencies:
       '@ag-grid-community/client-side-row-model': 32.3.2
       '@ag-grid-community/core': 32.3.2
@@ -6745,14 +6738,16 @@ snapshots:
       '@ag-grid-community/theming': 32.3.2
       '@ag-grid-community/vue3': 32.3.2(typescript@5.6.3)
       '@ag-grid-enterprise/clipboard': 32.3.2
+      '@ag-grid-enterprise/column-tool-panel': 32.3.2
       '@ag-grid-enterprise/core': 32.3.2
       '@ag-grid-enterprise/excel-export': 32.3.2
       '@ag-grid-enterprise/menu': 32.3.2
       '@ag-grid-enterprise/range-selection': 32.3.2
       '@ag-grid-enterprise/rich-select': 32.3.2
       '@ag-grid-enterprise/server-side-row-model': 32.3.2
-      '@milaboratories/uikit': 2.0.11(typescript@5.6.3)
-      '@platforma-sdk/model': 1.7.53
+      '@ag-grid-enterprise/side-bar': 32.3.2
+      '@milaboratories/uikit': 2.2.1(typescript@5.6.3)
+      '@platforma-sdk/model': 1.8.19
       canonicalize: 2.0.0
       lru-cache: 11.0.2
       vue: 3.5.12(typescript@5.6.3)

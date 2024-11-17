@@ -12,7 +12,6 @@
   "dependencies": {
     "@milaboratories/graph-maker": "catalog:",
     "@milaboratories/helpers": "catalog:",
-    "@milaboratories/uikit": "catalog:",
     "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
     "@platforma-sdk/ui-vue": "catalog:",
     "vue": "catalog:"

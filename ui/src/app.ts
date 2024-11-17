@@ -7,8 +7,8 @@ import MainPage from './MainPage.vue';
 export const sdkPlugin = defineApp(platforma, () => {
   return {
     routes: {
-      '/': MainPage,
-      '/graph': GraphPage
+      '/': () => MainPage,
+      '/graph': () => GraphPage
     }
   };
 });

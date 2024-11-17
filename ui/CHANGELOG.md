@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.2.10
+
+### Patch Changes
+
+- e2a8ae5: fix uikit version
+
 ## 0.2.9
 
 ### Patch Changes

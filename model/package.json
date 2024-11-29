@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@platforma-sdk/block-tools": "catalog:",
+    "@milaboratories/graph-maker": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "tsup": "catalog:"

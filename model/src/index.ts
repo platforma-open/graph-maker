@@ -3,11 +3,17 @@ import {
   type InferOutputsType,
   isPColumn, ValueType
 } from '@platforma-sdk/model';
+import {GraphMakerProps, GraphMakerState} from '@milaboratories/graph-maker';
 
-export type GraphState = { id: string; label: string; settings: unknown };
+export type GraphPageState = {
+  id: string;
+  label: string;
+  state: GraphMakerState,
+  settings: GraphMakerProps
+};
 
 export type UiState = {
-  graphs: GraphState[]
+  graphs: GraphPageState[]
 };
 
 export type BlockArgs = {};

@@ -32,7 +32,7 @@ import curve_dots from './assets/curve_dots.svg';
 import heatmap from './assets/heatmap.svg';
 // @ts-ignore
 import dendrogram from './assets/dendrogram.svg';
-import { GraphMakerSettings } from '@milaboratories/graph-maker';
+import { GraphMakerProps } from '@milaboratories/graph-maker';
 
 export const CHART_TYPES = [{
   group: 'Discrete',
@@ -76,7 +76,7 @@ export const CHART_TYPES = [{
   }[]
 }[];
 
-export function getChartTypeByTemplate(template: string): GraphMakerSettings['chartType'] {
+export function getChartTypeByTemplate(template: string): GraphMakerProps['chartType'] {
   if (template === 'heatmap') {
     return 'heatmap';
   }

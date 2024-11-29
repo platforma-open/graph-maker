@@ -27,12 +27,16 @@
       "url": "https://github.com/platforma-open/graph-maker",
       "docs": "https://github.com/platforma-open/graph-maker",
       "support": "mailto:support@milaboratories.com",
-      "description": "Versatile tool for creating powerful and interactive visualizations from complex data sets",
+      "description": "Visualize the outputs of other blocks.",
       "longDescription": "file:./docs/description.md",
       "changelog": "file:CHANGELOG.md",
       "tags": [
         "graphs",
-        "dataviz"
+        "dataviz",
+        "visualization",
+        "plot",
+        "graph",
+        "statistics"
       ],
       "organization": {
         "name": "MiLaboratories Inc",

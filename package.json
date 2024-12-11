@@ -1,6 +1,5 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
-  "version": "1.2.16",
   "scripts": {
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
     "build": "turbo run build",

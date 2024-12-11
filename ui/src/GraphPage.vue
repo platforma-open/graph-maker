@@ -46,7 +46,11 @@ const removeSection = async () => {
     app.navigateTo('/');
   }
 };
-
+//
+// watch(() => app.model.outputs.pFrame, async (handle) => {
+//   const list = await platforma?.pFrameDriver.listColumns(handle!);
+//   console.log(list, 'list')
+// }, {immediate: true})
 </script>
 
 <template>

@@ -11,8 +11,8 @@ import AddGraph from './components/AddGraph.vue';
 const app = useApp();
 
 const newId = computed(() => {
-  if (app.ui && app.ui.graphs.length) {
-    return String(Math.max(...app.ui.graphs.map(g => Number(g.id))) + 1);
+  if (app.model.ui && app.model.ui.graphs.length) {
+    return String(Math.max(...app.model.ui.graphs.map(g => Number(g.id))) + 1);
   }
   return '1';
 });

@@ -2,7 +2,7 @@ packages:
   - workflow
   - model
   - ui
-  - .
+  - block
   - test
 
 catalog:
@@ -27,6 +27,7 @@ catalog:
 
   "typescript": ^5.5.4
   "tsup": ~8.3.5
+  "turbo": ^2.3.3
 
   "vite": ^5.4.10
   "vitest": ^2.1.8

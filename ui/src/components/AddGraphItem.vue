@@ -1,36 +1,24 @@
 <script setup lang="ts">
 import '../assets/add-graph.scss';
+import type { GraphCardItem } from '../constants';
+//@ts-ignore
+import Contour from '../assets/new-assets/style_White Stroke.svg?raw';
 
-type Item = { image: string; title: string; id: string };
-
-const props = defineProps<{ item: Item; group: string }>();
+defineProps<{ item: GraphCardItem }>();
 
 defineEmits<{
   (e: 'selected', id: string): void;
 }>();
 </script>
 <template>
-  <div class="add-graph-item" :data-graph-group="props.group" @click="$emit('selected', props.item.id)">
-    <div class="add-graph-item__above">
-      <div class="add-graph-item__image-wrapper">
-        <img :src="props.item.image" :alt="props.item.title" />
-      </div>
+  <div class="add-graph__item" @click="$emit('selected', item.id)">
+    <div class="add-graph__text d-flex flex-column gap-6">
+      <div class="add-graph__title">{{ item.title }}</div>
+      <div class="add-graph__description text-description">{{ item.description }}</div>
     </div>
-    <div class="add-graph-item__below">
-      <div class="add-graph-item__title">
-        {{ props.item.title }}
-      </div>
-      <div class="add-graph-item__divider" />
-      <div class="add-graph-item__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M14.0605 8.00006L8.53022 13.5304L7.46956 12.4697L11.1892 8.75006L1.99989 8.75006L1.99989 7.25006L11.1892 7.25006L7.46956 3.53039L8.53022 2.46973L14.0605 8.00006Z"
-            fill="#110529"
-          />
-        </svg>
-      </div>
+    <div class="add-graph__icon">
+      <img :src="item.image" class="add-graph__icon-main" />
+      <div v-html="Contour" class="add-graph__icon-hover" />
     </div>
   </div>
 </template>

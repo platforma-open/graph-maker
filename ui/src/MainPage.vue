@@ -12,13 +12,16 @@ const app = useApp();
 
 const newId = computed(() => {
   if (app.model.ui && app.model.ui.graphs.length) {
-    return String(Math.max(...app.model.ui.graphs.map(g => Number(g.id))) + 1);
+    return String(Math.max(...app.model.ui.graphs.map((g) => Number(g.id))) + 1);
   }
   return '1';
 });
 const graphTitle = ref<string>('');
 
-const addSection = async (chartType: GraphMakerProps['chartType'], template: GraphMakerState['template']) => {
+const addSection = async (
+  chartType: GraphMakerProps['chartType'],
+  template: GraphMakerState['template']
+) => {
   const id = newId.value;
   const defaultTitle = 'My graph ' + id;
   const label = graphTitle.value || defaultTitle;
@@ -26,7 +29,10 @@ const addSection = async (chartType: GraphMakerProps['chartType'], template: Gra
     if (!ui) {
       ui = { graphs: [] } as UiState;
     }
-    ui.graphs = [...ui.graphs, { id, label, state: {template, title: label}, settings: { chartType, pFrame: undefined } }];
+    ui.graphs = [
+      ...ui.graphs,
+      { id, label, state: { template, title: label }, settings: { chartType, pFrame: undefined } }
+    ];
     return ui;
   });
   await app.navigateTo(`/graph?id=${id}`);
@@ -48,7 +54,7 @@ function onTitleChange(e: Event) {
 <template>
   <pl-block-page>
     <div class="container_main_page">
-      <div class="chart_header" :class="{empty: !graphTitle}">
+      <div class="chart_header" :class="{ empty: !graphTitle }">
         <input
           class="chart_title"
           :value="graphTitle"
@@ -58,7 +64,7 @@ function onTitleChange(e: Event) {
         />
         <component class="chart_edit" :is="EditIcon" />
       </div>
-      <add-graph @selected="(v) => onSelect(v as GraphMakerState['template'])"/>
+      <add-graph @selected="(v) => onSelect(v as GraphMakerState['template'])" />
     </div>
   </pl-block-page>
 </template>
@@ -72,7 +78,6 @@ function onTitleChange(e: Event) {
   min-width: max-content;
   overflow: hidden;
   gap: 16px;
-  align-items: center;
 }
 
 .chart_header {

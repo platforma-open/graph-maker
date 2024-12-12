@@ -10,6 +10,7 @@
     &::-webkit-scrollbar-thumb {
         background: var(--color-ic-02);
         border-radius: 5px;
+
         &:hover {
             --color-ic-02: var(--border-color-focus);
         }
@@ -25,69 +26,85 @@
 }
 
 .add-graph {
-    display: flex;
-    width: 670px;
-    overflow: auto;
-    position: relative;
-    flex-wrap: wrap;
-    gap: 6px;
-    &:hover {
-        @include scrollbar;
+    display: grid;
+    grid-template-columns: 320px 320px 320px;
+    gap: 0px;
+
+    @media screen and (max-width: 1280px) {
+        grid-template-columns: 320px 320px;
     }
-}
 
-.add-graph-item {
-    border-radius: 6px;
-    border: 1px solid var(--color-div-grey);
-    background: radial-gradient(141.42% 141.42% at 0% 0%, #D4F5C4 0%, #FFF 61.48%);
-    width: 160px;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: all .1s ease-in-out;
-
-    &:hover {
-        border: 1px solid var(--color-border-default);
+    &__item {
         cursor: pointer;
-    }
-
-    &:hover &__icon {
-        opacity: 1;
-    }
-
-    &__icon {
-        line-height: 0;
-        opacity: 0;
-        transition: all .3s ease-in-out;
-    }
-
-    &__divider {
-        flex-grow: 1;
-    }
-
-    &__image-wrapper {
-        background: url('./add-graph-bg.svg') no-repeat center;
-        width: 96px;
-        height: 96px;
         display: flex;
-        justify-content: center;
+        width: 320px;
+        height: 128px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid var(--border-color-div-grey);
+        background-color: var(--bg-elevated-01);
+        padding: 14px 12px 14px 20px;
         align-items: center;
+        transition: background-color .2s ease-in-out;
+
+        &:hover {
+            background-color: rgba(99, 224, 36, 0.12);
+            transition: background-color .2s ease-in-out;
+        }
     }
 
     &__title {
-        color: var(--color-txt-01);
+        color: var(--txt-01);
         font-family: Manrope;
         font-size: 14px;
-        font-style: normal;
         font-weight: 600;
         line-height: 20px;
+        text-transform: capitalize;
     }
 
-    &__below {
-        padding: 8px 16px 16px 16px;
+    &__description {
+        color: var(--txt-03) !important;
+    }
+
+    &__icon {
+        width: 100px;
+        height: 100px;
+        position: relative;
         display: flex;
         align-items: center;
-        flex-grow: 1;
+        justify-content: center;
+    }
+
+    &__icon-hover {
+        position: absolute;
+        inset: 0;
+        display: block;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
+
+
+
+    &:hover &__icon-hover {
+        opacity: 1;
+        transition: opacity .2s ease-in-out;
+    }
+}
+
+.add-graph-section {
+    display: grid;
+    grid-template-columns: calc(320px * 3);
+    gap: 24px;
+    @include scrollbar();
+
+    .pl-search-input {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: var(--bg-elevated-01);
+    }
+
+    @media screen and (max-width: 1280px) {
+        grid-template-columns: calc(320px * 2);
     }
 }

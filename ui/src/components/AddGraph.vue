@@ -2,20 +2,31 @@
 import '../assets/add-graph.scss';
 import AddGraphItem from './AddGraphItem.vue';
 import { CHART_TYPES } from '../constants.ts';
+import PlSearchInput from './PlSearchInput.vue';
+import { computed, ref } from 'vue';
 
 defineEmits(['selected']);
 
+const searchModel = ref();
+
+const items = computed(() => {
+  const searchValue = searchModel.value?.toLowerCase() ?? '';
+  return CHART_TYPES.filter((it) => {
+    const title = it.title?.toLowerCase();
+    return title?.includes(searchValue);
+  });
+});
 </script>
 <template>
-  <div class="add-graph">
-    <template v-for="(groupItem, idx) in CHART_TYPES" :key="idx">
+  <div class="add-graph-section">
+    <PlSearchInput v-model="searchModel" placeholder="Find..." />
+    <div class="add-graph">
       <AddGraphItem
-        v-for="(item, index) in groupItem.items"
-        :key="index"
+        v-for="item in items"
+        :key="item.id"
         :item="item"
-        :group="groupItem.group"
         @selected="(v) => $emit('selected', v)"
       />
-    </template>
+    </div>
   </div>
 </template>

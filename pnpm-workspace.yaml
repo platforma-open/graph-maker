@@ -13,7 +13,7 @@ catalog:
   "@platforma-sdk/model": ^1.18.0
   "@platforma-sdk/test": ^1.18.0
 
-  "@milaboratories/graph-maker": ^1.1.8
+  "@milaboratories/graph-maker": ^1.1.9
   "@platforma-sdk/ui-vue": ^1.17.5
   "@milaboratories/helpers": ^1.6.8
   "@milaboratories/software-pframes-conv": ^1.5.6

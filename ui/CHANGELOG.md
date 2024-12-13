@@ -1,5 +1,12 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.2.15
+
+### Patch Changes
+
+- e689add: redesign
+- 6448ec4: new graph page redesign
+
 ## 0.2.14
 
 ### Patch Changes

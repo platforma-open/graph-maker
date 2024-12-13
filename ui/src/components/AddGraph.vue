@@ -2,8 +2,8 @@
 import '../assets/add-graph.scss';
 import AddGraphItem from './AddGraphItem.vue';
 import { CHART_TYPES } from '../constants.ts';
-import PlSearchInput from './PlSearchInput.vue';
 import { computed, ref } from 'vue';
+import { PlSearchField } from '@platforma-sdk/ui-vue';
 
 defineEmits(['selected']);
 
@@ -19,7 +19,7 @@ const items = computed(() => {
 </script>
 <template>
   <div class="add-graph-section">
-    <PlSearchInput v-model="searchModel" placeholder="Find..." />
+    <PlSearchField v-model="searchModel" placeholder="Find..." />
     <div class="add-graph">
       <AddGraphItem
         v-for="item in items"

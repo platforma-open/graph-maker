@@ -18,8 +18,10 @@ const items = computed(() => {
 });
 </script>
 <template>
+  <div class="add-graph-search">
+    <PlSearchField v-model="searchModel" placeholder="Find..." clearable />
+  </div>
   <div class="add-graph-section">
-    <PlSearchField v-model="searchModel" placeholder="Find..." />
     <div class="add-graph">
       <AddGraphItem
         v-for="item in items"

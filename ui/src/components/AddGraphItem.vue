@@ -2,7 +2,7 @@
 import '../assets/add-graph.scss';
 import type { GraphCardItem } from '../constants';
 //@ts-ignore
-import Contour from '../assets/new-assets/style_White Stroke.svg?raw';
+import Contour from '../assets/icons/style_White Stroke.svg?raw';
 
 defineProps<{ item: GraphCardItem }>();
 
@@ -11,7 +11,7 @@ defineEmits<{
 }>();
 </script>
 <template>
-  <div class="add-graph__item" @click="$emit('selected', item.id)">
+  <div class="add-graph__item gap-8" @click="$emit('selected', item.id)">
     <div class="add-graph__text d-flex flex-column gap-6">
       <div class="add-graph__title">{{ item.title }}</div>
       <div class="add-graph__description text-description">{{ item.description }}</div>

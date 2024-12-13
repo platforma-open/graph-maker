@@ -1,46 +1,46 @@
 // @ts-ignore
-import box from './assets/new-assets/Type=Box Plot.svg';
+import box from './assets/icons/Type=Box Plot.svg';
 //@ts-ignore
-import boxBin from './assets/new-assets/Type=Box + Bin.svg';
+import boxBin from './assets/icons/Type=Box + Bin.svg';
 // @ts-ignore
-import box_jitteredDots from './assets/new-assets/Type=Box + Jitter.svg';
+import box_jitteredDots from './assets/icons/Type=Box + Jitter.svg';
 // @ts-ignore
-import violin from './assets/new-assets/Type=Violin.svg';
+import violin from './assets/icons/Type=Violin.svg';
 // @ts-ignore
-import violin_binnedDots from './assets/new-assets/Type=Violin + Bin.svg';
+import violin_binnedDots from './assets/icons/Type=Violin + Bin.svg';
 // @ts-ignore
-import binnedDots from './assets/new-assets/Type=Binned Dots.svg';
+import binnedDots from './assets/icons/Type=Binned Dots.svg';
 // @ts-ignore
-import jitteredDots from './assets/new-assets/Type=Jittered Dots.svg';
+import jitteredDots from './assets/icons/Type=Jittered Dots.svg';
 // @ts-ignore
-import bar from './assets/new-assets/Type=Bar Chart.svg';
+import bar from './assets/icons/Type=Bar Chart.svg';
 // @ts-ignore
-import barLine from './assets/new-assets/Type=Bar Chart + Line.svg';
+import barLine from './assets/icons/Type=Bar Chart + Line.svg';
 // @ts-ignore
-import barError from './assets/new-assets/Type=Bar Chart + Error.svg';
+import barError from './assets/icons/Type=Bar Chart + Error.svg';
 // @ts-ignore
-import stackedBar from './assets/new-assets/Type=Stacked Bar Chart.svg';
+import stackedBar from './assets/icons/Type=Stacked Bar Chart.svg';
 // @ts-ignore
-import line from './assets/new-assets/Type=Line.svg';
+import line from './assets/icons/Type=Line.svg';
 // @ts-ignore
-import curve from './assets/new-assets/Type=Curve.svg';
+import curve from './assets/icons/Type=Curve.svg';
 // @ts-ignore
-import line_jitteredDots from './assets/new-assets/Type=Line + Jitt.svg';
+import line_jitteredDots from './assets/icons/Type=Line + Jitt.svg';
 // @ts-ignore
-import line_binnedDots from './assets/new-assets/Type=Line + Bin.svg';
+import line_binnedDots from './assets/icons/Type=Line + Bin.svg';
 // @ts-ignore
-import line_errorbar from './assets/new-assets/Type=Line + Err.svg';
+import line_errorbar from './assets/icons/Type=Line + Err.svg';
 // @ts-ignore
-import sina from './assets/new-assets/Type=Sina Plot.svg';
+import sina from './assets/icons/Type=Sina Plot.svg';
 
-// @ts-ignore //FIXME './assets/dots.svg'; => ui/src/assets/new-assets/Type=Skatter.svg
-import dots from './assets/new-assets/Type=Skatter.svg';
 // @ts-ignore
-import curve_dots from './assets/new-assets/Type=Skatter + Curve.svg';
+import dots from './assets/icons/Type=Skatter.svg';
 // @ts-ignore
-import heatmap from './assets/new-assets/Type=Heatmap.svg';
+import curve_dots from './assets/icons/Type=Skatter + Curve.svg';
 // @ts-ignore
-import dendrogram from './assets/new-assets/Type=Dendrogram.svg';
+import heatmap from './assets/icons/Type=Heatmap.svg';
+// @ts-ignore
+import dendrogram from './assets/icons/Type=Dendrogram.svg';
 import { GraphMakerProps } from '@milaboratories/graph-maker';
 
 export type GraphCardItem = { id: string, title: string, description: string, image: string, };
@@ -61,9 +61,9 @@ export const CHART_TYPES: GraphCardItem[] = [
   { image: line_binnedDots, title: 'Line + Binned Dots', id: 'line_binnedDots', description: 'Combines a line with grouped data points to highlight density along the trend' },
   { image: line_errorbar, title: 'Line + Error Bars', id: 'line_errorbar', description: 'Visualizes trends with indicators of variability or uncertainty' },
   { image: sina, title: 'Sina Plot', id: 'sina', description: 'Shows individual data points with density to highlight distributions' },
-  { image: dots, title: 'Skatter Plot', id: 'dots', description: 'Displays individual data points to reveal relationships or patterns' },
+  { image: dots, title: 'Scatter Plot', id: 'dots', description: 'Displays individual data points to reveal relationships or patterns' },
   { image: curve, title: 'Curve', id: 'curve', description: 'Visualizes relationships or trends with a smooth line' },
-  { image: curve_dots, title: 'Skatter Plot + Curve', id: 'curve_dots', description: 'Combines raw data points with a smooth line to show trends or fits' },
+  { image: curve_dots, title: 'Scatter Plot + Curve', id: 'curve_dots', description: 'Combines raw data points with a smooth line to show trends or fits' },
   { image: heatmap, title: 'Heatmap', id: 'heatmap', description: 'Represents data intensity or values using color gradients' },
   { image: dendrogram, title: 'Dendrogram', id: 'dendrogram', description: 'Visualizes hierarchical clustering or relationships between data groups' },
 ];

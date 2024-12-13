@@ -1,80 +1,72 @@
 // @ts-ignore
-import box from './assets/box.svg';
+import box from './assets/icons/Type=Box Plot.svg';
+//@ts-ignore
+import boxBin from './assets/icons/Type=Box + Bin.svg';
 // @ts-ignore
-import box_jitteredDots from './assets/box_jitteredDots.svg';
+import box_jitteredDots from './assets/icons/Type=Box + Jitter.svg';
 // @ts-ignore
-import violin from './assets/violin.svg';
+import violin from './assets/icons/Type=Violin.svg';
 // @ts-ignore
-import violin_binnedDots from './assets/violin_binnedDots.svg';
+import violin_binnedDots from './assets/icons/Type=Violin + Bin.svg';
 // @ts-ignore
-import binnedDots from './assets/binnedDots.svg';
+import binnedDots from './assets/icons/Type=Binned Dots.svg';
 // @ts-ignore
-import jitteredDots from './assets/jitteredDots.svg';
+import jitteredDots from './assets/icons/Type=Jittered Dots.svg';
 // @ts-ignore
-import bar from './assets/bar.svg';
+import bar from './assets/icons/Type=Bar Chart.svg';
 // @ts-ignore
-import stackedBar from './assets/stackedBar.svg';
+import barLine from './assets/icons/Type=Bar Chart + Line.svg';
 // @ts-ignore
-import line from './assets/line.svg';
+import barError from './assets/icons/Type=Bar Chart + Error.svg';
 // @ts-ignore
-import line_jitteredDots from './assets/line_jitteredDots.svg';
+import stackedBar from './assets/icons/Type=Stacked Bar Chart.svg';
 // @ts-ignore
-import line_binnedDots from './assets/line_binnedDots.svg';
+import line from './assets/icons/Type=Line.svg';
 // @ts-ignore
-import line_errorbar from './assets/line_errorbar.svg';
+import curve from './assets/icons/Type=Curve.svg';
 // @ts-ignore
-import sina from './assets/sina.svg';
+import line_jitteredDots from './assets/icons/Type=Line + Jitt.svg';
 // @ts-ignore
-import dots from './assets/dots.svg';
+import line_binnedDots from './assets/icons/Type=Line + Bin.svg';
 // @ts-ignore
-import curve_dots from './assets/curve_dots.svg';
+import line_errorbar from './assets/icons/Type=Line + Err.svg';
 // @ts-ignore
-import heatmap from './assets/heatmap.svg';
+import sina from './assets/icons/Type=Sina Plot.svg';
+
 // @ts-ignore
-import dendrogram from './assets/dendrogram.svg';
+import dots from './assets/icons/Type=Skatter.svg';
+// @ts-ignore
+import curve_dots from './assets/icons/Type=Skatter + Curve.svg';
+// @ts-ignore
+import heatmap from './assets/icons/Type=Heatmap.svg';
+// @ts-ignore
+import dendrogram from './assets/icons/Type=Dendrogram.svg';
 import { GraphMakerProps } from '@milaboratories/graph-maker';
 
-export const CHART_TYPES = [{
-  group: 'Discrete',
-  items: [
-    { image: box, title: 'Boxplot', id: 'box' },
-    { image: box, title: 'Boxplot + Binned dots', id: 'box_binnedDots' },
-    { image: box_jitteredDots, title: 'Boxplot + Jittered dots', id: 'box_jitteredDots' },
-    { image: violin, title: 'Violin', id: 'violin' },
-    { image: violin_binnedDots, title: 'Violin + Binned dots', id: 'violin_binnedDots' },
-    { image: binnedDots, title: 'Binned dots', id: 'binnedDots' },
-    { image: jitteredDots, title: 'Jittered dots', id: 'jitteredDots' },
-    { image: bar, title: 'Bar', id: 'bar' },
-    { image: bar, title: 'Bar + Line', id: 'bar_line' },
-    { image: bar, title: 'Bar + Error Bar', id: 'bar_errorbar' },
-    { image: stackedBar, title: 'Stacked Bar', id: 'stackedBar' },
-    { image: line, title: 'Line', id: 'line' },
-    { image: line_jitteredDots, title: 'Line + Jittered dots', id: 'line_jitteredDots' },
-    { image: line_binnedDots, title: 'Line + Binned dots', id: 'line_binnedDots' },
-    { image: line_errorbar, title: 'Line + Error Bar', id: 'line_errorbar' },
-    { image: sina, title: 'Sina', id: 'sina' },
-  ]
-}, {
-  group: 'Scatter Plot',
-  items: [
-    { image: dots, title: 'Scatter Plot', id: 'dots' },
-    { image: line, title: 'Curve', id: 'curve' },
-    { image: curve_dots, title: 'Scatter Plot + Curve', id: 'curve_dots' },
-  ]
-}, {
-  group: 'Heatmap',
-  items: [{ image: heatmap, title: 'Heatmap', id: 'heatmap' }]
-}, {
-  group: 'Dendrogram',
-  items: [{ image: dendrogram, title: 'Dendrogram', id: 'dendrogram' }]
-}] as {
-  group: string,
-  items: {
-    image: string,
-    title: string,
-    id: string
-  }[]
-}[];
+export type GraphCardItem = { id: string, title: string, description: string, image: string, };
+export const CHART_TYPES: GraphCardItem[] = [
+  { image: box, title: 'Box Plot', id: 'box', description: 'Summarizes data distribution, variability, and outliers' },
+  { image: boxBin, title: 'Box Plot + Binned Dots', id: 'box_binnedDots', description: 'Displays statistical summaries with grouped raw data for density insights' },
+  { image: box_jitteredDots, title: 'Box Plot + Jittered Dots', id: 'box_jitteredDots', description: 'Highlights raw data alongside statistical summaries' },
+  { image: violin, title: 'Violin Plot', id: 'violin', description: 'Shows data distribution and density across categories' },
+  { image: violin_binnedDots, title: 'Violin Plot + Binned Dots', id: 'violin_binnedDots', description: 'Combines density visualization with grouped raw data for detailed insights' },
+  { image: binnedDots, title: 'Binned Dots', id: 'binnedDots', description: 'Groups individual data points into bins to reveal distribution patterns' },
+  { image: jitteredDots, title: 'Jittered Dots', id: 'jitteredDots', description: 'Adds random variation to data points for better visibility of overlapping values' },
+  { image: bar, title: 'Bar Chart', id: 'bar', description: 'Compares values across categories with discrete bars' },
+  { image: barLine, title: 'Bar Chart + Line', id: 'bar_line', description: 'Combines bars and a line to compare values and show trends simultaneously', },
+  { image: barError, title: 'Bar Chart + Error Bars', id: 'bar_errorbar', description: 'Shows data comparisons with added variability or uncertainty indicators' },
+  { image: stackedBar, title: 'Stacked Bar Chart', id: 'stackedBar', description: 'Compares parts of a whole across categories, layering segments within each bar' },
+  { image: line, title: 'Line Chart', id: 'line', description: 'Shows trends or changes in data over a continuous range' },
+  { image: line_jitteredDots, title: 'Line + Jittered Dots', id: 'line_jitteredDots', description: 'Displays individual data points with added variation alongside the trend line' },
+  { image: line_binnedDots, title: 'Line + Binned Dots', id: 'line_binnedDots', description: 'Combines a line with grouped data points to highlight density along the trend' },
+  { image: line_errorbar, title: 'Line + Error Bars', id: 'line_errorbar', description: 'Visualizes trends with indicators of variability or uncertainty' },
+  { image: sina, title: 'Sina Plot', id: 'sina', description: 'Shows individual data points with density to highlight distributions' },
+  { image: dots, title: 'Scatter Plot', id: 'dots', description: 'Displays individual data points to reveal relationships or patterns' },
+  { image: curve, title: 'Curve', id: 'curve', description: 'Visualizes relationships or trends with a smooth line' },
+  { image: curve_dots, title: 'Scatter Plot + Curve', id: 'curve_dots', description: 'Combines raw data points with a smooth line to show trends or fits' },
+  { image: heatmap, title: 'Heatmap', id: 'heatmap', description: 'Represents data intensity or values using color gradients' },
+  { image: dendrogram, title: 'Dendrogram', id: 'dendrogram', description: 'Visualizes hierarchical clustering or relationships between data groups' },
+];
 
 export function getChartTypeByTemplate(template: string): GraphMakerProps['chartType'] {
   if (template === 'heatmap') {

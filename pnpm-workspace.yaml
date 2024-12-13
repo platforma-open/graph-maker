@@ -9,14 +9,14 @@ catalog:
   "@platforma-sdk/tengo-builder": ^1.17.3
   "@platforma-sdk/block-tools": ^2.4.11
 
-  "@platforma-sdk/workflow-tengo": ^2.8.1
-  "@platforma-sdk/model": ^1.20.0
-  "@platforma-sdk/test": ^1.14.9
+  "@platforma-sdk/workflow-tengo": ^2.7.0
+  "@platforma-sdk/model": ^1.18.0
+  "@platforma-sdk/test": ^1.18.0
 
   "@milaboratories/graph-maker": ^1.1.9
-  "@platforma-sdk/ui-vue": ^1.20.4
-  "@milaboratories/helpers": ^1.6.10
-  "@milaboratories/software-pframes-conv": ^2.1.2
+  "@platforma-sdk/ui-vue": ^1.17.5
+  "@milaboratories/helpers": ^1.6.8
+  "@milaboratories/software-pframes-conv": ^1.5.6
 
   "sass": ^1.80.6
 
@@ -27,7 +27,6 @@ catalog:
 
   "typescript": ^5.5.4
   "tsup": ~8.3.5
-  "turbo": ^2.3.3
 
   "vite": ^5.4.10
   "vitest": ^2.1.8

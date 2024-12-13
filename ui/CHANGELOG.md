@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.0
+
+### Minor Changes
+
+- 4ffcddf: chore: update ci wf
+
 ## 0.2.15
 
 ### Patch Changes

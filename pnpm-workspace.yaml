@@ -7,7 +7,7 @@ packages:
 
 catalog:
   '@platforma-sdk/tengo-builder': ^1.17.3
-  '@platforma-sdk/block-tools': ^2.4.11
+  '@platforma-sdk/block-tools': ^2.5.0
 
   '@platforma-sdk/workflow-tengo': ^2.7.0
   '@platforma-sdk/model': ^1.18.0

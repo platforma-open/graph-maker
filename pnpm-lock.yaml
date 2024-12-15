@@ -16,8 +16,8 @@ catalogs:
       specifier: ^1.6.8
       version: 1.6.10
     '@platforma-sdk/block-tools':
-      specifier: ^2.4.11
-      version: 2.4.11
+      specifier: ^2.5.0
+      version: 2.5.0
     '@platforma-sdk/model':
       specifier: ^1.18.0
       version: 1.20.0
@@ -89,7 +89,7 @@ importers:
     devDependencies:
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
-        version: 2.4.11
+        version: 2.5.0
 
   model:
     dependencies:
@@ -102,7 +102,7 @@ importers:
         version: 1.1.9(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.6.3)
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
-        version: 2.4.11
+        version: 2.5.0
       tsup:
         specifier: 'catalog:'
         version: 8.3.5(postcss@8.4.49)(typescript@5.6.3)(yaml@2.6.1)
@@ -906,6 +906,9 @@ packages:
   '@milaboratories/pl-http@1.0.1':
     resolution: {integrity: sha512-Vy3gP46rR+KhDKGMdPahXsbJOPB6xHNkTaxeYooGrdXXn+pLK3X5NeZNvXt+nuEjc0BvB7b1hcJctEaGoiO0pw==}
 
+  '@milaboratories/pl-http@1.0.2':
+    resolution: {integrity: sha512-Pf9KEc++fqVGOKHutpTzArPhxHDaDyggIxczl/LAtcQ/JK5b1yHsf5R/UBHogqizLqEHGQmaI/Ks7o6TaRZnlQ==}
+
   '@milaboratories/pl-local@1.9.1':
     resolution: {integrity: sha512-gm4hRCDrmZAEatqDDAaIW+ugCMowu7lvkERbyxjzgMLWSa8nYqnKhQvXw+uclicAH+aNAHCkN+6SR4SHDdV9Tw==}
 
@@ -915,11 +918,17 @@ packages:
   '@milaboratories/pl-model-common@1.10.0':
     resolution: {integrity: sha512-w8PsqfBAJIS6cahJu5lbF4TglpK0Wbi9BERQk0zqNiiPwxHpDPimWzIZ1eZpA9mKCH03qp6uXXnuTTZuanNnWw==}
 
+  '@milaboratories/pl-model-common@1.10.1':
+    resolution: {integrity: sha512-Qo58VjHCmgnszrMZ4ZI3qSBeXZIXgOvFmu7ZaB0V+QHsSg1qIHKVkfrVYA6I3h1tHzR76yr/OmMbAx+zrV7tRw==}
+
   '@milaboratories/pl-model-middle-layer@1.6.2':
     resolution: {integrity: sha512-0utwNRv8M/2rgv9Zlt5zTixUEyBjxJyC6GthxAgVHX28U5TCWfi51K6A3FK9dDqVBhRnaHYU9+dV6P0m3Xuskw==}
 
   '@milaboratories/pl-model-middle-layer@1.6.7':
     resolution: {integrity: sha512-zZMG0COBU/2qwPJR2SipQONIWPHbeT3SFJ0TWrUa10J3LxuBKBFZAolkV4mDvxZOueemJtRVgNmfGivvMqNH8A==}
+
+  '@milaboratories/pl-model-middle-layer@1.6.8':
+    resolution: {integrity: sha512-yP23ZcjASCnIfM6Fk6zbntRt5u7Sk/HirKl4aUm2fhcxvl8mcw8KMK9+ogOUz/HikxFiuPeTUNMrBG6ObtTpnw==}
 
   '@milaboratories/pl-tree@1.4.19':
     resolution: {integrity: sha512-2c0pU7HlD+SrCNwduYTZYcZkg8vEFgQaOV2Pxf+ujo7QWEEmBlDVywY7QGXmIkBQj6BX6mZWr0lr4+FOjPRK0Q==}
@@ -1049,6 +1058,10 @@ packages:
 
   '@platforma-sdk/block-tools@2.4.11':
     resolution: {integrity: sha512-8l0hfQDsJwoDQqBaPxpPvZ36UwOcf9fKCXQZkOjT3xsVHCNpEPjGYQYtfwQmCDX6zNkJw1d4yw+DS2pufiauvw==}
+    hasBin: true
+
+  '@platforma-sdk/block-tools@2.5.0':
+    resolution: {integrity: sha512-aLopuqkhGJyWbEEpjLAh/BwMeHpobSNK7sVCn37PJaHkh5Vv3ldjYHRejtpw18CAlEjIUooZNZQWwMZ1yh0OwQ==}
     hasBin: true
 
   '@platforma-sdk/model@1.20.0':
@@ -2961,6 +2974,10 @@ packages:
     resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
     engines: {node: '>= 14'}
 
+  agent-base@7.1.3:
+    resolution: {integrity: sha512-jRR5wdylq8CkOe6hei19GGZnxM6rBGwFl3Bg0YItGDimvjGtAvdZk4Pu6Cl4u4Igsws4a1fd1Vq3ezrhn4KmFw==}
+    engines: {node: '>= 14'}
+
   alien-signals@0.2.0:
     resolution: {integrity: sha512-StlonZhBBrsPPwrDjiPAiVTf/rolxffLxVPT60Qv/t88BZ81BvUVzHgGqEFvJ1ii8HXtm1+zU2Icr59tfWEcag==}
 
@@ -3579,6 +3596,10 @@ packages:
 
   https-proxy-agent@7.0.5:
     resolution: {integrity: sha512-1e4Wqeblerz+tMKPIq2EMGiiWW1dIjZOksyHWSUm1rmuvw/how9hBHZ38lAGj5ID4Ik6EdkOw7NmWPy6LAwalw==}
+    engines: {node: '>= 14'}
+
+  https-proxy-agent@7.0.6:
+    resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
 
   human-id@1.0.2:
@@ -5790,6 +5811,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@milaboratories/pl-http@1.0.2':
+    dependencies:
+      cacheable-lookup: 6.1.0
+      https-proxy-agent: 7.0.6
+      undici: 7.1.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@milaboratories/pl-local@1.9.1':
     dependencies:
       '@milaboratories/ts-helpers': 1.1.3
@@ -5833,6 +5862,10 @@ snapshots:
     dependencies:
       zod: 3.23.8
 
+  '@milaboratories/pl-model-common@1.10.1':
+    dependencies:
+      zod: 3.23.8
+
   '@milaboratories/pl-model-middle-layer@1.6.2':
     dependencies:
       '@milaboratories/pl-model-common': 1.10.0
@@ -5843,6 +5876,13 @@ snapshots:
   '@milaboratories/pl-model-middle-layer@1.6.7':
     dependencies:
       '@milaboratories/pl-model-common': 1.10.0
+      remeda: 2.17.4
+      utility-types: 3.11.0
+      zod: 3.23.8
+
+  '@milaboratories/pl-model-middle-layer@1.6.8':
+    dependencies:
+      '@milaboratories/pl-model-common': 1.10.1
       remeda: 2.17.4
       utility-types: 3.11.0
       zod: 3.23.8
@@ -6000,6 +6040,27 @@ snapshots:
       '@aws-sdk/client-s3': 3.709.0
       '@milaboratories/pl-http': 1.0.1
       '@milaboratories/pl-model-middle-layer': 1.6.7
+      '@milaboratories/resolve-helper': 1.0.2
+      '@milaboratories/ts-helpers': 1.1.3
+      '@milaboratories/ts-helpers-oclif': 1.1.12
+      '@oclif/core': 4.0.37
+      canonicalize: 2.0.0
+      lru-cache: 11.0.2
+      mime-types: 2.1.35
+      remeda: 2.17.4
+      tar: 7.4.3
+      undici: 7.1.0
+      yaml: 2.6.1
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - aws-crt
+      - supports-color
+
+  '@platforma-sdk/block-tools@2.5.0':
+    dependencies:
+      '@aws-sdk/client-s3': 3.709.0
+      '@milaboratories/pl-http': 1.0.2
+      '@milaboratories/pl-model-middle-layer': 1.6.8
       '@milaboratories/resolve-helper': 1.0.2
       '@milaboratories/ts-helpers': 1.1.3
       '@milaboratories/ts-helpers-oclif': 1.1.12
@@ -8778,6 +8839,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  agent-base@7.1.3: {}
+
   alien-signals@0.2.0: {}
 
   ansi-colors@4.1.3: {}
@@ -9405,6 +9468,13 @@ snapshots:
     dependencies:
       agent-base: 7.1.1
       debug: 4.3.7(supports-color@8.1.1)
+    transitivePeerDependencies:
+      - supports-color
+
+  https-proxy-agent@7.0.6:
+    dependencies:
+      agent-base: 7.1.3
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 

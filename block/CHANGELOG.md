@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.0
+
+### Minor Changes
+
+- 27911fa: chore: bump version
+
 ## 1.3.0
 
 ### Minor Changes

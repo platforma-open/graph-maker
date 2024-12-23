@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.2
+
+### Patch Changes
+
+- 419f284: chore: update marketplace score
+
 ## 1.4.1
 
 ### Patch Changes

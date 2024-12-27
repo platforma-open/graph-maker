@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "scripts": {
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
     "build": "rm -rf ./block-pack && block-tools pack",
@@ -41,7 +41,7 @@
         "url": "https://milaboratories.com",
         "logo": "file:../logos/milaboratories.png"
       },
-      "marketplaceRanking": 9000
+      "marketplaceRanking": 11000
     }
   },
   "devDependencies": {

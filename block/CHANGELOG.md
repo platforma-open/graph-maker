@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.5
+
+### Patch Changes
+
+- 85ba82f: chore: fix changelog
+
 ## 1.4.4
 
 ### Patch Changes

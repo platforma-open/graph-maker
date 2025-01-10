@@ -31,7 +31,7 @@
       "support": "mailto:support@milaboratories.com",
       "description": "Versatile tool for creating powerful and interactive visualizations from complex data sets",
       "longDescription": "file:../docs/description.md",
-      "changelog": "file:../CHANGELOG.md",
+      "changelog": "file:./CHANGELOG.md",
       "tags": [
         "graphs",
         "dataviz"

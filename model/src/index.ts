@@ -1,5 +1,5 @@
 import {
-  BlockModel,
+  BlockModel, createPFrameForGraphs,
   type InferOutputsType,
   isPColumn, RenderCtx, ValueType
 } from '@platforma-sdk/model';
@@ -47,7 +47,7 @@ export const platforma = BlockModel.create('Heavy')
       .map(({ obj }) => obj)
       .filter(isPColumn)
       .filter((column) => valueTypes.find((valueType) => valueType === column.spec.valueType));
-    return ctx.createPFrame(columns);
+    return createPFrameForGraphs(ctx, columns);
   })
   .done();
 

@@ -32,13 +32,14 @@ import line_binnedDots from './assets/icons/Type=Line + Bin.svg';
 import line_errorbar from './assets/icons/Type=Line + Err.svg';
 // @ts-ignore
 import sina from './assets/icons/Type=Sina Plot.svg';
-
 // @ts-ignore
 import dots from './assets/icons/Type=Skatter.svg';
 // @ts-ignore
 import curve_dots from './assets/icons/Type=Skatter + Curve.svg';
 // @ts-ignore
 import heatmap from './assets/icons/Type=Heatmap.svg';
+// @ts-ignore
+import heatmapClustered from './assets/icons/Type=Heatmap + Dendrogram.svg';
 // @ts-ignore
 import dendrogram from './assets/icons/Type=Dendrogram.svg';
 import { GraphMakerProps } from '@milaboratories/graph-maker';
@@ -65,11 +66,12 @@ export const CHART_TYPES: GraphCardItem[] = [
   { image: curve, title: 'Curve', id: 'curve', description: 'Visualizes relationships or trends with a smooth line' },
   { image: curve_dots, title: 'Scatter Plot + Curve', id: 'curve_dots', description: 'Combines raw data points with a smooth line to show trends or fits' },
   { image: heatmap, title: 'Heatmap', id: 'heatmap', description: 'Represents data intensity or values using color gradients' },
+  { image: heatmapClustered, title: 'Heatmap + Dendro', id: 'heatmapClustered', description: 'Combines data intensity visualization with hierarchical clustering information' },
   { image: dendrogram, title: 'Dendrogram', id: 'dendrogram', description: 'Visualizes hierarchical clustering or relationships between data groups' },
 ];
 
 export function getChartTypeByTemplate(template: string): GraphMakerProps['chartType'] {
-  if (template === 'heatmap') {
+  if (template === 'heatmap' || template === 'heatmapClustered') {
     return 'heatmap';
   }
   if (template === 'dendrogram') {

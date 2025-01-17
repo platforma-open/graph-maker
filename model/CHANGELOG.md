@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.model
 
+## 1.2.3
+
+### Patch Changes
+
+- 4bb138d: add heatmap + dendro template
+
 ## 1.2.2
 
 ### Patch Changes

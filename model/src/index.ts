@@ -1,22 +1,29 @@
 import {
-  BlockModel,
+  BlockModel, createPFrameForGraphs,
   type InferOutputsType,
-  isPColumn, ValueType
+  isPColumn, RenderCtx, ValueType
 } from '@platforma-sdk/model';
+import {GraphMakerProps, GraphMakerState} from '@milaboratories/graph-maker';
 
-export type GraphState = { id: string; label: string; settings: unknown };
+export type GraphPageState = {
+  id: string;
+  label: string;
+  state: GraphMakerState,
+  settings: GraphMakerProps
+};
 
 export type UiState = {
-  graphs: GraphState[]
+  graphs: GraphPageState[]
 };
 
 export type BlockArgs = {};
 
-export const platforma = BlockModel.create<BlockArgs, UiState>('Heavy')
-  .initialArgs({})
+export const platforma = BlockModel.create('Heavy')
+  .withUiState<UiState>({graphs: []})
+  .withArgs<BlockArgs>({})
 
-  .sections((ctx) => {
-    const graphRoutes = (ctx.uiState?.graphs ?? []).map((gs) => ({
+  .sections((ctx:RenderCtx<any, any>) => {
+    const graphRoutes = (ctx.uiState?.graphs ?? []).map((gs:GraphPageState) => ({
       type: 'link' as const,
       href: `/graph?id=${gs.id}` as const,
       label: gs.label
@@ -33,7 +40,6 @@ export const platforma = BlockModel.create<BlockArgs, UiState>('Heavy')
 
   .output('pFrame', (ctx) => {
     const collection = ctx.resultPool.getData();
-
     if (collection === undefined || !collection.isComplete) return undefined;
 
     const valueTypes = ['Int', 'Long', 'Float', 'Double', 'String', 'Bytes'] as ValueType[];
@@ -41,7 +47,7 @@ export const platforma = BlockModel.create<BlockArgs, UiState>('Heavy')
       .map(({ obj }) => obj)
       .filter(isPColumn)
       .filter((column) => valueTypes.find((valueType) => valueType === column.spec.valueType));
-    return ctx.createPFrame(columns);
+    return createPFrameForGraphs(ctx, columns);
   })
   .done();
 

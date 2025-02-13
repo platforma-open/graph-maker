@@ -1,54 +1,20 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
-  "version": "1.2.13",
   "scripts": {
-    "build": "rm -rf ./dist && block-tools pack",
-    "build-all": "pnpm run -r build",
-    "prepublishOnly": "block-tools pack && block-tools publish -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'"
-  },
-  "files": [
-    "index.d.ts",
-    "index.js"
-  ],
-  "dependencies": {
-    "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
-    "@platforma-open/milaboratories.graph-maker.ui": "workspace:*",
-    "@platforma-open/milaboratories.graph-maker.workflow": "workspace:*"
-  },
-  "block": {
-    "components": {
-      "workflow": "@platforma-open/milaboratories.graph-maker.workflow/dist/tengo/tpl/main.plj.gz",
-      "model": "@platforma-open/milaboratories.graph-maker.model/dist/model.json",
-      "ui": "@platforma-open/milaboratories.graph-maker.ui/dist"
-    },
-    "meta": {
-      "title": "Graph Maker",
-      "logo": "file:logos/block-logo.png",
-      "url": "https://github.com/platforma-open/graph-maker",
-      "docs": "https://github.com/platforma-open/graph-maker",
-      "support": "mailto:support@milaboratories.com",
-      "description": "Visualize the outputs of other blocks.",
-      "longDescription": "file:./docs/description.md",
-      "changelog": "file:CHANGELOG.md",
-      "tags": [
-        "graphs",
-        "dataviz",
-        "visualization",
-        "plot",
-        "graph",
-        "statistics"
-      ],
-      "organization": {
-        "name": "MiLaboratories Inc",
-        "url": "https://milaboratories.com",
-        "logo": "file:logos/milaboratories.png"
-      },
-      "marketplaceRanking": 9000
-    }
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
+    "build": "turbo run build",
+    "test": "turbo run test --concurrency 1 --env-mode=loose",
+    "mark-stable": "turbo run mark-stable",
+    "watch": "turbo watch build",
+    "changeset": "changeset",
+    "version-packages": "changeset version"
   },
   "devDependencies": {
-    "@changesets/cli": "catalog:",
-    "@platforma-sdk/block-tools": "catalog:"
+    "turbo": "catalog:",
+    "@changesets/cli": "catalog:"
   },
-  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
+  "packageManager": "pnpm@9.12.0",
+  "pnpm": {
+    "overrides": {}
+  }
 }

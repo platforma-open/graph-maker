@@ -1,5 +1,102 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.9
+
+### Patch Changes
+
+- 470e969: update graph-maker version
+
+## 0.3.8
+
+### Patch Changes
+
+- 9c67b2a: update graph-maker version
+
+## 0.3.7
+
+### Patch Changes
+
+- 877dc37: update graph-maker version
+
+## 0.3.6
+
+### Patch Changes
+
+- 7abbfa6: update graph-maker version
+- 7abbfa6: update graph-maker version
+
+## 0.3.5
+
+### Patch Changes
+
+- 4bb138d: add heatmap + dendro template
+- Updated dependencies [4bb138d]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.3
+
+## 0.3.4
+
+### Patch Changes
+
+- 21ea27d: update dependencies
+
+## 0.3.3
+
+### Patch Changes
+
+- 59abd3d: update graph-maker version
+
+## 0.3.2
+
+### Patch Changes
+
+- 77056ac: update dependencies
+
+## 0.3.1
+
+### Patch Changes
+
+- eef8887: update graph-maker version
+
+## 0.3.0
+
+### Minor Changes
+
+- 4ffcddf: chore: update ci wf
+
+## 0.2.15
+
+### Patch Changes
+
+- e689add: redesign
+- 6448ec4: new graph page redesign
+
+## 0.2.14
+
+### Patch Changes
+
+- a9c8e94: update dependencies
+
+## 0.2.13
+
+### Patch Changes
+
+- b753e49: update dependencies
+
+## 0.2.12
+
+### Patch Changes
+
+- 24f6b2e: update graph-maker version
+
+## 0.2.11
+
+### Patch Changes
+
+- 54ba316: update graph-maker component interface
+- Updated dependencies [db01bb7]
+- Updated dependencies [54ba316]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.2
+
 ## 0.2.10
 
 ### Patch Changes

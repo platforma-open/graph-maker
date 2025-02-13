@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useApp } from './app';
-import { GraphMakerSettings } from '@milaboratories/graph-maker';
+import { GraphMakerProps, GraphMakerState } from '@milaboratories/graph-maker';
 import { PlBlockPage } from '@platforma-sdk/ui-vue';
 import { getChartTypeByTemplate } from './constants.ts';
 import { computed, ref } from 'vue';
@@ -11,14 +11,17 @@ import AddGraph from './components/AddGraph.vue';
 const app = useApp();
 
 const newId = computed(() => {
-  if (app.ui && app.ui.graphs.length) {
-    return String(Math.max(...app.ui.graphs.map(g => Number(g.id))) + 1);
+  if (app.model.ui && app.model.ui.graphs.length) {
+    return String(Math.max(...app.model.ui.graphs.map((g) => Number(g.id))) + 1);
   }
   return '1';
 });
 const graphTitle = ref<string>('');
 
-const addSection = async (chartType: GraphMakerSettings['chartType'], template: GraphMakerSettings['template']) => {
+const addSection = async (
+  chartType: GraphMakerProps['chartType'],
+  template: GraphMakerState['template']
+) => {
   const id = newId.value;
   const defaultTitle = 'My graph ' + id;
   const label = graphTitle.value || defaultTitle;
@@ -26,13 +29,16 @@ const addSection = async (chartType: GraphMakerSettings['chartType'], template: 
     if (!ui) {
       ui = { graphs: [] } as UiState;
     }
-    ui.graphs = [...ui.graphs, { id, label, settings: { chartType, template } }];
+    ui.graphs = [
+      ...ui.graphs,
+      { id, label, state: { template, title: label }, settings: { chartType, pFrame: undefined } }
+    ];
     return ui;
   });
   await app.navigateTo(`/graph?id=${id}`);
 };
 
-function onSelect(v: GraphMakerSettings['template']) {
+function onSelect(v: GraphMakerState['template']) {
   if (!v) {
     return;
   }
@@ -48,7 +54,7 @@ function onTitleChange(e: Event) {
 <template>
   <pl-block-page>
     <div class="container_main_page">
-      <div class="chart_header" :class="{empty: !graphTitle}">
+      <div class="chart_header" :class="{ empty: !graphTitle }">
         <input
           class="chart_title"
           :value="graphTitle"
@@ -58,7 +64,7 @@ function onTitleChange(e: Event) {
         />
         <component class="chart_edit" :is="EditIcon" />
       </div>
-      <add-graph @selected="(v) => onSelect(v as GraphMakerSettings['template'])"/>
+      <add-graph @selected="(v) => onSelect(v as GraphMakerState['template'])" />
     </div>
   </pl-block-page>
 </template>
@@ -72,7 +78,6 @@ function onTitleChange(e: Event) {
   min-width: max-content;
   overflow: hidden;
   gap: 16px;
-  align-items: center;
 }
 
 .chart_header {

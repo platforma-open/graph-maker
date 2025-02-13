@@ -1,0 +1,35 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M43.6492 3.67238C47.5791 1.44254 52.4209 1.44254 56.3509 3.67237L87.6491 21.431C91.5791 23.6608 94 27.7817 94 32.2414V67.7586C94 72.2183 91.5791 76.3392 87.6492 78.569L56.3509 96.3276C52.4209 98.5575 47.5791 98.5575 43.6492 96.3276L12.3509 78.569C8.42093 76.3392 6 72.2183 6 67.7586V32.2414C6 27.7817 8.42093 23.6608 12.3509 21.431L43.6492 3.67238Z" fill="url(#paint0_linear_15631_68830)"/>
+<path d="M33.5 64.5C54.0714 64.5 45.4286 34.5 66 34.5" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 38.5 33.75)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 33.5 33.75)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 36 72)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 36 23)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 33.5 48.75)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 38.5 48.75)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 41 43.75)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 36 43.75)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 31 43.75)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 36 62)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 36 53.5)" fill="white" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 68.5 20)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 68.5 32)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 66 37)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 71 37)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 66 46.5)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 71 46.5)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 66 60.5005)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 71 60.5005)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 68.5 75)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 68.5 65.5005)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 71 51.5)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 76 51.5)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 66 51.5)" fill="#DEDBFF" stroke="#110529"/>
+<circle cx="2.5" cy="2.5" r="2.5" transform="matrix(-1 0 0 1 61 51.5)" fill="#DEDBFF" stroke="#110529"/>
+<defs>
+<linearGradient id="paint0_linear_15631_68830" x1="50.0001" y1="0.0688678" x2="50.0001" y2="99.9311" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D1F5BF"/>
+<stop offset="1" stop-color="#F4FEE0"/>
+</linearGradient>
+</defs>
+</svg>

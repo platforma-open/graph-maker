@@ -1,0 +1,34 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M43.6492 3.67238C47.5791 1.44254 52.4209 1.44254 56.3509 3.67237L87.6491 21.431C91.5791 23.6608 94 27.7817 94 32.2414V67.7586C94 72.2183 91.5791 76.3392 87.6492 78.569L56.3509 96.3276C52.4209 98.5575 47.5791 98.5575 43.6492 96.3276L12.3509 78.569C8.42093 76.3392 6 72.2183 6 67.7586V32.2414C6 27.7817 8.42093 23.6608 12.3509 21.431L43.6492 3.67238Z" fill="url(#paint0_linear_15631_69775)"/>
+<path d="M25 65H35V75H25.5C25.2239 75 25 74.7761 25 74.5V65Z" fill="#DEDBFF" stroke="#110529"/>
+<path d="M25 25.5C25 25.2239 25.2239 25 25.5 25H35V35H25V25.5Z" fill="#C1ADFF" stroke="#110529"/>
+<rect x="25" y="35" width="10" height="10" fill="#C1ADFF" stroke="#110529"/>
+<rect x="55" y="55" width="10" height="10" fill="#DEDBFF" stroke="#110529"/>
+<rect x="45" y="45" width="10" height="10" fill="#DEDBFF" stroke="#110529"/>
+<rect x="35" y="45" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="35" y="35" width="10" height="10" fill="#DEDBFF" stroke="#110529"/>
+<rect x="45" y="35" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="55" y="35" width="10" height="10" fill="#DEDBFF" stroke="#110529"/>
+<rect x="55" y="25" width="10" height="10" fill="#DEDBFF" stroke="#110529"/>
+<rect x="25" y="45" width="10" height="10" fill="#C1ADFF" stroke="#110529"/>
+<rect x="25" y="55" width="10" height="10" fill="#DEDBFF" stroke="#110529"/>
+<rect x="65" y="35" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="35" y="25" width="10" height="10" fill="#C1ADFF" stroke="#110529"/>
+<rect x="45" y="25" width="10" height="10" fill="#C1ADFF" stroke="#110529"/>
+<path d="M65 25H74.5C74.7761 25 75 25.2239 75 25.5V35H65V25Z" fill="#DEDBFF" stroke="#110529"/>
+<rect x="65" y="45" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="65" y="55" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="55" y="45" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="45" y="55" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="35" y="55" width="10" height="10" fill="#DEDBFF" stroke="#110529"/>
+<path d="M65 65H75V74.5C75 74.7761 74.7761 75 74.5 75H65V65Z" fill="white" stroke="#110529"/>
+<rect x="55" y="65" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="45" y="65" width="10" height="10" fill="white" stroke="#110529"/>
+<rect x="35" y="65" width="10" height="10" fill="white" stroke="#110529"/>
+<defs>
+<linearGradient id="paint0_linear_15631_69775" x1="50.0001" y1="0.0688678" x2="50.0001" y2="99.9311" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D1F5BF"/>
+<stop offset="1" stop-color="#F4FEE0"/>
+</linearGradient>
+</defs>
+</svg>

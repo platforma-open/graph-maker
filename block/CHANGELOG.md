@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.12
+
+### Patch Changes
+
+- 796cc5c: description updated
+
 ## 1.4.11
 
 ### Patch Changes

@@ -33,7 +33,8 @@ export const platforma = BlockModel.create('Heavy')
       {
         type: 'link',
         href: '/',
-        label: '+ New Graph'
+        appearance: 'add-section',
+        label: 'New Graph'
       }
     ];
   })

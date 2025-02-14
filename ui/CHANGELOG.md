@@ -1,5 +1,13 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.10
+
+### Patch Changes
+
+- 626b44d: new graph button
+- Updated dependencies [626b44d]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.4
+
 ## 0.3.9
 
 ### Patch Changes

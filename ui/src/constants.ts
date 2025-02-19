@@ -42,6 +42,8 @@ import heatmap from './assets/icons/Type=Heatmap.svg';
 import heatmapClustered from './assets/icons/Type=Heatmap + Dendrogram.svg';
 // @ts-ignore
 import dendrogram from './assets/icons/Type=Dendrogram.svg';
+// @ts-ignore
+import histogram from './assets/icons/Type=Histogram.svg';
 import { GraphMakerProps } from '@milaboratories/graph-maker';
 
 export type GraphCardItem = { id: string, title: string, description: string, image: string, };
@@ -68,9 +70,13 @@ export const CHART_TYPES: GraphCardItem[] = [
   { image: heatmap, title: 'Heatmap', id: 'heatmap', description: 'Represents data intensity or values using color gradients' },
   { image: heatmapClustered, title: 'Heatmap + Dendro', id: 'heatmapClustered', description: 'Combines data intensity visualization with hierarchical clustering information' },
   { image: dendrogram, title: 'Dendrogram', id: 'dendrogram', description: 'Visualizes hierarchical clustering or relationships between data groups' },
+  { image: histogram, title: 'Histogram', id: 'bins', description: 'Shows data distribution by grouping values into bins' },
 ];
 
 export function getChartTypeByTemplate(template: string): GraphMakerProps['chartType'] {
+  if (template === 'bins') {
+    return 'histogram';
+  }
   if (template === 'heatmap' || template === 'heatmapClustered') {
     return 'heatmap';
   }

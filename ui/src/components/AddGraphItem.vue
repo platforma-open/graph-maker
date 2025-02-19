@@ -14,11 +14,11 @@ defineEmits<{
   <div class="add-graph__item gap-8" @click="$emit('selected', item.id)">
     <div class="add-graph__text d-flex flex-column gap-6">
       <div class="add-graph__title">{{ item.title }}</div>
-      <div class="add-graph__description text-description">{{ item.description }}</div>
+      <div class="add-graph__description">{{ item.description }}</div>
     </div>
     <div class="add-graph__icon">
-      <img :src="item.image" class="add-graph__icon-main" />
       <div v-html="Contour" class="add-graph__icon-hover" />
+      <img :src="item.image" class="add-graph__icon-main" />
     </div>
   </div>
 </template>

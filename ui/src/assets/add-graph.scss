@@ -50,6 +50,15 @@
             background-color: rgba(99, 224, 36, 0.12);
             transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
             border-color: var(--border-color-default);
+
+            .add-graph__description {
+                color: var(--txt-01);
+                transition: color .2s ease-in-out;
+            }
+            .add-graph__icon-hover {
+                opacity: 1;
+                transition: opacity .2s ease-in-out;
+            }
         }
     }
 
@@ -67,7 +76,12 @@
     }
 
     &__description {
-        color: var(--txt-03) !important;
+        color: var(--txt-03);
+        font-family: var(--font-family-base);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
     }
 
     &__icon {
@@ -78,18 +92,17 @@
         align-items: center;
         align-self: center;
         justify-content: center;
+        flex-shrink: 0;
     }
 
-    &__icon-hover {
+    &__icon-hover, &__icon-main {
         position: absolute;
         inset: 0;
         display: block;
-        opacity: 0;
-        transition: opacity .2s ease-in-out;
     }
 
-    &:hover &__icon-hover {
-        opacity: 1;
+    &__icon-hover {
+        opacity: 0;
         transition: opacity .2s ease-in-out;
     }
 }

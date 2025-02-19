@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.11
+
+### Patch Changes
+
+- 8b2ee8e: add histogram, style fixed for new graph page
+
 ## 0.3.10
 
 ### Patch Changes

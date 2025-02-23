@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.12
+
+### Patch Changes
+
+- ded97f5: add bubble plot
+
 ## 0.3.11
 
 ### Patch Changes

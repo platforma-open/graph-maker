@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.13
+
+### Patch Changes
+
+- 9750fde: add canvas-scatterplot to new graph page
+
 ## 0.3.12
 
 ### Patch Changes

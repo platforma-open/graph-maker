@@ -38,11 +38,15 @@ const addSection = async (
   await app.navigateTo(`/graph?id=${id}`);
 };
 
-function onSelect(v: GraphMakerState['template']) {
+function onSelect(v: GraphMakerState['template']|'dots_umap') {
   if (!v) {
     return;
   }
-  addSection(getChartTypeByTemplate(v), v);
+  if (v === 'dots_umap') {
+    addSection('scatterplot-umap', 'dots');
+  } else {
+    addSection(getChartTypeByTemplate(v), v);
+  }
 }
 
 function onTitleChange(e: Event) {
@@ -64,7 +68,7 @@ function onTitleChange(e: Event) {
         />
         <component class="chart_edit" :is="EditIcon" />
       </div>
-      <add-graph @selected="(v) => onSelect(v as GraphMakerState['template'])" />
+      <add-graph @selected="(v:unknown) => onSelect(v as GraphMakerState['template'])" />
     </div>
   </pl-block-page>
 </template>

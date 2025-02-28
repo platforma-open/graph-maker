@@ -67,6 +67,7 @@ export const CHART_TYPES: GraphCardItem[] = [
   { image: line_errorbar, title: 'Line + Error Bars', id: 'line_errorbar', description: 'Visualizes trends with indicators of variability or uncertainty' },
   { image: sina, title: 'Sina Plot', id: 'sina', description: 'Shows individual data points with density to highlight distributions' },
   { image: dots, title: 'Scatter Plot', id: 'dots', description: 'Displays individual data points to reveal relationships or patterns' },
+  { image: dots, title: 'Scatter Plot', id: 'dots_umap', description: 'Scatter Plot for big amount of dots' },
   { image: curve, title: 'Curve', id: 'curve', description: 'Visualizes relationships or trends with a smooth line' },
   { image: curve_dots, title: 'Scatter Plot + Curve', id: 'curve_dots', description: 'Combines raw data points with a smooth line to show trends or fits' },
   { image: heatmap, title: 'Heatmap', id: 'heatmap', description: 'Represents data intensity or values using color gradients' },

@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.18
+
+### Patch Changes
+
+- 88580f9: Updated tags and ranking
+
 ## 1.4.17
 
 ### Patch Changes

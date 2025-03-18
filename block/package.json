@@ -33,19 +33,15 @@
       "longDescription": "file:../docs/description.md",
       "changelog": "file:./CHANGELOG.md",
       "tags": [
-        "graphs",
-        "dataviz",
-        "visualization",
         "plot",
-        "graph",
-        "statistics"
+        "visualization"
       ],
       "organization": {
         "name": "MiLaboratories Inc",
         "url": "https://milaboratories.com",
         "logo": "file:../logos/milaboratories.png"
       },
-      "marketplaceRanking": 11000
+      "marketplaceRanking": 15000
     }
   },
   "devDependencies": {

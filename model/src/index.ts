@@ -40,15 +40,20 @@ export const platforma = BlockModel.create('Heavy')
   })
 
   .output('pFrame', (ctx) => {
-    const collection = ctx.resultPool.getData();
-    if (collection === undefined || !collection.isComplete) return undefined;
-
-    const valueTypes = ['Int', 'Long', 'Float', 'Double', 'String', 'Bytes'] as ValueType[];
-    const columns = collection.entries
-      .map(({ obj }) => obj)
+    const VALUE_TYPES: ValueType[] = [
+      'Int',
+      'Long',
+      'Float',
+      'Double',
+      'String',
+      'Bytes'
+    ];
+    const upstreamColumns = ctx.resultPool
+      .getData()
+      .entries.map((v) => v.obj)
       .filter(isPColumn)
-      .filter((column) => valueTypes.find((valueType) => valueType === column.spec.valueType));
-    return createPFrameForGraphs(ctx, columns);
+      .filter((column) => VALUE_TYPES.includes(column.spec.valueType));
+    return createPFrameForGraphs(ctx, upstreamColumns);
   })
   .done();
 

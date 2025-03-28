@@ -30,7 +30,7 @@ catalog:
   'turbo': ^2.4.4
 
   'vite': ^5.4.10
-  'vitest': ^3.0.9
+  'vitest': ^2.1.8
   '@vitejs/plugin-vue': ^5.2.3
 
   '@changesets/cli': ^2.28.1

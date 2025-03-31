@@ -6,8 +6,10 @@
   "scripts": {
     "build": "rm -rf dist && pl-tengo check && pl-tengo build"
   },
-  "devDependencies": {
-    "@platforma-sdk/tengo-builder": "catalog:",
+  "dependencies": {
     "@platforma-sdk/workflow-tengo": "catalog:"
+  },
+  "devDependencies": {
+    "@platforma-sdk/tengo-builder": "catalog:"
   }
 }

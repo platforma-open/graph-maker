@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.17
+
+### Patch Changes
+
+- b41cab6: add loading to main page
+
 ## 0.3.16
 
 ### Patch Changes

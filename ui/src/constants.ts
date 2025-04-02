@@ -46,6 +46,8 @@ import dendrogram from './assets/icons/Type=Dendrogram.svg';
 import histogram from './assets/icons/Type=Histogram.svg';
 // @ts-ignore
 import bubble from './assets/icons/Type=Dot Plot.svg';
+// @ts-ignore
+import logo from './assets/icons/Type=Logo.svg';
 import { GraphMakerProps } from '@milaboratories/graph-maker';
 
 export type GraphCardItem = { id: string, title: string, description: string, image: string, };
@@ -75,6 +77,7 @@ export const CHART_TYPES: GraphCardItem[] = [
   { image: dendrogram, title: 'Dendrogram', id: 'dendrogram', description: 'Visualizes hierarchical clustering or relationships between data groups' },
   { image: histogram, title: 'Histogram', id: 'bins', description: 'Shows data distribution by grouping values into bins' },
   { image: bubble, title: 'Bubble plot', id: 'bubble', description: 'Visualizes individual data points to compare distributions or frequencies' },
+  { image: logo, title: 'Logo plot', id: 'logo', description: 'Visualizes base or residue frequency and conservation in aligned sequences' },
 ];
 
 export function getChartTypeByTemplate(template: string): GraphMakerProps['chartType'] {

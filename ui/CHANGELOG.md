@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.18
+
+### Patch Changes
+
+- f9de3ba: add logo layer
+
 ## 0.3.17
 
 ### Patch Changes

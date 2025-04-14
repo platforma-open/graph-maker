@@ -10,13 +10,13 @@ catalog:
   '@platforma-sdk/block-tools': ^2.5.35
 
 
-  '@platforma-sdk/workflow-tengo': ^4.0.4
-  '@platforma-sdk/model': ^1.28.4
-  '@platforma-sdk/test': ^1.28.6
+  '@platforma-sdk/workflow-tengo': ^4.0.9
+  '@platforma-sdk/model': ^1.29.2
+  '@platforma-sdk/test': ^1.29.7
 
 
-  '@milaboratories/graph-maker': ^1.1.70
-  '@platforma-sdk/ui-vue': ^1.28.4
+  '@milaboratories/graph-maker': ^1.1.71
+  '@platforma-sdk/ui-vue': 1.28.4
   '@milaboratories/helpers': ^1.6.11
   '@milaboratories/software-pframes-conv': ^1.5.6
 
@@ -35,4 +35,4 @@ catalog:
   'vitest': ^2.1.8
   '@vitejs/plugin-vue': ^5.2.3
 
-  '@changesets/cli': ^2.28.1
+  '@changesets/cli': ^2.29.0

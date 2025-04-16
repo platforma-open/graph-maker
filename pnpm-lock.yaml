@@ -10,8 +10,8 @@ catalogs:
       specifier: ^2.29.0
       version: 2.29.0
     '@milaboratories/graph-maker':
-      specifier: ^1.1.75
-      version: 1.1.75
+      specifier: ^1.1.76
+      version: 1.1.76
     '@milaboratories/helpers':
       specifier: ^1.6.11
       version: 1.6.11
@@ -99,7 +99,7 @@ importers:
     devDependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.75(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
+        version: 1.1.76(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
         version: 2.5.36
@@ -133,7 +133,7 @@ importers:
     dependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.75(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
+        version: 1.1.76(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
       '@milaboratories/helpers':
         specifier: 'catalog:'
         version: 1.6.11
@@ -812,8 +812,8 @@ packages:
     resolution: {integrity: sha512-AZqGarqi0qD8mf4+4uWZRtJXTn5bM4cQDq7ikZFhd647CZEoBJ3+0xN7tb/BIV5vKF5cFepSRZ9vulUYi9oF1w==}
     engines: {node: '>=20.0.0'}
 
-  '@milaboratories/graph-maker@1.1.75':
-    resolution: {integrity: sha512-rSDWKigYHKiCZs/iVAdTvXbZcSbpCGU5Ty9KyNndykvYWOSkD2PJ7Fm6HQJ6PfCgBaVJN+d1g1wo+qlaf0g+8g==}
+  '@milaboratories/graph-maker@1.1.76':
+    resolution: {integrity: sha512-RmogrkVSt0tlQr5fvvqBszr2PpgFOHGcvaKWeimjLC9iaSJA7WN9uYH8DtL+2kVVGeS39aMJ7a4d3jJg4vcTDg==}
 
   '@milaboratories/helpers@1.6.11':
     resolution: {integrity: sha512-TyERmUULB8hvbwqnMOQ14YAPQzVBGpBSLkByYpl3/5vCkf4OndBg+V8XqITHEZkca9y82LVm5IDU0hP7KOCQ9Q==}
@@ -5543,7 +5543,7 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.23.8
 
-  '@milaboratories/graph-maker@1.1.75(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)':
+  '@milaboratories/graph-maker@1.1.76(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)':
     dependencies:
       '@ag-grid-community/core': 32.3.3
       '@milaboratories/helpers': 1.6.11

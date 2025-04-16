@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.21
+
+### Patch Changes
+
+- 9165782: allow metadata in data inputs
+
 ## 0.3.20
 
 ### Patch Changes

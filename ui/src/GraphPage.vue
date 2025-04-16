@@ -62,6 +62,7 @@ const removeSection = () => {
       :pFrame="app.model.outputs.pFrame"
       :chartType="graphProps.chartType"
       :allowDeleting="true"
+      :dataColumnPredicate="() => true"
       @delete-this-graph="removeSection"
     />
   </div>

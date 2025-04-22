@@ -10,8 +10,8 @@ catalogs:
       specifier: ^2.29.0
       version: 2.29.0
     '@milaboratories/graph-maker':
-      specifier: ^1.1.78
-      version: 1.1.78
+      specifier: ^1.1.79
+      version: 1.1.79
     '@milaboratories/helpers':
       specifier: ^1.6.11
       version: 1.6.11
@@ -28,8 +28,8 @@ catalogs:
       specifier: ^1.29.7
       version: 1.29.7
     '@platforma-sdk/ui-vue':
-      specifier: 1.28.4
-      version: 1.28.4
+      specifier: ^1.29.15
+      version: 1.29.17
     '@platforma-sdk/workflow-tengo':
       specifier: ^4.0.9
       version: 4.0.9
@@ -99,7 +99,7 @@ importers:
     devDependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.78(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
+        version: 1.1.79(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
         version: 2.5.36
@@ -133,7 +133,7 @@ importers:
     dependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.78(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
+        version: 1.1.79(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)
       '@milaboratories/helpers':
         specifier: 'catalog:'
         version: 1.6.11
@@ -142,7 +142,7 @@ importers:
         version: link:../model
       '@platforma-sdk/ui-vue':
         specifier: 'catalog:'
-        version: 1.28.4(typescript@5.8.2)
+        version: 1.29.17(typescript@5.8.2)
       vue:
         specifier: 'catalog:'
         version: 3.5.13(typescript@5.8.2)
@@ -812,15 +812,15 @@ packages:
     resolution: {integrity: sha512-AZqGarqi0qD8mf4+4uWZRtJXTn5bM4cQDq7ikZFhd647CZEoBJ3+0xN7tb/BIV5vKF5cFepSRZ9vulUYi9oF1w==}
     engines: {node: '>=20.0.0'}
 
-  '@milaboratories/graph-maker@1.1.78':
-    resolution: {integrity: sha512-trQqWfnaJddVP+wU7v6feiP8h1B/P6LV3iR2xCAtrdgENrnZW7e/8GuYxYe9iETIXGXUzfKlrv6ISbOoyE8qJQ==}
+  '@milaboratories/graph-maker@1.1.79':
+    resolution: {integrity: sha512-9dyKP+rJa3QkADzFNJHZUTcQdft0IaYgwj2gNFxFcsBuDALvnPh0HKOqlBlcW/IiWC0/9LyRkIOq1yqORrhfNw==}
 
   '@milaboratories/helpers@1.6.11':
     resolution: {integrity: sha512-TyERmUULB8hvbwqnMOQ14YAPQzVBGpBSLkByYpl3/5vCkf4OndBg+V8XqITHEZkca9y82LVm5IDU0hP7KOCQ9Q==}
     engines: {node: '>=20.10.0'}
 
-  '@milaboratories/miplots4@1.0.82':
-    resolution: {integrity: sha512-ZZesUnvnY1IZugHEKZXIsCmD/aoHHt++UltZ95wgwwjBGGhdNVvgJDlYzGPLG+jertMNHphvo2DFt2i9CZx4tw==}
+  '@milaboratories/miplots4@1.0.83':
+    resolution: {integrity: sha512-kdRm10G4GXJp79mPEi3fTKyjr6jFqxh28ftUihjD88vR7aWL384c7TuBi6CXNFIYOFdGBW+rnpn5Q2xpl6dB6w==}
 
   '@milaboratories/pf-plots@1.0.99':
     resolution: {integrity: sha512-WYUMm1eRxLskWiRTk06v2Zk6MRTMk1eJdFjv6IPnQYmVuPiCHrtS1/JBwXeXkxhcoYlOmKEh01xYSRbn0GkrIA==}
@@ -894,9 +894,6 @@ packages:
   '@milaboratories/ts-helpers@1.1.5':
     resolution: {integrity: sha512-zxjDIkVr2CoGzlBZsAbtggjv52pAKVYHEnjtGVhu5tQNEqn6rg4LDKhI/izhYr0nXlehvIm88jfn1y1yit+n/A==}
     engines: {node: '>=20.16.0'}
-
-  '@milaboratories/uikit@2.2.67':
-    resolution: {integrity: sha512-muzFLYFmQKIZCM2FF9W71Uzi1vyf8hVY0wn2Q31We5uevBuwlYOHHMHEyBRLLVo3kPHnAzV3EqO8KrvOv3JG9w==}
 
   '@milaboratories/uikit@2.2.69':
     resolution: {integrity: sha512-P34e/bv9O4NADncd/KD/WLrR96dvbmKlAeaeggfUQwT7SnSbgziHLx3n0Xz0Q3ZfXo7owBKGc9AVJ2FkGFnutg==}
@@ -1053,9 +1050,6 @@ packages:
 
   '@platforma-sdk/test@1.29.7':
     resolution: {integrity: sha512-fxnc0yM7vbCzKhk8z7gWutbJCm/xVWZ2pNcfDJQKUwvBfsn20LbMHQYJ2lfyMC2Vd6aFdISOn7n/xz+lhTW9lA==}
-
-  '@platforma-sdk/ui-vue@1.28.4':
-    resolution: {integrity: sha512-m5SSYkoUAPoBw3QCkFLGXvUUiAYYYcWdovmAfVHPPHpSbYApEYhL5w8QtXFV61lbWF1QTbHZ18JBOCcDA/c4Ww==}
 
   '@platforma-sdk/ui-vue@1.29.17':
     resolution: {integrity: sha512-xo6Ycnmyxvb0iCGttSaxeoUvg/QPPRavLENnQsF+scT68IBxFgfnIMaQvAi05RsDKKUldR2q11soMoygdrYI7Q==}
@@ -5559,11 +5553,11 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.23.8
 
-  '@milaboratories/graph-maker@1.1.78(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)':
+  '@milaboratories/graph-maker@1.1.79(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.2)':
     dependencies:
       '@ag-grid-community/core': 32.3.3
       '@milaboratories/helpers': 1.6.11
-      '@milaboratories/miplots4': 1.0.82(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
+      '@milaboratories/miplots4': 1.0.83(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
       '@milaboratories/pf-plots': 1.0.99
       '@platforma-sdk/model': 1.29.17
       '@platforma-sdk/ui-vue': 1.29.17(typescript@5.8.2)
@@ -5582,7 +5576,7 @@ snapshots:
 
   '@milaboratories/helpers@1.6.11': {}
 
-  '@milaboratories/miplots4@1.0.82(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)':
+  '@milaboratories/miplots4@1.0.83(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)':
     dependencies:
       '@d3fc/d3fc-chart': 5.1.9(d3-array@3.2.4)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(d3-scale@4.0.2)(d3-selection@3.0.0)(d3-shape@3.2.0)
       '@d3fc/d3fc-pointer': 3.0.3(d3-dispatch@3.0.1)(d3-selection@3.0.0)
@@ -5807,13 +5801,6 @@ snapshots:
     dependencies:
       denque: 2.1.0
 
-  '@milaboratories/uikit@2.2.67(typescript@5.8.2)':
-    dependencies:
-      d3: 7.9.0
-      vue: 3.5.13(typescript@5.8.2)
-    transitivePeerDependencies:
-      - typescript
-
   '@milaboratories/uikit@2.2.69(typescript@5.8.2)':
     dependencies:
       d3: 7.9.0
@@ -6028,18 +6015,6 @@ snapshots:
       - sugarss
       - supports-color
       - terser
-
-  '@platforma-sdk/ui-vue@1.28.4(typescript@5.8.2)':
-    dependencies:
-      '@milaboratories/uikit': 2.2.67(typescript@5.8.2)
-      '@platforma-sdk/model': 1.29.2
-      ag-grid-enterprise: 33.0.4
-      ag-grid-vue3: 33.0.4(vue@3.5.13(typescript@5.8.2))
-      canonicalize: 2.1.0
-      lru-cache: 11.1.0
-      vue: 3.5.13(typescript@5.8.2)
-    transitivePeerDependencies:
-      - typescript
 
   '@platforma-sdk/ui-vue@1.29.17(typescript@5.8.2)':
     dependencies:

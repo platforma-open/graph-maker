@@ -1,0 +1,839 @@
+{
+  "id": "2wDpziJjjVe3sTDeYlK2vKag0RZ",
+  "version": "1",
+  "turboVersion": "2.5.0",
+  "monorepo": true,
+  "globalCacheInputs": {
+    "rootKey": "I can’t see ya, but I know you’re here",
+    "files": {},
+    "hashOfExternalDependencies": "7a95655b8e3ac2ec",
+    "hashOfInternalDependencies": "",
+    "environmentVariables": {
+      "specified": {
+        "env": [],
+        "passThroughEnv": null
+      },
+      "configured": [],
+      "inferred": [],
+      "passthrough": null
+    },
+    "engines": null
+  },
+  "packages": [
+    "@platforma-open/milaboratories.graph-maker",
+    "@platforma-open/milaboratories.graph-maker.model",
+    "@platforma-open/milaboratories.graph-maker.test",
+    "@platforma-open/milaboratories.graph-maker.ui",
+    "@platforma-open/milaboratories.graph-maker.workflow"
+  ],
+  "envMode": "strict",
+  "frameworkInference": true,
+  "tasks": [
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker#build",
+      "task": "build",
+      "package": "@platforma-open/milaboratories.graph-maker",
+      "hash": "44fe12784509d97b",
+      "inputs": {
+        "CHANGELOG.md": "704bd223459035cd63f604feb4163900cb28c8a0",
+        "index.d.ts": "794bb7081f27d2d49e6730deea19a78b5756c77d",
+        "index.js": "2845ebb61d9deee859ef583a77fb65893b392d9f",
+        "package.json": "a534f34946cbbd94f2d4955144597623cab60da5"
+      },
+      "hashOfExternalDependencies": "1e60b3043cea7182",
+      "cache": {
+        "local": true,
+        "remote": false,
+        "status": "HIT",
+        "source": "LOCAL",
+        "timeSaved": 0
+      },
+      "command": "rm -rf ./block-pack && block-tools pack",
+      "cliArguments": [],
+      "outputs": [
+        "./block-pack/**",
+        "./dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "block/.turbo/turbo-build.log",
+      "directory": "block",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker.model#build",
+        "@platforma-open/milaboratories.graph-maker.ui#build",
+        "@platforma-open/milaboratories.graph-maker.workflow#build"
+      ],
+      "dependents": [
+        "@platforma-open/milaboratories.graph-maker#test",
+        "@platforma-open/milaboratories.graph-maker.test#build"
+      ],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          "./block-pack/**",
+          "./dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [
+          "$TURBO_DEFAULT$"
+        ],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker#test",
+      "task": "test",
+      "package": "@platforma-open/milaboratories.graph-maker",
+      "hash": "7556dc417262abaf",
+      "inputs": {
+        "CHANGELOG.md": "704bd223459035cd63f604feb4163900cb28c8a0",
+        "index.d.ts": "794bb7081f27d2d49e6730deea19a78b5756c77d",
+        "index.js": "2845ebb61d9deee859ef583a77fb65893b392d9f",
+        "package.json": "a534f34946cbbd94f2d4955144597623cab60da5"
+      },
+      "hashOfExternalDependencies": "1e60b3043cea7182",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": null,
+      "excludedOutputs": null,
+      "logFile": "block/.turbo/turbo-test.log",
+      "directory": "block",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker#build"
+      ],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [],
+        "cache": true,
+        "dependsOn": [
+          "build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": [
+          "DEBUG",
+          "PL_ADDRESS",
+          "PL_TEST_PASSWORD",
+          "PL_TEST_PROXY",
+          "PL_TEST_USER"
+        ],
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": [
+            "DEBUG",
+            "PL_ADDRESS",
+            "PL_TEST_PASSWORD",
+            "PL_TEST_PROXY",
+            "PL_TEST_USER"
+          ]
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": [
+          "PL_ADDRESS=83f9c7fec1cc29c9c3d71b605baa76ebebe1a51c052c0bfad1e37e9883b994fa",
+          "PL_TEST_PASSWORD=c638833f69bbfb3c267afa0a74434812436b8f08a81fd263c6be6871de4f1265",
+          "PL_TEST_USER=f85ac825d102b9f2d546aa1679ea991ae845994c1343730d564f3fcd0a2168c3"
+        ]
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.model#build",
+      "task": "build",
+      "package": "@platforma-open/milaboratories.graph-maker.model",
+      "hash": "e309264c94f7933e",
+      "inputs": {
+        "CHANGELOG.md": "284b48cac643f9828c5aad4b7957ec1d3f2909a7",
+        "package.json": "f89775408f8cead29e26fdd041bb421a3c50c171",
+        "src/index.ts": "535147da7d1d8be5bb4e15ff063d74685a9ac11d",
+        "tsconfig.json": "c5ecaffd0b67580effbb7202647547eb259df4e7",
+        "vite.config.mts": "1a01b555448af621dd75c5b13e9e182b0910033a"
+      },
+      "hashOfExternalDependencies": "280ba29acb0a633a",
+      "cache": {
+        "local": true,
+        "remote": false,
+        "status": "HIT",
+        "source": "LOCAL",
+        "timeSaved": 0
+      },
+      "command": "tsup && vite build && block-tools build-model",
+      "cliArguments": [],
+      "outputs": [
+        "./block-pack/**",
+        "./dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "model/.turbo/turbo-build.log",
+      "directory": "model",
+      "dependencies": [],
+      "dependents": [
+        "@platforma-open/milaboratories.graph-maker#build",
+        "@platforma-open/milaboratories.graph-maker.model#test",
+        "@platforma-open/milaboratories.graph-maker.ui#build"
+      ],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          "./block-pack/**",
+          "./dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [
+          "$TURBO_DEFAULT$"
+        ],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "vite",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.model#test",
+      "task": "test",
+      "package": "@platforma-open/milaboratories.graph-maker.model",
+      "hash": "6eb62ab451827561",
+      "inputs": {
+        "CHANGELOG.md": "284b48cac643f9828c5aad4b7957ec1d3f2909a7",
+        "package.json": "f89775408f8cead29e26fdd041bb421a3c50c171",
+        "src/index.ts": "535147da7d1d8be5bb4e15ff063d74685a9ac11d",
+        "tsconfig.json": "c5ecaffd0b67580effbb7202647547eb259df4e7",
+        "vite.config.mts": "1a01b555448af621dd75c5b13e9e182b0910033a"
+      },
+      "hashOfExternalDependencies": "280ba29acb0a633a",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": null,
+      "excludedOutputs": null,
+      "logFile": "model/.turbo/turbo-test.log",
+      "directory": "model",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker.model#build"
+      ],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [],
+        "cache": true,
+        "dependsOn": [
+          "build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": [
+          "DEBUG",
+          "PL_ADDRESS",
+          "PL_TEST_PASSWORD",
+          "PL_TEST_PROXY",
+          "PL_TEST_USER"
+        ],
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "vite",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": [
+            "DEBUG",
+            "PL_ADDRESS",
+            "PL_TEST_PASSWORD",
+            "PL_TEST_PROXY",
+            "PL_TEST_USER"
+          ]
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": [
+          "PL_ADDRESS=83f9c7fec1cc29c9c3d71b605baa76ebebe1a51c052c0bfad1e37e9883b994fa",
+          "PL_TEST_PASSWORD=c638833f69bbfb3c267afa0a74434812436b8f08a81fd263c6be6871de4f1265",
+          "PL_TEST_USER=f85ac825d102b9f2d546aa1679ea991ae845994c1343730d564f3fcd0a2168c3"
+        ]
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.test#build",
+      "task": "build",
+      "package": "@platforma-open/milaboratories.graph-maker.test",
+      "hash": "40f37ed39e604d38",
+      "inputs": {
+        "CHANGELOG.md": "dca878688c8e7c5fd0edf7f1b7df5555645f3eb9",
+        "assets/test_file.json": "0fbddba449f0dbdf452f548ac96bb4597999441e",
+        "package.json": "d6530fbd377a4f1a57b36e4b754cf4e39a265085",
+        "src/wf.test.ts": "00f80a5716e388ffc48519907d0be90591185eb2",
+        "test_config.json": "297c77f86aa4e27de9eebc853961a3f95887c85c",
+        "tsconfig.json": "527dddb2392de91cbf4692e81b68b94d809e3354",
+        "vitest.config.mts": "d0d1b5e288dd7913deea21698b81b68641c465a0"
+      },
+      "hashOfExternalDependencies": "da047530089cbacd",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": [
+        "./block-pack/**",
+        "./dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "test/.turbo/turbo-build.log",
+      "directory": "test",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker#build"
+      ],
+      "dependents": [
+        "@platforma-open/milaboratories.graph-maker.test#test"
+      ],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          "./block-pack/**",
+          "./dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [
+          "$TURBO_DEFAULT$"
+        ],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.test#test",
+      "task": "test",
+      "package": "@platforma-open/milaboratories.graph-maker.test",
+      "hash": "f4b642b4fdbef96f",
+      "inputs": {
+        "CHANGELOG.md": "dca878688c8e7c5fd0edf7f1b7df5555645f3eb9",
+        "assets/test_file.json": "0fbddba449f0dbdf452f548ac96bb4597999441e",
+        "package.json": "d6530fbd377a4f1a57b36e4b754cf4e39a265085",
+        "src/wf.test.ts": "00f80a5716e388ffc48519907d0be90591185eb2",
+        "test_config.json": "297c77f86aa4e27de9eebc853961a3f95887c85c",
+        "tsconfig.json": "527dddb2392de91cbf4692e81b68b94d809e3354",
+        "vitest.config.mts": "d0d1b5e288dd7913deea21698b81b68641c465a0"
+      },
+      "hashOfExternalDependencies": "da047530089cbacd",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "vitest",
+      "cliArguments": [],
+      "outputs": null,
+      "excludedOutputs": null,
+      "logFile": "test/.turbo/turbo-test.log",
+      "directory": "test",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker.test#build"
+      ],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [],
+        "cache": true,
+        "dependsOn": [
+          "build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": [
+          "DEBUG",
+          "PL_ADDRESS",
+          "PL_TEST_PASSWORD",
+          "PL_TEST_PROXY",
+          "PL_TEST_USER"
+        ],
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": [
+            "DEBUG",
+            "PL_ADDRESS",
+            "PL_TEST_PASSWORD",
+            "PL_TEST_PROXY",
+            "PL_TEST_USER"
+          ]
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": [
+          "PL_ADDRESS=83f9c7fec1cc29c9c3d71b605baa76ebebe1a51c052c0bfad1e37e9883b994fa",
+          "PL_TEST_PASSWORD=c638833f69bbfb3c267afa0a74434812436b8f08a81fd263c6be6871de4f1265",
+          "PL_TEST_USER=f85ac825d102b9f2d546aa1679ea991ae845994c1343730d564f3fcd0a2168c3"
+        ]
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.ui#build",
+      "task": "build",
+      "package": "@platforma-open/milaboratories.graph-maker.ui",
+      "hash": "d59a1bf7a784ad6e",
+      "inputs": {
+        "CHANGELOG.md": "471f04e85c4264a7dd587d9e303175bfaae99fba",
+        "index.html": "e37ab12ef6090a1380237b55964f225b48d02cfc",
+        "package.json": "41f4ad2725ec9b074131b034285bd6c759db3101",
+        "src/GraphPage.vue": "1295404ecf2930f9c76722e03f5d806d52904fae",
+        "src/MainPage.vue": "8b2c7a3a9274a1ff177a64660d5eb2f4b22c83d6",
+        "src/app.ts": "a0c5efaa4c50ae8c676cf58595c2de492a120244",
+        "src/assets/add-graph.scss": "5384e3a162a2f020507c269d1f496669da0885be",
+        "src/assets/edit.vue": "99160cad9c41edc5743ed8fdd5e920e46bc928e5",
+        "src/assets/icons/Type=Area.svg": "d6054e3ea5cb9457d4504cdbc15010f694952a17",
+        "src/assets/icons/Type=Bar Chart + Error.svg": "dcd47e891acbd33f00b19974e19df14e82b5c1f0",
+        "src/assets/icons/Type=Bar Chart + Line.svg": "934787a3921b441a5a2d1a0c8cc44184617677d7",
+        "src/assets/icons/Type=Bar Chart.svg": "98b0f2dfb21d40a3c20c4273ea1ede936443a4e5",
+        "src/assets/icons/Type=Binned Dots.svg": "80cd0904362c60edd99e0d6acb6962eedd8cdaba",
+        "src/assets/icons/Type=Box + Bin.svg": "83d584d48e4212c723a9d3bf9675267edb0e3afe",
+        "src/assets/icons/Type=Box + Jitter.svg": "f66b4ffff01ea9bbab6396526187489dd6b6219e",
+        "src/assets/icons/Type=Box + Line + Dots.svg": "ade0af8f749f282b6ae3ded66c206592bfd7111d",
+        "src/assets/icons/Type=Box Plot.svg": "6506b8b166dd0ac12acb52f334083f51554db30c",
+        "src/assets/icons/Type=Bubble.svg": "ffb905a22096634f37c338314825a7ca73e81898",
+        "src/assets/icons/Type=Circular Dendrogram.svg": "d468131e20f75d3d7e3f01524c5055f30c28caf7",
+        "src/assets/icons/Type=Cluster.svg": "02c299c077866df7fa474a37b7754eff1ea682a8",
+        "src/assets/icons/Type=Curve.svg": "2ba617f7cacb715099300887d7322d7164a5493d",
+        "src/assets/icons/Type=Dendrogram.svg": "11540e5f7d73ca65f797f6f30311e95247b66c8e",
+        "src/assets/icons/Type=Dispersion.svg": "c53dd8e8b603d2b0a5a2de867015e1c531cd842c",
+        "src/assets/icons/Type=Dot Plot.svg": "5d1520fd18ea8b750105ee71111b2a1d29b28e45",
+        "src/assets/icons/Type=Heatmap + Dendrogram.svg": "b099b3f61eb65b7ba6d2dc25de0e7c4ef68dc2f7",
+        "src/assets/icons/Type=Heatmap + Histogram.svg": "737b1bc456cd54c8a021835dd9e6d22319da1fd4",
+        "src/assets/icons/Type=Heatmap.svg": "356963477fd6a2cec7491799bd26c44c3fee1492",
+        "src/assets/icons/Type=Histogram.svg": "52f1609f401ab1fa51b0eb6f6e6ecef9d8628230",
+        "src/assets/icons/Type=Jittered Dots.svg": "96285b88870cab39909ddd577254e24cfbe25fa2",
+        "src/assets/icons/Type=Line + Bin.svg": "336e16d376867490f9e5bb8fb4ef5ac7c4d2b409",
+        "src/assets/icons/Type=Line + Err.svg": "5af164b1756b81cb32d582e2db778aed7f2379a5",
+        "src/assets/icons/Type=Line + Jitt.svg": "af6784fe39f140bf09b074efbf68d1603d3120b1",
+        "src/assets/icons/Type=Line.svg": "79ef223a5186e098caeba76564418356c0d0e436",
+        "src/assets/icons/Type=Logo.svg": "d2a9fc0ee8e2b8c80b98822c5c74a7be99af31e5",
+        "src/assets/icons/Type=MA Plot.svg": "f7d7f0c064a280ca0dffb0f7c9b3fb25ff50412b",
+        "src/assets/icons/Type=Paired Points.svg": "b4676c5af60c0b4ce697e13bda6c6d8cb4b72ce3",
+        "src/assets/icons/Type=Sina Plot.svg": "b12399b8843f131a1f0df28fafd617498c0e6a96",
+        "src/assets/icons/Type=Skatter + Curve.svg": "251dd8eb5a007ffdccb765eeeea6e286d21a8f85",
+        "src/assets/icons/Type=Skatter.svg": "f0a2d2029ff7b86d6458fd51ed3f3f5f9b216a82",
+        "src/assets/icons/Type=Stacked Bar Chart.svg": "e7788437a59db0f0a8311bd3691ef54de5a2ca13",
+        "src/assets/icons/Type=Trendline.svg": "cb13388fb6420226b6e7e5276fbe639669b167a0",
+        "src/assets/icons/Type=Venn.svg": "cb942d98ce59dbbac6802ec128959e44f3e77776",
+        "src/assets/icons/Type=Violin + Bin.svg": "705f8ee4b1be55cf6f94e02cf1583ae87527c014",
+        "src/assets/icons/Type=Violin + Jitter.svg": "4ddb4362d1d2bb6fe2cbaa42fc1563a80f60318f",
+        "src/assets/icons/Type=Violin.svg": "211b6caddbef52ffbefd8d8bc56f7b140dc124c8",
+        "src/assets/icons/Type=Volcano.svg": "08d99e333951731feda3253776c9992c2f33a719",
+        "src/assets/icons/style_White Stroke.svg": "86565afde0f51c62e2acab08a8d2869593a26bce",
+        "src/components/AddGraph.vue": "50f0890a53e1fa2d52fa0e3fb67ee27097b5e9d2",
+        "src/components/AddGraphItem.vue": "2570b457c1a3cf31f4d5e85f86b29a96bc380f17",
+        "src/constants.ts": "be64fbf2e625d194db64b76562f5e6c806afba68",
+        "src/main.ts": "0dc713bc6b4fc523ef81daf363a093a93e6e0ec4",
+        "tsconfig.app.json": "c620c59675426d9fb09943f884fa138c141f2772",
+        "tsconfig.json": "65f670c8f0aa5f2b919670ae58c7e58861c53620",
+        "tsconfig.node.json": "3afdd6e38438be7612befbd4b656af7bed27a31a",
+        "vite.config.ts": "c39ba16b6e44ca3185da9b45807e5a43cafe4c91"
+      },
+      "hashOfExternalDependencies": "2b0fe1ff740c5059",
+      "cache": {
+        "local": true,
+        "remote": false,
+        "status": "HIT",
+        "source": "LOCAL",
+        "timeSaved": 0
+      },
+      "command": "vue-tsc -b && vite build",
+      "cliArguments": [],
+      "outputs": [
+        "./block-pack/**",
+        "./dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "ui/.turbo/turbo-build.log",
+      "directory": "ui",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker.model#build"
+      ],
+      "dependents": [
+        "@platforma-open/milaboratories.graph-maker#build",
+        "@platforma-open/milaboratories.graph-maker.ui#test"
+      ],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          "./block-pack/**",
+          "./dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [
+          "$TURBO_DEFAULT$"
+        ],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "vite",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.ui#test",
+      "task": "test",
+      "package": "@platforma-open/milaboratories.graph-maker.ui",
+      "hash": "3631e1a0db4d9a93",
+      "inputs": {
+        "CHANGELOG.md": "471f04e85c4264a7dd587d9e303175bfaae99fba",
+        "index.html": "e37ab12ef6090a1380237b55964f225b48d02cfc",
+        "package.json": "41f4ad2725ec9b074131b034285bd6c759db3101",
+        "src/GraphPage.vue": "1295404ecf2930f9c76722e03f5d806d52904fae",
+        "src/MainPage.vue": "8b2c7a3a9274a1ff177a64660d5eb2f4b22c83d6",
+        "src/app.ts": "a0c5efaa4c50ae8c676cf58595c2de492a120244",
+        "src/assets/add-graph.scss": "5384e3a162a2f020507c269d1f496669da0885be",
+        "src/assets/edit.vue": "99160cad9c41edc5743ed8fdd5e920e46bc928e5",
+        "src/assets/icons/Type=Area.svg": "d6054e3ea5cb9457d4504cdbc15010f694952a17",
+        "src/assets/icons/Type=Bar Chart + Error.svg": "dcd47e891acbd33f00b19974e19df14e82b5c1f0",
+        "src/assets/icons/Type=Bar Chart + Line.svg": "934787a3921b441a5a2d1a0c8cc44184617677d7",
+        "src/assets/icons/Type=Bar Chart.svg": "98b0f2dfb21d40a3c20c4273ea1ede936443a4e5",
+        "src/assets/icons/Type=Binned Dots.svg": "80cd0904362c60edd99e0d6acb6962eedd8cdaba",
+        "src/assets/icons/Type=Box + Bin.svg": "83d584d48e4212c723a9d3bf9675267edb0e3afe",
+        "src/assets/icons/Type=Box + Jitter.svg": "f66b4ffff01ea9bbab6396526187489dd6b6219e",
+        "src/assets/icons/Type=Box + Line + Dots.svg": "ade0af8f749f282b6ae3ded66c206592bfd7111d",
+        "src/assets/icons/Type=Box Plot.svg": "6506b8b166dd0ac12acb52f334083f51554db30c",
+        "src/assets/icons/Type=Bubble.svg": "ffb905a22096634f37c338314825a7ca73e81898",
+        "src/assets/icons/Type=Circular Dendrogram.svg": "d468131e20f75d3d7e3f01524c5055f30c28caf7",
+        "src/assets/icons/Type=Cluster.svg": "02c299c077866df7fa474a37b7754eff1ea682a8",
+        "src/assets/icons/Type=Curve.svg": "2ba617f7cacb715099300887d7322d7164a5493d",
+        "src/assets/icons/Type=Dendrogram.svg": "11540e5f7d73ca65f797f6f30311e95247b66c8e",
+        "src/assets/icons/Type=Dispersion.svg": "c53dd8e8b603d2b0a5a2de867015e1c531cd842c",
+        "src/assets/icons/Type=Dot Plot.svg": "5d1520fd18ea8b750105ee71111b2a1d29b28e45",
+        "src/assets/icons/Type=Heatmap + Dendrogram.svg": "b099b3f61eb65b7ba6d2dc25de0e7c4ef68dc2f7",
+        "src/assets/icons/Type=Heatmap + Histogram.svg": "737b1bc456cd54c8a021835dd9e6d22319da1fd4",
+        "src/assets/icons/Type=Heatmap.svg": "356963477fd6a2cec7491799bd26c44c3fee1492",
+        "src/assets/icons/Type=Histogram.svg": "52f1609f401ab1fa51b0eb6f6e6ecef9d8628230",
+        "src/assets/icons/Type=Jittered Dots.svg": "96285b88870cab39909ddd577254e24cfbe25fa2",
+        "src/assets/icons/Type=Line + Bin.svg": "336e16d376867490f9e5bb8fb4ef5ac7c4d2b409",
+        "src/assets/icons/Type=Line + Err.svg": "5af164b1756b81cb32d582e2db778aed7f2379a5",
+        "src/assets/icons/Type=Line + Jitt.svg": "af6784fe39f140bf09b074efbf68d1603d3120b1",
+        "src/assets/icons/Type=Line.svg": "79ef223a5186e098caeba76564418356c0d0e436",
+        "src/assets/icons/Type=Logo.svg": "d2a9fc0ee8e2b8c80b98822c5c74a7be99af31e5",
+        "src/assets/icons/Type=MA Plot.svg": "f7d7f0c064a280ca0dffb0f7c9b3fb25ff50412b",
+        "src/assets/icons/Type=Paired Points.svg": "b4676c5af60c0b4ce697e13bda6c6d8cb4b72ce3",
+        "src/assets/icons/Type=Sina Plot.svg": "b12399b8843f131a1f0df28fafd617498c0e6a96",
+        "src/assets/icons/Type=Skatter + Curve.svg": "251dd8eb5a007ffdccb765eeeea6e286d21a8f85",
+        "src/assets/icons/Type=Skatter.svg": "f0a2d2029ff7b86d6458fd51ed3f3f5f9b216a82",
+        "src/assets/icons/Type=Stacked Bar Chart.svg": "e7788437a59db0f0a8311bd3691ef54de5a2ca13",
+        "src/assets/icons/Type=Trendline.svg": "cb13388fb6420226b6e7e5276fbe639669b167a0",
+        "src/assets/icons/Type=Venn.svg": "cb942d98ce59dbbac6802ec128959e44f3e77776",
+        "src/assets/icons/Type=Violin + Bin.svg": "705f8ee4b1be55cf6f94e02cf1583ae87527c014",
+        "src/assets/icons/Type=Violin + Jitter.svg": "4ddb4362d1d2bb6fe2cbaa42fc1563a80f60318f",
+        "src/assets/icons/Type=Violin.svg": "211b6caddbef52ffbefd8d8bc56f7b140dc124c8",
+        "src/assets/icons/Type=Volcano.svg": "08d99e333951731feda3253776c9992c2f33a719",
+        "src/assets/icons/style_White Stroke.svg": "86565afde0f51c62e2acab08a8d2869593a26bce",
+        "src/components/AddGraph.vue": "50f0890a53e1fa2d52fa0e3fb67ee27097b5e9d2",
+        "src/components/AddGraphItem.vue": "2570b457c1a3cf31f4d5e85f86b29a96bc380f17",
+        "src/constants.ts": "be64fbf2e625d194db64b76562f5e6c806afba68",
+        "src/main.ts": "0dc713bc6b4fc523ef81daf363a093a93e6e0ec4",
+        "tsconfig.app.json": "c620c59675426d9fb09943f884fa138c141f2772",
+        "tsconfig.json": "65f670c8f0aa5f2b919670ae58c7e58861c53620",
+        "tsconfig.node.json": "3afdd6e38438be7612befbd4b656af7bed27a31a",
+        "vite.config.ts": "c39ba16b6e44ca3185da9b45807e5a43cafe4c91"
+      },
+      "hashOfExternalDependencies": "2b0fe1ff740c5059",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": null,
+      "excludedOutputs": null,
+      "logFile": "ui/.turbo/turbo-test.log",
+      "directory": "ui",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker.ui#build"
+      ],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [],
+        "cache": true,
+        "dependsOn": [
+          "build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": [
+          "DEBUG",
+          "PL_ADDRESS",
+          "PL_TEST_PASSWORD",
+          "PL_TEST_PROXY",
+          "PL_TEST_USER"
+        ],
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "vite",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": [
+            "DEBUG",
+            "PL_ADDRESS",
+            "PL_TEST_PASSWORD",
+            "PL_TEST_PROXY",
+            "PL_TEST_USER"
+          ]
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": [
+          "PL_ADDRESS=83f9c7fec1cc29c9c3d71b605baa76ebebe1a51c052c0bfad1e37e9883b994fa",
+          "PL_TEST_PASSWORD=c638833f69bbfb3c267afa0a74434812436b8f08a81fd263c6be6871de4f1265",
+          "PL_TEST_USER=f85ac825d102b9f2d546aa1679ea991ae845994c1343730d564f3fcd0a2168c3"
+        ]
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.workflow#build",
+      "task": "build",
+      "package": "@platforma-open/milaboratories.graph-maker.workflow",
+      "hash": "8079ec556013383f",
+      "inputs": {
+        "CHANGELOG.md": "e69e79fed057438d8b154189bd20625e5b57e74d",
+        "index.d.ts": "9b27fb746128717f87ece0d519889a7316f0ebe1",
+        "index.js": "0d329ed26581b8a6b923fe89eb0ceae7cfac0440",
+        "package.json": "35b13ac805dfea2939de39c559cf11c56e6ce58e",
+        "src/main.tpl.tengo": "1d6417d46028092aadbbc41e1319a46ca17b76ba"
+      },
+      "hashOfExternalDependencies": "aadbdd02c8494b6d",
+      "cache": {
+        "local": true,
+        "remote": false,
+        "status": "HIT",
+        "source": "LOCAL",
+        "timeSaved": 0
+      },
+      "command": "rm -rf dist && pl-tengo check && pl-tengo build",
+      "cliArguments": [],
+      "outputs": [
+        "./block-pack/**",
+        "./dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "workflow/.turbo/turbo-build.log",
+      "directory": "workflow",
+      "dependencies": [],
+      "dependents": [
+        "@platforma-open/milaboratories.graph-maker#build",
+        "@platforma-open/milaboratories.graph-maker.workflow#test"
+      ],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          "./block-pack/**",
+          "./dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [
+          "$TURBO_DEFAULT$"
+        ],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "@platforma-open/milaboratories.graph-maker.workflow#test",
+      "task": "test",
+      "package": "@platforma-open/milaboratories.graph-maker.workflow",
+      "hash": "9e05ba43d8441ed0",
+      "inputs": {
+        "CHANGELOG.md": "e69e79fed057438d8b154189bd20625e5b57e74d",
+        "index.d.ts": "9b27fb746128717f87ece0d519889a7316f0ebe1",
+        "index.js": "0d329ed26581b8a6b923fe89eb0ceae7cfac0440",
+        "package.json": "35b13ac805dfea2939de39c559cf11c56e6ce58e",
+        "src/main.tpl.tengo": "1d6417d46028092aadbbc41e1319a46ca17b76ba"
+      },
+      "hashOfExternalDependencies": "aadbdd02c8494b6d",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": null,
+      "excludedOutputs": null,
+      "logFile": "workflow/.turbo/turbo-test.log",
+      "directory": "workflow",
+      "dependencies": [
+        "@platforma-open/milaboratories.graph-maker.workflow#build"
+      ],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [],
+        "cache": true,
+        "dependsOn": [
+          "build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "interruptible": false,
+        "env": [],
+        "passThroughEnv": [
+          "DEBUG",
+          "PL_ADDRESS",
+          "PL_TEST_PASSWORD",
+          "PL_TEST_PROXY",
+          "PL_TEST_USER"
+        ],
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": [
+            "DEBUG",
+            "PL_ADDRESS",
+            "PL_TEST_PASSWORD",
+            "PL_TEST_PROXY",
+            "PL_TEST_USER"
+          ]
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": [
+          "PL_ADDRESS=83f9c7fec1cc29c9c3d71b605baa76ebebe1a51c052c0bfad1e37e9883b994fa",
+          "PL_TEST_PASSWORD=c638833f69bbfb3c267afa0a74434812436b8f08a81fd263c6be6871de4f1265",
+          "PL_TEST_USER=f85ac825d102b9f2d546aa1679ea991ae845994c1343730d564f3fcd0a2168c3"
+        ]
+      }
+    }
+  ],
+  "user": "github-merge-queue[bot]",
+  "scm": {
+    "type": "git",
+    "sha": "f0f3f6bd45381eb07c2bdfdfca1832f8b9dada3b",
+    "branch": "main"
+  }
+}
+

@@ -12,7 +12,7 @@ catalog:
 
   '@platforma-sdk/workflow-tengo': ^4.3.0
   '@platforma-sdk/model': ^1.30.11
-  '@platforma-sdk/test': ^1.30.14
+  '@platforma-sdk/test': ^1.30.8
 
 
   '@milaboratories/graph-maker': ^1.1.84

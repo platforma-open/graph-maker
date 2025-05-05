@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories..test
 
+## 1.2.1
+
+### Patch Changes
+
+- f4fd9a5: remove default test
+
 ## 1.2.0
 
 ### Minor Changes

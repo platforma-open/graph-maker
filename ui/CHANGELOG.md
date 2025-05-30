@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.32
+
+### Patch Changes
+
+- ff6ed80: update dependencies
+
 ## 0.3.31
 
 ### Patch Changes

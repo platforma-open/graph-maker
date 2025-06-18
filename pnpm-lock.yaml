@@ -10,8 +10,8 @@ catalogs:
       specifier: ^2.29.4
       version: 2.29.4
     '@milaboratories/graph-maker':
-      specifier: ^1.1.112
-      version: 1.1.112
+      specifier: ^1.1.114
+      version: 1.1.114
     '@milaboratories/helpers':
       specifier: ^1.6.12
       version: 1.6.12
@@ -99,7 +99,7 @@ importers:
     devDependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.112(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)
+        version: 1.1.114(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
         version: 2.5.55
@@ -133,7 +133,7 @@ importers:
     dependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.112(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)
+        version: 1.1.114(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)
       '@milaboratories/helpers':
         specifier: 'catalog:'
         version: 1.6.12
@@ -988,8 +988,8 @@ packages:
     resolution: {integrity: sha512-kgHk5h9g4GboJ2DklNl+0P/PSLLj2JWltFbqK/RgfAq5857IwwCdpD179G44LiekrU6bSqC6q8Z2HHZs/229rQ==}
     engines: {node: '>=20.3.0'}
 
-  '@milaboratories/graph-maker@1.1.112':
-    resolution: {integrity: sha512-jZNFDRij5xfvIRe8cM4MtaTUB0AnDsb30XwZDFZNLpo8WLnQDBYbQkfBGaLQfYs11Kd4IWrDvgQkrcTRyjh8Vg==}
+  '@milaboratories/graph-maker@1.1.114':
+    resolution: {integrity: sha512-5v6oGE+D567e1N6Qromc89iGO6JLNENNIlmbG+ucEIcO00D5yFWzP9N03gpWwOx9fWp/BNr5hRXFNreIafDtYA==}
 
   '@milaboratories/helpers@1.6.12':
     resolution: {integrity: sha512-1aUP1nMIe97ypPugSCf7r20JIl9W0ookYo0J5KI1yWADEcYadb9DDAfMs7HjIw1lAriumdvl+LE4rsfyAmzozA==}
@@ -997,6 +997,9 @@ packages:
 
   '@milaboratories/miplots4@1.0.108':
     resolution: {integrity: sha512-r4keZgLB79APjY2KlqW7aM+O59FBkUhTe5otIBzUn+2W972Swoeea9j4XoA5mOEzh/6ehCMwFDXHWnJ2BT5qRg==}
+
+  '@milaboratories/miplots4@1.0.110':
+    resolution: {integrity: sha512-vY8Dv922gjM1Lhs5Ksqh+wLH40Dq+8q+jYM41qBd3+DZ1CNQisRL0kC43NaNSkC3u6TQcvvrJy1+vCLUN9jD8A==}
 
   '@milaboratories/pf-plots@1.1.18':
     resolution: {integrity: sha512-NebVPQaZrdqf3Mzcm5eD9rft8ZMOsrK1O04zeMtXGbnH0l84FBp/f5dakL66aWKyOJBL3VooStCtgqNpGBExwQ==}
@@ -6065,11 +6068,11 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.23.8
 
-  '@milaboratories/graph-maker@1.1.112(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)':
+  '@milaboratories/graph-maker@1.1.114(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)':
     dependencies:
       '@ag-grid-community/core': 32.3.3
       '@milaboratories/helpers': 1.6.12
-      '@milaboratories/miplots4': 1.0.108(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
+      '@milaboratories/miplots4': 1.0.110(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
       '@milaboratories/pf-plots': 1.1.18
       '@platforma-sdk/model': 1.34.0
       '@platforma-sdk/ui-vue': 1.34.4(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)
@@ -6090,6 +6093,40 @@ snapshots:
   '@milaboratories/helpers@1.6.12': {}
 
   '@milaboratories/miplots4@1.0.108(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)':
+    dependencies:
+      '@d3fc/d3fc-chart': 5.1.9(d3-array@3.2.4)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(d3-scale@4.0.2)(d3-selection@3.0.0)(d3-shape@3.2.0)
+      '@d3fc/d3fc-pointer': 3.0.3(d3-dispatch@3.0.1)(d3-selection@3.0.0)
+      '@d3fc/d3fc-webgl': 3.2.1(d3-scale@4.0.2)(d3-shape@3.2.0)
+      '@stdlib/stats-anova1': 0.2.2
+      '@stdlib/stats-kruskal-test': 0.2.2
+      '@stdlib/stats-ttest': 0.2.2
+      '@stdlib/stats-ttest2': 0.2.2
+      '@stdlib/stats-wilcoxon': 0.2.2
+      '@types/d3-polygon': 3.0.2
+      d3-array: 3.2.4
+      d3-axis: 3.0.0
+      d3-color: 3.1.0
+      d3-format: 3.1.0
+      d3-hierarchy: 3.1.2
+      d3-polygon: 3.0.1
+      d3-quadtree: 3.0.1
+      d3-random: 3.0.1
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-shape: 3.2.0
+      d3-zoom: 3.0.0
+      lodash: 4.17.21
+      rbush: 4.0.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - d3-dispatch
+      - d3-path
+      - d3-scale-chromatic
+      - supports-color
+
+  '@milaboratories/miplots4@1.0.110(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)':
     dependencies:
       '@d3fc/d3fc-chart': 5.1.9(d3-array@3.2.4)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(d3-scale@4.0.2)(d3-selection@3.0.0)(d3-shape@3.2.0)
       '@d3fc/d3fc-pointer': 3.0.3(d3-dispatch@3.0.1)(d3-selection@3.0.0)

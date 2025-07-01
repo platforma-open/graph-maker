@@ -7,17 +7,17 @@ packages:
 
 catalog:
   '@platforma-sdk/tengo-builder': ^2.1.10
-  '@platforma-sdk/block-tools': ^2.5.55
+  '@platforma-sdk/block-tools': ^2.5.59
 
 
-  '@platforma-sdk/workflow-tengo': ^4.8.0
-  '@platforma-sdk/model': ^1.37.0
-  '@platforma-sdk/test': ^1.37.0
+  '@platforma-sdk/workflow-tengo': ^4.9.1
+  '@platforma-sdk/model': ^1.37.2
+  '@platforma-sdk/test': ^1.37.9
 
 
-  '@milaboratories/graph-maker': ^1.1.123
-  '@platforma-sdk/ui-vue': ^1.36.0
-  '@milaboratories/helpers': ^1.6.12
+  '@milaboratories/graph-maker': ^1.1.127
+  '@platforma-sdk/ui-vue': ^1.37.10
+  '@milaboratories/helpers': ^1.6.15
   '@milaboratories/software-pframes-conv': ^1.5.6
 
   'sass': ^1.89.2

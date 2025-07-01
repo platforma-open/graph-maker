@@ -1,5 +1,12 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.42
+
+### Patch Changes
+
+- Updated dependencies [0f9a852]
+  - @platforma-open/milaboratories.graph-maker.ui@0.3.38
+
 ## 1.4.41
 
 ### Patch Changes

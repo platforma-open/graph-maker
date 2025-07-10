@@ -6,15 +6,13 @@ packages:
   - test
 
 catalog:
+  '@milaboratories/ts-configs': ^1.0.4
+  '@milaboratories/build-configs': ^1.0.4
   '@platforma-sdk/tengo-builder': ^2.1.12
   '@platforma-sdk/block-tools': ^2.5.61
-
-
   '@platforma-sdk/workflow-tengo': ^4.9.2
   '@platforma-sdk/model': ^1.39.8
   '@platforma-sdk/test': ^1.39.15
-
-
   '@milaboratories/graph-maker': ^1.1.132
   '@platforma-sdk/ui-vue': ^1.39.16
   '@milaboratories/helpers': ^1.6.17
@@ -22,7 +20,7 @@ catalog:
 
   'sass': ^1.89.2
 
-  'vue': ^3.5.14
+  'vue': ^3.5.17
   'vue-tsc': ^2.2.10
 
   'zod': ^3.23.8

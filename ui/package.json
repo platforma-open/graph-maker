@@ -10,17 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@milaboratories/graph-maker": "catalog:",
     "@milaboratories/helpers": "catalog:",
-    "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
+    "@milaboratories/graph-maker": "catalog:",
     "@platforma-sdk/ui-vue": "catalog:",
+    "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
     "vue": "catalog:"
   },
   "devDependencies": {
+    "@milaboratories/build-configs": "catalog:",
+    "@milaboratories/ts-configs": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "sass": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
+    "vitest": "catalog:",
     "vue-tsc": "catalog:"
   }
 }

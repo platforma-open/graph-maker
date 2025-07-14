@@ -18,6 +18,9 @@ catalogs:
     '@milaboratories/helpers':
       specifier: ^1.6.17
       version: 1.6.17
+    '@milaboratories/ts-configs':
+      specifier: ^1.0.4
+      version: 1.0.4
     '@platforma-sdk/block-tools':
       specifier: ^2.5.61
       version: 2.5.61
@@ -63,9 +66,6 @@ catalogs:
     vue-tsc:
       specifier: ^2.2.10
       version: 2.2.10
-
-overrides:
-  '@milaboratories/graph-maker': link:/Users/aleksandr/Projects/MILAB/graph-maker/
 
 importers:
 
@@ -189,6 +189,9 @@ importers:
         version: 2.1.12
 
 packages:
+
+  '@ag-grid-community/core@32.3.5':
+    resolution: {integrity: sha512-RGL3RyPCKC4R2fcG1gXdk7rs+CXig23wufTFJfbE46aQDxg941ww07G0cDS5Z5u/6btM9GJkxlwcR0JVEI003A==}
 
   '@aws-crypto/crc32@5.2.0':
     resolution: {integrity: sha512-nLbCWqQNgUiwwtFsen1AdzAtvuLRsQS8rYgMuxCrdKf9kOssamGLuPwyTY9wyYblNr9+1XM8v6zoDTPPSIeANg==}
@@ -3188,6 +3191,9 @@ packages:
     engines: {node: '>=0.10.0', npm: '>2.7.0'}
     os: [aix, darwin, freebsd, linux, macos, openbsd, sunos, win32, windows]
 
+  '@types/argparse@1.0.38':
+    resolution: {integrity: sha512-ebDJ9b0e702Yr7pWgB0jzm+CX4Srzz8RcXtLJDJB+BSccqMa36uyH/zUsSYao5+BD1ytv3k3rPYCq4mAE1hsXA==}
+
   '@types/d3-array@3.2.1':
     resolution: {integrity: sha512-Y2Jn2idRrLzUfAKV2LyRImR+y4oa2AntrgID95SHJxuMUrkNXmanDSed71sRNZysveJVt1hLLemQZIady0FpEg==}
 
@@ -3321,6 +3327,9 @@ packages:
 
   '@types/react@18.3.23':
     resolution: {integrity: sha512-/LDXMQh55EzZQ0uVAZmKKhfENivEvWz6E+EYzh+/MCjMhNsotd+ZHhBGIjFDTi6+fz0OhQQQLbTgdQIxxCsC0w==}
+
+  '@types/resolve@1.20.2':
+    resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
   '@types/semver@7.7.0':
     resolution: {integrity: sha512-k107IF4+Xr7UHjwDc7Cfd6PRQfbdkiRabXGRjo07b4WyPahFBZCZ1sE+BNxYIJPPg73UkfOsVOLwqVc/6ETrIA==}
@@ -3552,6 +3561,9 @@ packages:
 
   ag-charts-locale@11.3.2:
     resolution: {integrity: sha512-6DrHD53PfdVNqFAlmNkHTnlQ9QY9EzME0vvaiotUpO8boKflGivgqmfx/uNTp6AsvOrsnRBBZW4b4XSg0LKG2w==}
+
+  ag-charts-types@10.3.5:
+    resolution: {integrity: sha512-DtvV+IS4RlocGV2IcaQOe/eM6eBGGCvkLnwxGkDxKa8ddxivv90fwlfPxK0O5XnVectiKtWFfOw35Cm0k+4vMw==}
 
   ag-charts-types@11.3.2:
     resolution: {integrity: sha512-trPGqgGYiTeLgtf9nLuztDYOPOFOLbqHn1g2D99phf7QowcwdX0TPx0wfWG8Hm90LjB8IH+G2s3AZe2vrdAtMQ==}
@@ -4810,6 +4822,10 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
 
+  require-from-string@2.0.2:
+    resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
+    engines: {node: '>=0.10.0'}
+
   resize-observer-polyfill@1.5.1:
     resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
 
@@ -5499,6 +5515,11 @@ packages:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
+
+  '@ag-grid-community/core@32.3.5':
+    dependencies:
+      ag-charts-types: 10.3.5
+      tslib: 2.7.0
 
   '@aws-crypto/crc32@5.2.0':
     dependencies:
@@ -6519,8 +6540,101 @@ snapshots:
 
   '@microsoft/api-extractor-model@7.30.6(@types/node@20.16.15)':
     dependencies:
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.13.1(@types/node@20.16.15)
+    transitivePeerDependencies:
+      - '@types/node'
+
+  '@microsoft/api-extractor-model@7.30.6(@types/node@22.7.5)':
+    dependencies:
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.13.1(@types/node@22.7.5)
+    transitivePeerDependencies:
+      - '@types/node'
+    optional: true
+
+  '@microsoft/api-extractor@7.52.8(@types/node@20.16.15)':
+    dependencies:
+      '@microsoft/api-extractor-model': 7.30.6(@types/node@20.16.15)
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.13.1(@types/node@20.16.15)
+      '@rushstack/rig-package': 0.5.3
+      '@rushstack/terminal': 0.15.3(@types/node@20.16.15)
+      '@rushstack/ts-command-line': 5.0.1(@types/node@20.16.15)
+      lodash: 4.17.21
+      minimatch: 3.0.8
+      resolve: 1.22.8
+      semver: 7.5.4
+      source-map: 0.6.1
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - '@types/node'
+
+  '@microsoft/api-extractor@7.52.8(@types/node@22.7.5)':
+    dependencies:
+      '@microsoft/api-extractor-model': 7.30.6(@types/node@22.7.5)
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.13.1(@types/node@22.7.5)
+      '@rushstack/rig-package': 0.5.3
+      '@rushstack/terminal': 0.15.3(@types/node@22.7.5)
+      '@rushstack/ts-command-line': 5.0.1(@types/node@22.7.5)
+      lodash: 4.17.21
+      minimatch: 3.0.8
+      resolve: 1.22.8
+      semver: 7.5.4
+      source-map: 0.6.1
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - '@types/node'
+    optional: true
+
+  '@microsoft/tsdoc-config@0.17.1':
+    dependencies:
+      '@microsoft/tsdoc': 0.15.1
+      ajv: 8.12.0
+      jju: 1.4.0
+      resolve: 1.22.8
+
+  '@microsoft/tsdoc@0.15.1': {}
+
+  '@milaboratories/biowasm-tools@1.1.0':
+    dependencies:
       comlink: 4.4.2
       wasm-feature-detect: 1.8.0
+
+  '@milaboratories/build-configs@1.0.4(@microsoft/api-extractor@7.52.8(@types/node@20.16.15))(postcss@8.5.6)(rollup@4.40.1)(sass@1.89.2)(vue@3.5.17(typescript@5.8.3))(yaml@2.7.0)':
+    dependencies:
+      '@rollup/plugin-node-resolve': 16.0.1(rollup@4.40.1)
+      '@types/node': 20.16.15
+      '@vitejs/plugin-vue': 5.2.4(vite@6.3.5(@types/node@20.16.15)(sass@1.89.2)(yaml@2.7.0))(vue@3.5.17(typescript@5.8.3))
+      rollup-plugin-node-externals: 8.0.1(rollup@4.40.1)
+      rollup-plugin-sourcemaps2: 0.5.2(@types/node@20.16.15)(rollup@4.40.1)
+      tsup: 8.3.5(@microsoft/api-extractor@7.52.8(@types/node@20.16.15))(postcss@8.5.6)(typescript@5.5.4)(yaml@2.7.0)
+      typescript: 5.5.4
+      vite: 6.3.5(@types/node@20.16.15)(sass@1.89.2)(yaml@2.7.0)
+      vite-plugin-css-injected-by-js: 3.5.2(vite@6.3.5(@types/node@20.16.15)(sass@1.89.2)(yaml@2.7.0))
+      vite-plugin-dts: 4.5.4(@types/node@20.16.15)(rollup@4.40.1)(typescript@5.5.4)(vite@6.3.5(@types/node@20.16.15)(sass@1.89.2)(yaml@2.7.0))
+    transitivePeerDependencies:
+      - '@microsoft/api-extractor'
+      - '@swc/core'
+      - jiti
+      - less
+      - lightningcss
+      - postcss
+      - rollup
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - vue
+      - yaml
 
   '@milaboratories/computable@2.6.0':
     dependencies:
@@ -6532,19 +6646,19 @@ snapshots:
 
   '@milaboratories/graph-maker@1.1.132(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)':
     dependencies:
-      '@ag-grid-community/core': 32.3.3
+      '@ag-grid-community/core': 32.3.5
       '@milaboratories/helpers': 1.6.17
       '@milaboratories/miplots4': 1.0.125(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
       '@milaboratories/pf-plots': 1.1.23
       '@platforma-sdk/model': 1.39.8
       '@platforma-sdk/ui-vue': 1.39.16(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.8.3)
       '@types/d3-hierarchy': 3.1.7
-      '@vueuse/core': 13.4.0(vue@3.5.14(typescript@5.8.3))
-      ag-grid-vue3: 33.3.2(vue@3.5.14(typescript@5.8.3))
+      '@vueuse/core': 13.5.0(vue@3.5.17(typescript@5.8.3))
+      ag-grid-vue3: 33.3.2(vue@3.5.17(typescript@5.8.3))
       canonicalize: 2.1.0
       d3-hierarchy: 3.1.2
       d3-scale: 4.0.2
-      vue: 3.5.14(typescript@5.8.3)
+      vue: 3.5.17(typescript@5.8.3)
     transitivePeerDependencies:
       - async-validator
       - axios
@@ -6588,7 +6702,7 @@ snapshots:
       '@types/d3-selection': 3.0.11
       '@types/d3-shape': 3.1.7
       '@types/d3-zoom': 3.0.8
-      '@types/lodash': 4.17.19
+      '@types/lodash': 4.17.20
       '@types/node': 18.15.3
       '@types/rbush': 4.0.0
       '@types/react': 18.3.23
@@ -6870,12 +6984,12 @@ snapshots:
       '@types/d3': 7.4.3
       '@types/sortablejs': 1.15.8
       '@vue/test-utils': 2.4.6
-      '@vueuse/core': 13.4.0(vue@3.5.14(typescript@5.8.3))
-      '@vueuse/integrations': 13.4.0(sortablejs@1.15.6)(vue@3.5.14(typescript@5.8.3))
+      '@vueuse/core': 13.5.0(vue@3.5.17(typescript@5.8.3))
+      '@vueuse/integrations': 13.5.0(sortablejs@1.15.6)(vue@3.5.17(typescript@5.8.3))
       d3: 7.9.0
       resize-observer-polyfill: 1.5.1
       sortablejs: 1.15.6
-      vue: 3.5.14(typescript@5.8.3)
+      vue: 3.5.17(typescript@5.8.3)
     transitivePeerDependencies:
       - async-validator
       - axios
@@ -7124,20 +7238,20 @@ snapshots:
       '@milaboratories/uikit': 2.3.6(typescript@5.8.3)
       '@platforma-sdk/model': 1.39.8
       '@types/d3-format': 3.0.4
-      '@types/lodash': 4.17.19
+      '@types/lodash': 4.17.20
       '@types/node': 20.16.15
       '@types/semver': 7.7.0
       '@types/sortablejs': 1.15.8
-      '@vueuse/core': 13.4.0(vue@3.5.14(typescript@5.8.3))
-      '@vueuse/integrations': 13.4.0(sortablejs@1.15.6)(vue@3.5.14(typescript@5.8.3))
+      '@vueuse/core': 13.5.0(vue@3.5.17(typescript@5.8.3))
+      '@vueuse/integrations': 13.5.0(sortablejs@1.15.6)(vue@3.5.17(typescript@5.8.3))
       ag-grid-enterprise: 33.3.2
-      ag-grid-vue3: 33.3.2(vue@3.5.14(typescript@5.8.3))
+      ag-grid-vue3: 33.3.2(vue@3.5.17(typescript@5.8.3))
       canonicalize: 2.1.0
       d3-format: 3.1.0
       lodash: 4.17.21
       lru-cache: 11.1.0
       sortablejs: 1.15.6
-      vue: 3.5.14(typescript@5.8.3)
+      vue: 3.5.17(typescript@5.8.3)
       zod: 3.23.8
     transitivePeerDependencies:
       - async-validator
@@ -9827,6 +9941,8 @@ snapshots:
       '@stdlib/utils-constructor-name': 0.2.2
       '@stdlib/utils-global': 0.2.2
 
+  '@types/argparse@1.0.38': {}
+
   '@types/d3-array@3.2.1': {}
 
   '@types/d3-axis@3.0.6':
@@ -9978,6 +10094,8 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.15
       csstype: 3.1.3
+
+  '@types/resolve@1.20.2': {}
 
   '@types/semver@7.7.0': {}
 
@@ -10158,9 +10276,9 @@ snapshots:
   '@vue/language-core@2.2.0(typescript@5.5.4)':
     dependencies:
       '@volar/language-core': 2.4.11
-      '@vue/compiler-dom': 3.5.14
+      '@vue/compiler-dom': 3.5.17
       '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.14
+      '@vue/shared': 3.5.17
       alien-signals: 0.4.14
       minimatch: 9.0.5
       muggle-string: 0.4.1
@@ -10259,6 +10377,8 @@ snapshots:
 
   ag-charts-locale@11.3.2:
     optional: true
+
+  ag-charts-types@10.3.5: {}
 
   ag-charts-types@11.3.2: {}
 
@@ -11498,6 +11618,8 @@ snapshots:
       type-fest: 4.41.0
 
   require-directory@2.1.1: {}
+
+  require-from-string@2.0.2: {}
 
   resize-observer-polyfill@1.5.1: {}
 

@@ -1,6 +1,7 @@
 {
   "extends": "@milaboratories/ts-configs/browser",
   "compilerOptions": {
+    "customConditions": ["default"],
     "rootDir": "./src",
     "outDir": "./dist",
   },

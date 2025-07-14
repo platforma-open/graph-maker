@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@milaboratories/helpers": "catalog:",
     "@milaboratories/graph-maker": "catalog:",
-    "@platforma-sdk/ui-vue": "catalog:",
+    "@milaboratories/helpers": "catalog:",
     "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
+    "@platforma-sdk/ui-vue": "catalog:",
     "vue": "catalog:"
   },
   "devDependencies": {

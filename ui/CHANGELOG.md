@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.42
+
+### Patch Changes
+
+- 55fab75: global ts vite configs
+
 ## 0.3.41
 
 ### Patch Changes

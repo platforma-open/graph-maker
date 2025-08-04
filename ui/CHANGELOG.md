@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.45
+
+### Patch Changes
+
+- a4cfd51: update graph-maker version
+
 ## 0.3.44
 
 ### Patch Changes

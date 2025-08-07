@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.46
+
+### Patch Changes
+
+- c9d3236: add stacked area chart
+
 ## 0.3.45
 
 ### Patch Changes

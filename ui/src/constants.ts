@@ -1,52 +1,28 @@
-// @ts-ignore
 import box from './assets/icons/Type=Box Plot.svg';
-//@ts-ignore
 import boxBin from './assets/icons/Type=Box + Bin.svg';
-// @ts-ignore
 import box_jitteredDots from './assets/icons/Type=Box + Jitter.svg';
-// @ts-ignore
 import violin from './assets/icons/Type=Violin.svg';
-// @ts-ignore
 import violin_binnedDots from './assets/icons/Type=Violin + Bin.svg';
-// @ts-ignore
 import binnedDots from './assets/icons/Type=Binned Dots.svg';
-// @ts-ignore
 import jitteredDots from './assets/icons/Type=Jittered Dots.svg';
-// @ts-ignore
 import bar from './assets/icons/Type=Bar Chart.svg';
-// @ts-ignore
 import barLine from './assets/icons/Type=Bar Chart + Line.svg';
-// @ts-ignore
 import barError from './assets/icons/Type=Bar Chart + Error.svg';
-// @ts-ignore
 import stackedBar from './assets/icons/Type=Stacked Bar Chart.svg';
-// @ts-ignore
+import stackedArea from './assets/icons/Type=Stacked bar + Stream area.svg';
 import line from './assets/icons/Type=Line.svg';
-// @ts-ignore
 import curve from './assets/icons/Type=Curve.svg';
-// @ts-ignore
 import line_jitteredDots from './assets/icons/Type=Line + Jitt.svg';
-// @ts-ignore
 import line_binnedDots from './assets/icons/Type=Line + Bin.svg';
-// @ts-ignore
 import line_errorbar from './assets/icons/Type=Line + Err.svg';
-// @ts-ignore
 import sina from './assets/icons/Type=Sina Plot.svg';
-// @ts-ignore
 import dots from './assets/icons/Type=Skatter.svg';
-// @ts-ignore
 import curve_dots from './assets/icons/Type=Skatter + Curve.svg';
-// @ts-ignore
 import heatmap from './assets/icons/Type=Heatmap.svg';
-// @ts-ignore
 import heatmapClustered from './assets/icons/Type=Heatmap + Dendrogram.svg';
-// @ts-ignore
 import dendrogram from './assets/icons/Type=Dendrogram.svg';
-// @ts-ignore
 import histogram from './assets/icons/Type=Histogram.svg';
-// @ts-ignore
 import bubble from './assets/icons/Type=Dot Plot.svg';
-// @ts-ignore
 import logo from './assets/icons/Type=Logo.svg';
 import { GraphMakerProps } from '@milaboratories/graph-maker';
 
@@ -63,6 +39,7 @@ export const CHART_TYPES: GraphCardItem[] = [
   { image: barLine, title: 'Bar Chart + Line', id: 'bar_line', description: 'Combines bars and a line to compare values and show trends simultaneously', },
   { image: barError, title: 'Bar Chart + Error Bars', id: 'bar_errorbar', description: 'Shows data comparisons with added variability or uncertainty indicators' },
   { image: stackedBar, title: 'Stacked Bar Chart', id: 'stackedBar', description: 'Compares parts of a whole across categories, layering segments within each bar' },
+  { image: stackedArea, title: 'Stacked Bar + Stream Area', id: 'stackedArea', description: 'Tracks proportions with stacked bars while smooth areas highlight transitions and trends' },
   { image: line, title: 'Line Chart', id: 'line', description: 'Shows trends or changes in data over a continuous range' },
   { image: line_jitteredDots, title: 'Line + Jittered Dots', id: 'line_jitteredDots', description: 'Displays individual data points with added variation alongside the trend line' },
   { image: line_binnedDots, title: 'Line + Binned Dots', id: 'line_binnedDots', description: 'Combines a line with grouped data points to highlight density along the trend' },

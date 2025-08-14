@@ -6,31 +6,31 @@ packages:
   - test
 
 catalog:
-  '@milaboratories/ts-configs': ^1.0.5
-  '@milaboratories/build-configs': ^1.0.5
-  '@platforma-sdk/tengo-builder': ^2.1.14
-  '@platforma-sdk/block-tools': ^2.5.80
-  '@platforma-sdk/workflow-tengo': ^4.17.0
-  '@platforma-sdk/model': ^1.42.10
-  '@platforma-sdk/test': ^1.42.12
-  '@milaboratories/graph-maker': ^1.1.143
-  '@platforma-sdk/ui-vue': ^1.42.10
-  '@milaboratories/helpers': ^1.6.19
+  '@milaboratories/ts-configs': ^1.0.6
+  '@milaboratories/build-configs': ^1.0.8
+  '@platforma-sdk/tengo-builder': ^2.1.15
+  '@platforma-sdk/block-tools': ^2.5.83
+  '@platforma-sdk/workflow-tengo': ^5.0.3
+  '@platforma-sdk/model': ^1.42.22
+  '@platforma-sdk/test': ^1.42.20
+  '@milaboratories/graph-maker': ^1.1.146
+  '@platforma-sdk/ui-vue': ^1.42.21
+  '@milaboratories/helpers': ^1.6.20
   '@milaboratories/software-pframes-conv': ^1.5.6
 
   'sass': ^1.89.2
 
   'vue': ^3.5.17
-  'vue-tsc': ^2.2.10
+  'vue-tsc': ^3.0.5
 
   'zod': ^3.23.8
 
-  'typescript': ^5.8.3
+  'typescript': ^5.9.2
   'tsup': ~8.3.5
   'turbo': ^2.5.5
 
-  'vite': ^6.3.5
-  'vitest': ^3.1.3
-  '@vitejs/plugin-vue': ^5.2.4
+  'vite': ^7.1.2
+  'vitest': ^3.2.4
+  '@vitejs/plugin-vue': ^6.0.1
 
   '@changesets/cli': ^2.29.5

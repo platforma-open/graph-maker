@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
-  "version": "1.4.53",
+  "version": "1.4.54",
   "scripts": {
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
     "build": "rm -rf ./block-pack && block-tools pack",

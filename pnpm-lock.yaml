@@ -24,6 +24,9 @@ catalogs:
     '@platforma-sdk/block-tools':
       specifier: ^2.6.3
       version: 2.6.3
+    '@platforma-sdk/blocks-deps-updater':
+      specifier: ^2.0.0
+      version: 2.0.0
     '@platforma-sdk/model':
       specifier: ^1.43.0
       version: 1.43.0
@@ -74,6 +77,9 @@ importers:
       '@changesets/cli':
         specifier: 'catalog:'
         version: 2.29.7(@types/node@22.7.5)
+      '@platforma-sdk/blocks-deps-updater':
+        specifier: 'catalog:'
+        version: 2.0.0
       turbo:
         specifier: 'catalog:'
         version: 2.5.5
@@ -1264,6 +1270,10 @@ packages:
 
   '@platforma-sdk/block-tools@2.6.3':
     resolution: {integrity: sha512-oZs1nbH7Dpvc9M1nMm4+NrUiT/hhQNLLuq5YkZnUGeUHTE5utgWmld4ozBfENAH6Zg9cInGqz6ZzXvBuDRXP6g==}
+    hasBin: true
+
+  '@platforma-sdk/blocks-deps-updater@2.0.0':
+    resolution: {integrity: sha512-cef5ysA011ub5bofbWQJ3EM9rZ7A4ixGMKhFIsF2VNwYrCu5XRHsayA6vDeFOBjX4Jnq9D0QztW0JUxXD73bpw==}
     hasBin: true
 
   '@platforma-sdk/model@1.43.0':
@@ -7368,6 +7378,10 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
       - supports-color
+
+  '@platforma-sdk/blocks-deps-updater@2.0.0':
+    dependencies:
+      yaml: 2.8.1
 
   '@platforma-sdk/model@1.43.0':
     dependencies:

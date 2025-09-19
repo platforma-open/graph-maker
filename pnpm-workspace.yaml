@@ -9,16 +9,15 @@ catalog:
   '@milaboratories/ts-configs': ^1.0.6
   '@milaboratories/build-configs': ^1.0.8
   '@platforma-sdk/tengo-builder': ^2.1.19
-  '@platforma-sdk/block-tools': ^2.6.2
+  '@platforma-sdk/block-tools': ^2.6.3
   '@platforma-sdk/workflow-tengo': ^5.2.0
-  '@platforma-sdk/model': ^1.42.51
-  '@platforma-sdk/test': ^1.42.54
-  '@milaboratories/graph-maker': ^1.1.154
-  '@platforma-sdk/ui-vue': ^1.42.53
+  '@platforma-sdk/model': ^1.43.0
+  '@platforma-sdk/test': ^1.43.0
+  '@milaboratories/graph-maker': ^1.1.159
+  '@platforma-sdk/ui-vue': ^1.43.0
   '@milaboratories/helpers': ^1.8.0
-  '@milaboratories/software-pframes-conv': ^2.2.7
-  '@platforma-sdk/blocks-deps-updater': ^2.0.0
-  
+  '@milaboratories/software-pframes-conv': ^1.5.6
+
   'sass': ^1.89.2
 
   'vue': ^3.5.17
@@ -34,4 +33,4 @@ catalog:
   'vitest': ^3.2.4
   '@vitejs/plugin-vue': ^6.0.1
 
-  '@changesets/cli': ^2.29.6
+  '@changesets/cli': ^2.29.7

@@ -17,6 +17,7 @@ catalog:
   '@platforma-sdk/ui-vue': ^1.43.0
   '@milaboratories/helpers': ^1.8.0
   '@milaboratories/software-pframes-conv': ^2.2.7
+  "@platforma-sdk/blocks-deps-updater": ^2.0.0
 
   'sass': ^1.89.2
 

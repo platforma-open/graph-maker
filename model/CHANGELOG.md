@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.model
 
+## 1.2.9
+
+### Patch Changes
+
+- d84334d: technical release
+
 ## 1.2.8
 
 ### Patch Changes

@@ -122,7 +122,7 @@ importers:
   test:
     dependencies:
       this-block:
-        specifier: workspace:@platforma-open/milaboratories.graph-maker@^
+        specifier: workspace:@platforma-open/milaboratories.graph-maker@*
         version: link:../block
     devDependencies:
       '@platforma-sdk/test':

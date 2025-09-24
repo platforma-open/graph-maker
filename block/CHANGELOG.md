@@ -1,5 +1,15 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.60
+
+### Patch Changes
+
+- d84334d: technical release
+- Updated dependencies [d84334d]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.9
+  - @platforma-open/milaboratories.graph-maker.ui@0.3.56
+  - @platforma-open/milaboratories.graph-maker.workflow@1.2.2
+
 ## 1.4.59
 
 ### Patch Changes

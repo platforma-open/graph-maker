@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories..test
 
+## 1.2.2
+
+### Patch Changes
+
+- d84334d: technical release
+
 ## 1.2.1
 
 ### Patch Changes

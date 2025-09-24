@@ -1316,6 +1316,7 @@ packages:
   '@platforma-sdk/block-tools@2.6.3':
     resolution: {integrity: sha512-oZs1nbH7Dpvc9M1nMm4+NrUiT/hhQNLLuq5YkZnUGeUHTE5utgWmld4ozBfENAH6Zg9cInGqz6ZzXvBuDRXP6g==}
     hasBin: true
+
   '@platforma-sdk/block-tools@2.6.7':
     resolution: {integrity: sha512-48EE+IUuhWaVPWTRehysd6rCxM8lwhpYWZf6sxlx1SlTBc7sFRvxTX+yY747G+e3SUrJ1UUVXhkPo96xslLaIw==}
     hasBin: true

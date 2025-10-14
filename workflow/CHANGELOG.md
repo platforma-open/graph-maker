@@ -1,5 +1,13 @@
 # @platforma-open/milaboratories.graph-maker.workflow
 
+## 1.2.3
+
+### Patch Changes
+
+- 313688f: technical release
+- b00944f: technical release
+- 0d8ea0e: technical release
+
 ## 1.2.2
 
 ### Patch Changes

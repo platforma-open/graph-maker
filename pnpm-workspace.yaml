@@ -9,13 +9,13 @@ catalog:
   '@milaboratories/ts-configs': ^1.0.6
   '@milaboratories/build-configs': ^1.0.8
   '@platforma-sdk/tengo-builder': ^2.3.0
-  '@platforma-sdk/block-tools': ^2.6.8
+  '@platforma-sdk/block-tools': ^2.6.14
   '@platforma-sdk/workflow-tengo': ^5.3.3
-  '@platforma-sdk/model': ^1.43.21
+  '@platforma-sdk/model': ^1.44.5
   '@platforma-sdk/test': ^1.44.7
-  '@milaboratories/graph-maker': ^1.1.164
-  '@platforma-sdk/ui-vue': ^1.43.21
-  '@milaboratories/helpers': ^1.9.0
+  '@milaboratories/graph-maker': ^1.1.169
+  '@platforma-sdk/ui-vue': ^1.44.6
+  '@milaboratories/helpers': ^1.12.0
   '@milaboratories/software-pframes-conv': ^2.2.7
   '@platforma-sdk/blocks-deps-updater': ^2.0.0
 

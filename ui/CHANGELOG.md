@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.63
+
+### Patch Changes
+
+- 6999747: update graph-maker version
+
 ## 0.3.62
 
 ### Patch Changes

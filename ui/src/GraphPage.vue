@@ -33,19 +33,20 @@ const state = computed({
   }
 });
 
-const removeSection = () => {
+const removeSection = async () => {
+  const deletedId = app.queryParams.id;
   let lastId;
   for (const graph of ui.model.graphs) {
     if (graph.id !== app.queryParams.id) {
       lastId = graph.id;
     }
   }
-  app.updateUiState(ui => {
-    ui.graphs = ui.graphs.filter(it => it.id !== app.queryParams.id);
+
+  await app.updateUiState(ui => {
+    ui.graphs = ui.graphs.filter(it => it.id !== deletedId);
     return ui;
-  });
-  // @ts-ignore
-  app.navigateTo(lastId ? `/graph?id=${lastId}` : '/');
+  });// @ts-ignore
+  await app.navigateTo(lastId ? `/graph?id=${lastId}` : '/');
 };
 
 // watch(() => app.model.outputs.pFrame, async (handle) => {

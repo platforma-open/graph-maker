@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.66
+
+### Patch Changes
+
+- eb350e1: fix chart deleting
+
 ## 0.3.65
 
 ### Patch Changes

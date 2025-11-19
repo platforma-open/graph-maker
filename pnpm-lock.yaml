@@ -13,8 +13,8 @@ catalogs:
       specifier: ^1.0.8
       version: 1.0.8
     '@milaboratories/graph-maker':
-      specifier: ^1.1.181
-      version: 1.1.181
+      specifier: ^1.1.182
+      version: 1.1.182
     '@milaboratories/helpers':
       specifier: ^1.12.0
       version: 1.12.0
@@ -111,7 +111,7 @@ importers:
     devDependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.181(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
+        version: 1.1.182(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
         version: 2.6.22
@@ -145,7 +145,7 @@ importers:
     dependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.181(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
+        version: 1.1.182(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
       '@milaboratories/helpers':
         specifier: 'catalog:'
         version: 1.12.0
@@ -907,8 +907,8 @@ packages:
     resolution: {integrity: sha512-xqm4dhODYfk6e15ka4dVDWwOJLKK0+lsDN3Cwy/S6pYgw/X1OUN0nCRgsKmU+Qt2ZtBx+tTJv4/X2JbAe08Jiw==}
     engines: {node: '>=22.19.0'}
 
-  '@milaboratories/graph-maker@1.1.181':
-    resolution: {integrity: sha512-2zccSfYfe5ccxmiBW9KA3AMGoN1v32cif1A3ANLVWjwt3tgSNKbjCahxDfKsCP7ayve8M3wr41DD9OJa0fS3vw==}
+  '@milaboratories/graph-maker@1.1.182':
+    resolution: {integrity: sha512-zkY9AHDD26yTSN4Zb8o7XroMVQ7O//gcWOEs8SKhWLZF/4tCdGSQnQO7EGbjE0EL29aayQj060Y6RtaacUIghg==}
 
   '@milaboratories/helpers@1.12.0':
     resolution: {integrity: sha512-Eg3AQMJbVClYhdvhogdlW3Ys9EdLLl8ZTqG675iLwoO64ZJcQOAnIPjXwl4zJ/bZWx4nEhRF9AvwxRdc08fikQ==}
@@ -921,8 +921,8 @@ packages:
     resolution: {integrity: sha512-mQksz5yxc5NGDS/HN7jQjrTBeIq0NKLO6NC/I/ztskujs9x28tFsdV23FvH0cPZUfG26//hPdN5erpazkTdfjw==}
     engines: {node: '>=22.19.0'}
 
-  '@milaboratories/pf-plots@1.1.46':
-    resolution: {integrity: sha512-iSkmFFO9XsrIMlou6N0K1G9Th1k/rdADmcgAuXll3or0Z8Y+foBJ6ej79A/H9CHzsWgb/ZtRmtFEfkCSfR9a/w==}
+  '@milaboratories/pf-plots@1.1.47':
+    resolution: {integrity: sha512-ZJyYMy4LPsg0lJ/jdfxo+DI7ovi3fzVWHfCuVdig2TmzMexckhtyARsezVI1tFhMEwcvrfAESCDE/EyDzJTg/A==}
 
   '@milaboratories/pframes-rs-node@1.0.103':
     resolution: {integrity: sha512-MwY8EOAxtdFBHAFYCTt9VwJcP1JK2GC+teTuwZVzlSpTp0t8FOVGDhmAnf5Zb5pQFiXMav8hF3xbw6n2DZunfw==}
@@ -964,9 +964,6 @@ packages:
 
   '@milaboratories/pl-model-common@1.21.4':
     resolution: {integrity: sha512-k0dqRSWF2npDXEI00F+on6g/B6LDIOlRTJTZ5Pc+vyj9n4GvlR2lT93GKJwJXEx4jok8H//2FwZabC+EFxTYpQ==}
-
-  '@milaboratories/pl-model-common@1.21.5':
-    resolution: {integrity: sha512-bPF/tzL2rPc6LmaVH1BVdfeZbE4Mtfaje2ZHrFQDLtnzuJEPmze06xslzkYQnfMxLaB/ou+Y36YgVYQgt15aXw==}
 
   '@milaboratories/pl-model-common@1.21.7':
     resolution: {integrity: sha512-VMekzK2oGPN3e64w10zSgXzxYkMlKyoSSkXWf5AvaqaZvGnQariOFEl1TRJMzNaVKJn82FFrvyxgqJSEDsWsJQ==}
@@ -6573,12 +6570,12 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.23.8
 
-  '@milaboratories/graph-maker@1.1.181(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)':
+  '@milaboratories/graph-maker@1.1.182(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)':
     dependencies:
       '@ag-grid-community/core': 32.3.9
       '@milaboratories/helpers': 1.12.0
       '@milaboratories/miplots4': 1.0.158(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
-      '@milaboratories/pf-plots': 1.1.46
+      '@milaboratories/pf-plots': 1.1.47
       '@platforma-sdk/model': 1.45.35
       '@platforma-sdk/ui-vue': 1.45.36(sortablejs@1.15.6)(typescript@5.9.2)
       '@types/d3-hierarchy': 3.1.7
@@ -6658,9 +6655,9 @@ snapshots:
       - encoding
       - supports-color
 
-  '@milaboratories/pf-plots@1.1.46':
+  '@milaboratories/pf-plots@1.1.47':
     dependencies:
-      '@milaboratories/pl-model-common': 1.21.5
+      '@milaboratories/pl-model-common': 1.21.7
       '@platforma-sdk/model': 1.45.35
       canonicalize: 2.1.0
       lodash: 4.17.21
@@ -6819,12 +6816,6 @@ snapshots:
       - supports-color
 
   '@milaboratories/pl-model-common@1.21.4':
-    dependencies:
-      '@milaboratories/pl-error-like': 1.12.5
-      canonicalize: 2.1.0
-      zod: 3.23.8
-
-  '@milaboratories/pl-model-common@1.21.5':
     dependencies:
       '@milaboratories/pl-error-like': 1.12.5
       canonicalize: 2.1.0

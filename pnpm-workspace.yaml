@@ -13,8 +13,8 @@ catalog:
   '@platforma-sdk/workflow-tengo': ^5.6.1
   '@platforma-sdk/model': ^1.45.35
   '@platforma-sdk/test': ^1.45.35
-  '@milaboratories/graph-maker': ^1.1.182
-  '@platforma-sdk/ui-vue': ^1.45.36
+  '@milaboratories/graph-maker': ^1.1.183
+  '@platforma-sdk/ui-vue': ^1.45.37
   '@milaboratories/helpers': ^1.12.0
   '@milaboratories/software-pframes-conv': ^2.2.9
   '@platforma-sdk/blocks-deps-updater': ^2.0.0

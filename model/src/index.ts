@@ -2,7 +2,6 @@ import { GraphMakerProps, GraphMakerState } from '@milaboratories/graph-maker';
 import {
   BlockModel,
   type InferOutputsType,
-  PColumnCollection,
   RenderCtx,
   createPFrameForGraphs
 } from '@platforma-sdk/model';
@@ -43,42 +42,6 @@ export const platforma = BlockModel.create('Heavy')
 
   .output('pFrame', (ctx) => {
     return createPFrameForGraphs(ctx);
-  })
-  .output('filteredPFrame', (ctx) => {
-    const mainColumn = ctx.resultPool.selectColumns(
-      (spec) => spec.name === 'pl7.app/vdj/geneHit',
-    )?.[0];
-    if (!mainColumn) {
-      return undefined;
-    }
-    const anchorCtx = ctx.resultPool.resolveAnchorCtx({ main: {
-      ...mainColumn.spec,
-      domain: {},
-      axesSpec: mainColumn.spec.axesSpec.map((s) => ({...s, domain: {}}))
-    }});
-    if (!anchorCtx) {
-      return undefined;
-    }
-    const entries = new PColumnCollection()
-      .addColumnProvider(ctx.resultPool)
-      .addAxisLabelProvider(ctx.resultPool)
-      .getUniversalEntries(
-        [{
-          domainAnchor: 'main',
-          axes: [
-            { anchor: 'main', idx: 0 },
-          ],
-        },
-        {
-          // Include linker columns to connect clonotypes to clusters
-          domainAnchor: 'main',
-          annotations: {
-            'pl7.app/isLinkerColumn': 'true',
-          },
-        }],
-        { anchorCtx, enrichByLinkers: false },
-      );
-    return ctx.createPFrame(entries ?? []);
   })
   .done(2);
 

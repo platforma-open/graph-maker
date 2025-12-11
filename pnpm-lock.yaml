@@ -13,8 +13,8 @@ catalogs:
       specifier: ^1.0.9
       version: 1.0.9
     '@milaboratories/graph-maker':
-      specifier: ^1.1.194
-      version: 1.1.194
+      specifier: ^1.1.195
+      version: 1.1.195
     '@milaboratories/helpers':
       specifier: ^1.12.0
       version: 1.12.0
@@ -111,7 +111,7 @@ importers:
     devDependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.194(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
+        version: 1.1.195(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
         version: 2.6.27
@@ -145,7 +145,7 @@ importers:
     dependencies:
       '@milaboratories/graph-maker':
         specifier: 'catalog:'
-        version: 1.1.194(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
+        version: 1.1.195(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)
       '@milaboratories/helpers':
         specifier: 'catalog:'
         version: 1.12.0
@@ -912,8 +912,8 @@ packages:
     resolution: {integrity: sha512-xqm4dhODYfk6e15ka4dVDWwOJLKK0+lsDN3Cwy/S6pYgw/X1OUN0nCRgsKmU+Qt2ZtBx+tTJv4/X2JbAe08Jiw==}
     engines: {node: '>=22.19.0'}
 
-  '@milaboratories/graph-maker@1.1.194':
-    resolution: {integrity: sha512-P7jQ1XUKfiSkK1bvIScT5l+ceqs4VzgtTtkSp2dFSXAIbgLOB+20DfAEDL4NzZmswTFOXECOd8aRcDFJoGs3sg==}
+  '@milaboratories/graph-maker@1.1.195':
+    resolution: {integrity: sha512-kY8t5KUCo6Vyqk0sKRLc3EEGnqU9fOKnfp6LpMOyQk+4xoSmtqadCAGEyIWZNj9KgR/ALOtUbaiq566joUh7lg==}
 
   '@milaboratories/helpers@1.12.0':
     resolution: {integrity: sha512-Eg3AQMJbVClYhdvhogdlW3Ys9EdLLl8ZTqG675iLwoO64ZJcQOAnIPjXwl4zJ/bZWx4nEhRF9AvwxRdc08fikQ==}
@@ -926,8 +926,8 @@ packages:
     resolution: {integrity: sha512-WAwR4rs2LWBe4xcRK3wIW8k/DMWGZ9kT6MHukY0DNYZhDD3bsTx5m5Qj7E9X7QJpGio6uq7Cix/bQIVvcF/DAg==}
     engines: {node: '>=22.19.0'}
 
-  '@milaboratories/pf-plots@1.1.51':
-    resolution: {integrity: sha512-T8h5Vw0qqxYstNrp6RqheZdaLoRkdK+7fbpLwRu3tQer9GFsP7eq47WgLlhWpTJeFoXWDQoyiNvgpryZqV/Y0g==}
+  '@milaboratories/pf-plots@1.1.52':
+    resolution: {integrity: sha512-KaPpB+b/jpLrpAgwGgWZmMGN18TJ3YzZxyXWIxXw+v6qlMk6HImEnAmHBmhmUTVqgQ0ArcfUcSWGxHr6U3x/kg==}
 
   '@milaboratories/pframes-rs-node@1.0.109':
     resolution: {integrity: sha512-3eqK+/rqx3fyN21bnbMgY+8XgwWTaIjOiySrE5IgUVbCD9rr2OzSnEiLGkGjx/1O0PX6UEZ05St3oYxCsrq6Jw==}
@@ -6482,12 +6482,12 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.23.8
 
-  '@milaboratories/graph-maker@1.1.194(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)':
+  '@milaboratories/graph-maker@1.1.195(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(sortablejs@1.15.6)(typescript@5.9.2)':
     dependencies:
       '@ag-grid-community/core': 32.3.9
       '@milaboratories/helpers': 1.12.0
       '@milaboratories/miplots4': 1.0.162(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
-      '@milaboratories/pf-plots': 1.1.51
+      '@milaboratories/pf-plots': 1.1.52
       '@platforma-sdk/model': 1.47.5
       '@platforma-sdk/ui-vue': 1.47.5(sortablejs@1.15.6)(typescript@5.9.2)
       '@types/d3-hierarchy': 3.1.7
@@ -6567,7 +6567,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@milaboratories/pf-plots@1.1.51':
+  '@milaboratories/pf-plots@1.1.52':
     dependencies:
       '@milaboratories/pl-model-common': 1.21.10
       '@platforma-sdk/model': 1.47.5

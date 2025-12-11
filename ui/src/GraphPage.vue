@@ -6,14 +6,11 @@ import { GraphPageState } from '@platforma-open/milaboratories.graph-maker.model
 
 const app = useApp<`/graph?id=${string}`>();
 
-const ui = app.createUiModel(undefined, () => ({ graphs: [] }));
-
-const graphProps = computed(() => ui.model.graphs.find(it => it.id === app.queryParams.id)?.settings)
+const graphProps = computed(() => app.model.ui.graphs.find(it => it.id === app.queryParams.id)?.settings)
 const state = computed({
   get() {
-    const graphState = ui.model.graphs.find(it => it.id === app.queryParams.id);
+    const graphState = app.model.ui.graphs.find(it => it.id === app.queryParams.id);
     if (!graphState) {
-      console.error(`Missed saved settings for ${app.queryParams.id}, graphs:`, ui.model.graphs);
       return null;
     }
     return {
@@ -22,7 +19,7 @@ const state = computed({
     } as GraphMakerState;
   },
   set(nextState: GraphMakerState) {
-    ui.model.graphs = ui.model.graphs.map((item) => {
+    app.model.ui.graphs = app.model.ui.graphs.map((item) => {
       return item.id === app.queryParams.id ? {
         id: item.id,
         label: nextState.title,
@@ -36,23 +33,17 @@ const state = computed({
 const removeSection = async () => {
   const deletedId = app.queryParams.id;
   let lastId;
-  for (const graph of ui.model.graphs) {
+  for (const graph of app.model.ui.graphs) {
     if (graph.id !== app.queryParams.id) {
       lastId = graph.id;
     }
   }
 
-  await app.updateUiState(ui => {
-    ui.graphs = ui.graphs.filter(it => it.id !== deletedId);
-    return ui;
-  });// @ts-ignore
+  app.model.ui.graphs = app.model.ui.graphs.filter(it => it.id !== deletedId);
+  // @ts-ignore
   await app.navigateTo(lastId ? `/graph?id=${lastId}` : '/');
 };
 
-// watch(() => app.model.outputs.pFrame, async (handle) => {
-//   const list = await platforma?.pFrameDriver.listColumns(handle!);
-//   console.log(list, 'list')
-// }, {immediate: true})
 </script>
 
 <template>

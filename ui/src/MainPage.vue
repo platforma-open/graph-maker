@@ -28,16 +28,28 @@ const addSection = async (
   const defaultTitle = 'My graph ' + id;
   const label = graphTitle.value || defaultTitle;
   isLoading.value = true;
-  await app.updateUiState((ui: UiState) => {
-    if (!ui) {
-      ui = { graphs: [] } as UiState;
-    }
-    ui.graphs = [
-      ...ui.graphs,
-      { id, label, state: { template, title: label }, settings: { chartType, pFrame: undefined } }
-    ];
-    return ui;
-  });
+  console.log('before', JSON.stringify(app.model.ui.graphs, null, 2));
+
+  if (!app.model.ui) {
+    app.model.ui = { graphs: [] } as UiState;
+  } 
+  app.model.ui.graphs = [
+    ...app.model.ui.graphs,
+    { id, label, state: { template, title: label }, settings: { chartType, pFrame: undefined } }
+  ];
+  await app.allSettled();
+  console.log('after', JSON.stringify(app.model.ui.graphs, null, 2));
+
+  // await app.updateUiState((ui: UiState) => {
+  //   if (!ui) {
+  //     ui = { graphs: [] } as UiState;
+  //   }
+  //   ui.graphs = [
+  //     ...ui.graphs,
+  //     { id, label, state: { template, title: label }, settings: { chartType, pFrame: undefined } }
+  //   ];
+  //   return ui;
+  // });
 
   await app.navigateTo(`/graph?id=${id}`);
 };

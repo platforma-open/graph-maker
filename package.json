@@ -21,9 +21,9 @@
     "overrides": {
       "@platforma-sdk/model": "/Users/elenaerokhina/projects/platforma/sdk/model/package.tgz",
       "@milaboratories/pl-model-common": "/Users/elenaerokhina/projects/platforma/lib/model/common/package.tgz",
-      "@milaboratories/graph-maker": "/Users/elenaerokhina/projects/vizualizations/packages/graph-maker/package.tgz",
-      "@milaboratories/miplots4": "/Users/elenaerokhina/projects/vizualizations/packages/miplots4/package.tgz",
-      "@milaboratories/pf-plots": "/Users/elenaerokhina/projects/vizualizations/packages/pf-plots/package.tgz"
+      "@milaboratories/graph-maker": "/Users/elenaerokhina/projects/visualizations/packages/graph-maker/package.tgz",
+      "@milaboratories/miplots4": "/Users/elenaerokhina/projects/visualizations/packages/miplots4/package.tgz",
+      "@milaboratories/pf-plots": "/Users/elenaerokhina/projects/visualizations/packages/pf-plots/package.tgz"
     }
   }
 }

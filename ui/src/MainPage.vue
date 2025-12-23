@@ -38,18 +38,6 @@ const addSection = async (
     { id, label, state: { template, title: label }, settings: { chartType, pFrame: undefined } }
   ];
   await app.allSettled();
-  console.log('after', JSON.stringify(app.model.ui.graphs, null, 2));
-
-  // await app.updateUiState((ui: UiState) => {
-  //   if (!ui) {
-  //     ui = { graphs: [] } as UiState;
-  //   }
-  //   ui.graphs = [
-  //     ...ui.graphs,
-  //     { id, label, state: { template, title: label }, settings: { chartType, pFrame: undefined } }
-  //   ];
-  //   return ui;
-  // });
 
   await app.navigateTo(`/graph?id=${id}`);
 };
@@ -72,7 +60,7 @@ function onTitleChange(e: Event) {
 </script>
 
 <template>
-  <pl-block-page :bodyLoading="isLoading" >
+  <pl-block-page :bodyLoading="isLoading ? {variant: 'graph', title: 'Creating new graph page...', subtitle: ''} : undefined" >
     <div class="container_main_page">
       <div class="chart_header" :class="{ empty: !graphTitle }">
         <input

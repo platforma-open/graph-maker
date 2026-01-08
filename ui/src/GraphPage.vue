@@ -54,6 +54,7 @@ const removeSection = async () => {
       :pFrame="app.model.outputs.pFrame"
       :chartType="graphProps.chartType"
       :allowDeleting="true"
+      :allowTitleEditing="true"
       :dataColumnPredicate="() => true"
       @delete-this-graph="removeSection"
     />

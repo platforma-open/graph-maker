@@ -40,7 +40,7 @@ export const platforma = BlockModel.create('Heavy')
     ];
   })
 
-  .output('pFrame', (ctx) => {
+  .outputWithStatus('pFrame', (ctx) => {
     return createPFrameForGraphs(ctx);
   })
   .done(2);

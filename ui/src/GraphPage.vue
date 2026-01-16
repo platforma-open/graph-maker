@@ -53,7 +53,7 @@ const removeSection = async () => {
       v-model="state"
       :pFrame="app.model.outputs.pFrame"
       :chartType="graphProps.chartType"
-      :allowDeleting="true"
+      :allowChartDeleting="true"
       :allowTitleEditing="true"
       :dataColumnPredicate="() => true"
       @delete-this-graph="removeSection"

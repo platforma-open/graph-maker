@@ -1,7 +1,7 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker.ui",
   "private": true,
-  "version": "0.3.78",
+  "version": "0.3.79",
   "type": "module",
   "scripts": {
     "dev": "vite",

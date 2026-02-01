@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.model
 
+## 1.2.14
+
+### Patch Changes
+
+- 970eb94: fix loading
+
 ## 1.2.13
 
 ### Patch Changes

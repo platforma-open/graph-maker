@@ -1,5 +1,13 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.78
+
+### Patch Changes
+
+- 970eb94: fix loading
+- Updated dependencies [970eb94]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.14
+
 ## 0.3.77
 
 ### Patch Changes

@@ -23,7 +23,7 @@ export const platforma = BlockModel.create('Heavy')
   .withUiState<UiState>({ graphs: [] })
   .withArgs<BlockArgs>({})
 
-  .sections((ctx: RenderCtx<any, any>) => {
+  .sections((ctx) => {
     const graphRoutes = (ctx.uiState?.graphs ?? []).map((gs: GraphPageState) => ({
       type: 'link' as const,
       href: `/graph?id=${gs.id}` as const,
@@ -40,7 +40,7 @@ export const platforma = BlockModel.create('Heavy')
     ];
   })
 
-  .outputWithStatus('pFrame', (ctx) => {
+  .output('pFrame', (ctx) => {
     return createPFrameForGraphs(ctx);
   })
   .done(2);

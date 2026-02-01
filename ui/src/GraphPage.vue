@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useApp } from './app';
 import { GraphMakerState, GraphMaker } from '@milaboratories/graph-maker';
 import { GraphPageState } from '@platforma-open/milaboratories.graph-maker.model';
+import { OutputWithStatus, PFrameHandle } from '@platforma-sdk/model';
 
 const app = useApp<`/graph?id=${string}`>();
 
@@ -44,6 +45,16 @@ const removeSection = async () => {
   await app.navigateTo(lastId ? `/graph?id=${lastId}` : '/');
 };
 
+const cachedPFrame = ref<PFrameHandle | undefined>(app.model.outputs.pFrame);
+watch(() => app.model.outputs.pFrame, async (handle) => {
+  if (handle) {
+    cachedPFrame.value = handle;
+  }
+}, {immediate: true})
+
+const graphMakerPframe = computed(() => {
+  return {ok: true, value: cachedPFrame.value, stable: cachedPFrame.value !== undefined} as OutputWithStatus<PFrameHandle>;
+});
 </script>
 
 <template>
@@ -51,7 +62,7 @@ const removeSection = async () => {
     <graph-maker
       v-if="state && graphProps"
       v-model="state"
-      :pFrame="app.model.outputs.pFrame"
+      :pFrame="graphMakerPframe"
       :chartType="graphProps.chartType"
       :allowChartDeleting="true"
       :allowTitleEditing="true"

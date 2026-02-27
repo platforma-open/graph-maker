@@ -17,6 +17,12 @@
     "@platforma-sdk/blocks-deps-updater": "catalog:"
   },
   "packageManager": "pnpm@9.12.0",
+  "pnpm": {
+    "overrides": {
+        "@milaboratories/graph-maker": "/Users/elenaerokhina/projects/visualizations/packages/graph-maker/package.tgz",
+        "@milaboratories/pf-plots": "/Users/elenaerokhina/projects/visualizations/packages/pf-plots/package.tgz"
+     }
+},
   "//pnpm": {
     "overrides": {
       "@platforma-sdk/model": "/Users/elenaerokhina/projects/platforma/sdk/model/package.tgz",

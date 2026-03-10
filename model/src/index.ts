@@ -96,7 +96,7 @@ export const platforma = BlockModel.create('Heavy')
       liveColumns.map((c) => [c.id, c as PColumn<PColumnDataUniversal>]),
     );
     const tables: (PTableHandle | null)[] = ctx.uiState?.graphs.map((gs: GraphPageState) => {
-      const query = gs.state.chartSpecQuery;
+      const query = gs.state.chartSpecQueryResult?.specQuery;
       if (!query) {
         return null;
       }

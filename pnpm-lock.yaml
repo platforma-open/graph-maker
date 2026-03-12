@@ -200,9 +200,6 @@ importers:
 
 packages:
 
-  '@ag-grid-community/core@32.3.9':
-    resolution: {integrity: sha512-oZeAEPgaJVMzfKqbAPCyadcN5+iy+tjvhRLqEYJdBxtLgW/s2s0qXcXQvnrz7eUMD3Z7h3BQRVt2h/p0T6Ox/w==}
-
   '@ast-grep/napi-darwin-arm64@0.36.3':
     resolution: {integrity: sha512-uM0Hrm5gcHqaBL64ktmPBFMTorTlPKWsUfi0E2Cg09GJfeYWvZmicCqgd7qVtjURmQvFQdb4JSqHIkJvws6Uqw==}
     engines: {node: '>= 10'}
@@ -1029,7 +1026,7 @@ packages:
     engines: {node: '>=22.19.0'}
 
   '@milaboratories/graph-maker@file:../../../visualizations/packages/graph-maker/package.tgz':
-    resolution: {integrity: sha512-eMRo9ZfVUmpkV0LTSvQ2+Sydi3Yy2vfvtoPimdwslvoZpYzDUun9G6qABSikotrRfEBttMyx9p+8zETFTmpUvg==, tarball: file:../../../visualizations/packages/graph-maker/package.tgz}
+    resolution: {integrity: sha512-0XUMZ0nF45eObXhr5/Wc3CwYtgbzxyDut6kwwVq9EvddNy9ukMjJzkkGDP4rbNYQlcVy35U48zzZYTwEjdN7eA==, tarball: file:../../../visualizations/packages/graph-maker/package.tgz}
     version: 1.2.2
     peerDependencies:
       '@platforma-sdk/model': ^1.57.2
@@ -1047,7 +1044,7 @@ packages:
     engines: {node: '>=22.19.0'}
 
   '@milaboratories/pf-plots@file:../../../visualizations/packages/pf-plots/package.tgz':
-    resolution: {integrity: sha512-vArs2LjMvO1x/n4GslGAHC9pACpp9TQBjRjCc0mEmIy8j0U4Nwr0VkA5h3ANaj+51ypMJ3kY1q0gMz450K+mkw==, tarball: file:../../../visualizations/packages/pf-plots/package.tgz}
+    resolution: {integrity: sha512-/t2cL+xFGQjFwF/RHdn/9zrsX/7PBv9pNi4uKTdJOOyL/5NmJYTJqMPsoO8Qt8A1WZwLJfH7ETnesTVaFvWfWg==, tarball: file:../../../visualizations/packages/pf-plots/package.tgz}
     version: 1.1.65
     peerDependencies:
       '@milaboratories/pl-model-common': ^1.25.0
@@ -3520,9 +3517,6 @@ packages:
   ag-charts-locale@12.1.2:
     resolution: {integrity: sha512-GFAq4KZit3CHT3Br/LGruas75HqsvV+VZV6qz5hLrmiovJSSVfzPirzf/hUGDTCHqIOS7CdxmpdKUu8pKv1LGw==}
 
-  ag-charts-types@10.3.9:
-    resolution: {integrity: sha512-drcRiJVencliC8LnRwk4MmeQDNNBg5GzmOoLFihO3/k0CUK0VF/N+2nc7iFozwaNG0btSB9vAhYuJLjqHMtRrQ==}
-
   ag-charts-types@12.1.2:
     resolution: {integrity: sha512-B5IEMzaDxpJRko9sREIBEZOn44tlMX353tMJ1RGYHZrjDFx4on/p6q3YxBvway3nViAM2POmFOS45+1fF9YC8g==}
 
@@ -5665,11 +5659,6 @@ packages:
 
 snapshots:
 
-  '@ag-grid-community/core@32.3.9':
-    dependencies:
-      ag-charts-types: 10.3.9
-      tslib: 2.8.1
-
   '@ast-grep/napi-darwin-arm64@0.36.3':
     optional: true
 
@@ -6860,7 +6849,6 @@ snapshots:
 
   '@milaboratories/graph-maker@file:../../../visualizations/packages/graph-maker/package.tgz(@milaboratories/pl-model-common@1.25.0)(@platforma-sdk/model@1.57.2)(@platforma-sdk/ui-vue@1.57.3(typescript@5.9.2))(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)(typescript@5.9.2)':
     dependencies:
-      '@ag-grid-community/core': 32.3.9
       '@milaboratories/helpers': 1.13.5
       '@milaboratories/miplots4': 1.0.175(d3-dispatch@3.0.1)(d3-path@3.1.0)(d3-scale-chromatic@3.1.0)
       '@milaboratories/pf-plots': file:../../../visualizations/packages/pf-plots/package.tgz(@milaboratories/pl-model-common@1.25.0)(@platforma-sdk/model@1.57.2)
@@ -6869,7 +6857,6 @@ snapshots:
       '@types/d3-hierarchy': 3.1.7
       '@types/d3-scale': 4.0.9
       '@vueuse/core': 13.9.0(vue@3.5.24(typescript@5.9.2))
-      ag-grid-vue3: 34.1.2(vue@3.5.24(typescript@5.9.2))
       canonicalize: 2.1.0
       d3-hierarchy: 3.1.2
       d3-scale: 4.0.2
@@ -10482,8 +10469,6 @@ snapshots:
 
   ag-charts-locale@12.1.2:
     optional: true
-
-  ag-charts-types@10.3.9: {}
 
   ag-charts-types@12.1.2: {}
 

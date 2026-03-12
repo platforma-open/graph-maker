@@ -26,11 +26,11 @@ function mapSpecQueryIdsToColumns(
   });
   switch (query.type) {
     case 'column':
-      return { type: 'column', column: getColumn(query.column) } as SpecQuery<PColumn<PColumnDataUniversal>>;
+      return { type: 'column', column: getColumn(query.column) };
     case 'sparseToDenseColumn':
-      return { ...query, column: getColumn(query.column) } as SpecQuery<PColumn<PColumnDataUniversal>>;
+      return { ...query, column: getColumn(query.column) };
     case 'inlineColumn':
-      return query as unknown as SpecQuery<PColumn<PColumnDataUniversal>>;
+      return query;
     case 'innerJoin':
     case 'fullJoin':
       return { ...query, entries: query.entries.map(traverseEntry) } as SpecQuery<PColumn<PColumnDataUniversal>>;
@@ -43,9 +43,9 @@ function mapSpecQueryIdsToColumns(
     case 'filter':
     case 'sort':
     case 'sliceAxes':
-      return { ...query, input: mapSpecQueryIdsToColumns(query.input, getColumn) } as SpecQuery<PColumn<PColumnDataUniversal>>;
+      return { ...query, input: mapSpecQueryIdsToColumns(query.input, getColumn) };
     default:
-      return query as unknown as SpecQuery<PColumn<PColumnDataUniversal>>;
+      return query;
   }
 }
 
@@ -61,6 +61,8 @@ export type UiState = {
 };
 
 export type BlockArgs = {};
+
+const suitableSpec = (spec: PColumnSpec) => !isHiddenFromUIColumn(spec) && !isHiddenFromGraphColumn(spec);
 
 export const platforma = BlockModel.create('Heavy')
   .withUiState<UiState>({ graphs: [] })
@@ -84,29 +86,29 @@ export const platforma = BlockModel.create('Heavy')
   })
 
   .outputWithStatus('pFrame', (ctx) => {
-    const suitableSpec = (spec: PColumnSpec) =>
-      !isHiddenFromUIColumn(spec) && !isHiddenFromGraphColumn(spec);
     const columns = getAllRelatedColumns(ctx, suitableSpec).filter(
       it => !((['Bytes', 'File']).includes(it.spec.valueType)));
     return {value: ctx.createPFrame(columns), columns};
   })
   .output('table', (ctx) => {
-    const liveColumns = ctx.resultPool.selectColumns(() => true);
-    const liveById = new Map(
-      liveColumns.map((c) => [c.id, c as PColumn<PColumnDataUniversal>]),
+    const columns = getAllRelatedColumns(ctx, suitableSpec).filter(
+      it => !((['Bytes', 'File']).includes(it.spec.valueType)));;
+    const columnsById = new Map(
+      columns.map((c) => [c.id, c as PColumn<PColumnDataUniversal>]),
     );
-    const tables: (PTableHandle | null)[] = ctx.uiState?.graphs.map((gs: GraphPageState) => {
-      const query = gs.state.chartSpecQueryResult?.specQuery;
+    const tables: ({table: PTableHandle | null, id: string} | null)[] = ctx.uiState?.graphs.map((gs: GraphPageState) => {
+      const savedRequestData =  gs.state.chartSpecQueryResult;
+      const query = savedRequestData?.specQuery;
       if (!query) {
         return null;
       }
       try {
         const restoredQuery = mapSpecQueryIdsToColumns(query as SpecQuery<PObjectId>, (id: PObjectId) => {
-          const col = liveById.get(id);
+          const col = columnsById.get(id);
           if (!col) throw new Error(`Column ${String(id)} not found in result pool`);
           return col;
         });
-        return ctx.createPTableV2({ query: restoredQuery }) ?? null;
+        return {table: ctx.createPTableV2({ query: restoredQuery }) ?? null, id: savedRequestData.id};
       } catch {
         return null;
       }

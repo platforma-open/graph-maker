@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 import { useApp } from './app';
 import { GraphMakerState, GraphMaker } from '@milaboratories/graph-maker';
 import { GraphPageState } from '@platforma-open/milaboratories.graph-maker.model';
-import { PTableHandle } from '@platforma-sdk/model';
 
 const app = useApp<`/graph?id=${string}`>();
 
@@ -46,16 +45,6 @@ const removeSection = async () => {
   await app.navigateTo(lastId ? `/graph?id=${lastId}` : '/');
 };
 
-// watch(() => app.model.outputs.table, async (newTable:PTableHandle[]) => {
-//   console.log('tables', newTable);
-//   console.log('uistate', app.model.ui.graphs.map(it => ({ chartSpecQuery: it.state.chartSpecQuery, chartDataQuery: it.state.chartDataQuery })));
-//   const table = newTable?.[tableIdx.value];
-//   if (table !== null) {
-//     console.log('table shape', await platforma?.pFrameDriver.getShape(table));
-//     console.log('table', await platforma?.pFrameDriver.getData(table, [0, 1, 2]));
-//   }
-// }, { immediate: true, deep: true });
-
 </script>
 
 <template>
@@ -64,7 +53,7 @@ const removeSection = async () => {
       v-if="state && graphProps"
       v-model="state"
       :pFrame="app.model.outputs.pFrame"
-      :chartTableHandle="app.model.outputs.table[tableIdx] ?? null"
+      :chartTable="app.model.outputs.table?.[tableIdx] ?? null"
       :chartType="graphProps.chartType"
       :allowChartDeleting="true"
       :allowTitleEditing="true"

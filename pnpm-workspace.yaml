@@ -6,18 +6,18 @@ packages:
   - test
 
 catalog:
-  '@milaboratories/ts-configs': 1.2.0
-  '@milaboratories/build-configs': 1.4.0
-  '@platforma-sdk/tengo-builder': 2.4.14
-  '@platforma-sdk/block-tools': 2.6.44
-  '@platforma-sdk/workflow-tengo': 5.8.1
-  '@platforma-sdk/model': 1.58.11
-  '@platforma-sdk/test': 1.53.12
-  '@milaboratories/graph-maker': ^1.2.3
-  '@platforma-sdk/ui-vue': 1.58.17
-  '@milaboratories/helpers': 1.13.0
+  '@milaboratories/ts-configs': 1.2.2
+  '@milaboratories/build-configs': 1.5.2
+  '@platforma-sdk/tengo-builder': 2.4.28
+  '@platforma-sdk/block-tools': 2.6.68
+  '@platforma-sdk/workflow-tengo': 5.9.1
+  '@platforma-sdk/model': 1.58.22
+  '@platforma-sdk/test': 1.58.24
+  '@milaboratories/graph-maker': ^1.2.4
+  '@platforma-sdk/ui-vue': 1.58.25
+  '@milaboratories/helpers': 1.13.7
   '@milaboratories/software-pframes-conv': 2.2.9
-  '@platforma-sdk/blocks-deps-updater': 2.0.0
+  '@platforma-sdk/blocks-deps-updater': 2.1.0
 
   'sass': ^1.89.2
 

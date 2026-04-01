@@ -6,31 +6,18 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup && vite build && block-tools build-model"
+    "build": "ts-builder build --target block-model && block-tools build-model",
+    "watch": "ts-builder build --target block-model --watch",
+    "type-check": "ts-builder type-check --target block-model"
   },
   "dependencies": {
-    "@platforma-sdk/model": "catalog:"
+    "@platforma-sdk/model": "catalog:",
+    "@milaboratories/graph-maker": "catalog:"
   },
   "devDependencies": {
+    "@milaboratories/ts-builder": "catalog:",
+    "@milaboratories/ts-configs": "catalog:",
     "@platforma-sdk/block-tools": "catalog:",
-    "@milaboratories/graph-maker": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:",
-    "tsup": "catalog:"
-  },
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "splitting": false,
-    "treeshake": true,
-    "clean": true,
-    "format": [
-      "cjs",
-      "esm"
-    ],
-    "dts": true,
-    "minify": false,
-    "sourcemap": true
+    "typescript": "catalog:"
   }
 }

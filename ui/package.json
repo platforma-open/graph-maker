@@ -1,7 +1,7 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker.ui",
   "private": true,
-  "version": "0.3.88",
+  "version": "0.3.89",
   "type": "module",
   "scripts": {
     "dev": "ts-builder serve --target block-ui",

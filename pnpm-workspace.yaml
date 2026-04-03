@@ -14,7 +14,7 @@ catalog:
   '@platforma-sdk/workflow-tengo': 5.11.0
   '@platforma-sdk/model': 1.62.0
   '@platforma-sdk/test': 1.62.0
-  '@milaboratories/graph-maker': 1.2.7
+  '@milaboratories/graph-maker': 1.2.8
   '@platforma-sdk/ui-vue': 1.62.0
   '@milaboratories/helpers': 1.14.0
   '@milaboratories/software-pframes-conv': 2.2.9

@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.model
 
+## 1.2.19
+
+### Patch Changes
+
+- e5ba24d: Add Selection Plot option
+
 ## 1.2.18
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 0.3.92
+
+### Patch Changes
+
+- e5ba24d: Add Selection Plot option
+- Updated dependencies [e5ba24d]
+  - @platforma-open/milaboratories.graph-maker.model@1.2.19
+
 ## 0.3.91
 
 ### Patch Changes

@@ -1,38 +1,35 @@
 packages:
-  - workflow
-  - model
-  - ui
   - block
+  - model
   - test
+  - ui
+  - workflow
 
 catalog:
-  '@milaboratories/ts-builder': 1.4.0
+  '@milaboratories/ts-builder': 1.5.2
   '@milaboratories/ts-configs': 1.2.3
   '@milaboratories/build-configs': 2.0.0
-  '@platforma-sdk/tengo-builder': 2.5.27
-  '@platforma-sdk/block-tools': 2.7.23
-  '@platforma-sdk/workflow-tengo': 5.21.0
-  '@platforma-sdk/model': 1.75.8
-  '@platforma-sdk/test': 1.75.9
+  '@platforma-sdk/tengo-builder': 4.0.8
+  '@platforma-sdk/block-tools': 2.11.0
+  '@platforma-sdk/workflow-tengo': 6.6.3
+  '@platforma-sdk/model': 1.79.14
+  '@platforma-sdk/test': 1.79.14
   '@milaboratories/graph-maker': 1.4.1
-  '@platforma-sdk/ui-vue': 1.75.8
+  '@platforma-sdk/ui-vue': 1.79.14
   '@milaboratories/helpers': 1.14.2
   '@milaboratories/software-pframes-conv': 2.2.9
   '@platforma-sdk/blocks-deps-updater': 2.2.0
 
   'sass': ^1.89.2
 
-  'vue': ~3.5.24
-  'vue-tsc': ^3.0.5
+  'vue': 3.5.24
 
   'zod': ^3.23.8
 
   'typescript': ^5.9.2
-  'tsup': ~8.3.5
   'turbo': ^2.5.5
-
-  'vite': ^7.1.2
   'vitest': ^3.2.4
-  '@vitejs/plugin-vue': ^6.0.1
 
   '@changesets/cli': ^2.29.7
+  "@platforma-sdk/package-builder": 3.13.0
+  shx: ~0.4.0

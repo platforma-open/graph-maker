@@ -1,21 +1,26 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
   "version": "1.4.96",
-  "scripts": {
-    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
-    "build": "rm -rf ./block-pack && block-tools pack",
-    "mark-stable": "block-tools mark-stable -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'",
-    "prepublishOnly": "block-tools pack && block-tools publish -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'"
-  },
   "files": [
     "index.d.ts",
     "index.js"
   ],
+  "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
+    "build": "shx rm -rf ./block-pack && block-tools pack",
+    "mark-stable": "block-tools mark-stable -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'",
+    "prepublishOnly": "block-tools pack && block-tools publish -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'",
+    "do-pack": "shx rm -f *.tgz && block-tools pack && pnpm pack && shx mv *.tgz package.tgz"
+  },
   "dependencies": {
-    "@platforma-sdk/model": "catalog:",
     "@platforma-open/milaboratories.graph-maker.model": "workspace:*",
     "@platforma-open/milaboratories.graph-maker.ui": "workspace:*",
-    "@platforma-open/milaboratories.graph-maker.workflow": "workspace:*"
+    "@platforma-open/milaboratories.graph-maker.workflow": "workspace:*",
+    "@platforma-sdk/model": "catalog:"
+  },
+  "devDependencies": {
+    "@platforma-sdk/block-tools": "catalog:",
+    "shx": "catalog:"
   },
   "block": {
     "components": {
@@ -43,8 +48,5 @@
       },
       "marketplaceRanking": 15000
     }
-  },
-  "devDependencies": {
-    "@platforma-sdk/block-tools": "catalog:"
   }
 }

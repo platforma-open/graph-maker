@@ -1,7 +1,5 @@
 {
-  "name": "@platforma-open/milaboratories.graph-maker",
   "scripts": {
-    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
     "build": "turbo run build",
     "build:dev": "env PL_PKG_DEV=local turbo run build",
     "test": "env PL_PKG_DEV=local turbo run test --concurrency 1",
@@ -9,21 +7,23 @@
     "watch": "turbo watch build",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "update-sdk": "pl-blocks-deps-updater"
+    "update-sdk": "block-tools structure refresh --update-deps-only",
+    "fmt": "turbo run fmt",
+    "check": "turbo run check",
+    "test:dry-run": "env PL_PKG_DEV=local turbo run test --dry-run=json",
+    "do-pack": "turbo run do-pack",
+    "upgrade-sdk": "block-tools structure refresh --update-deps-only && pnpm i && block-tools structure refresh && pnpm i && pnpm fmt"
   },
   "devDependencies": {
-    "turbo": "catalog:",
     "@changesets/cli": "catalog:",
-    "@platforma-sdk/blocks-deps-updater": "catalog:"
+    "@milaboratories/ts-builder": "catalog:",
+    "@platforma-sdk/block-tools": "catalog:",
+    "shx": "catalog:",
+    "turbo": "catalog:"
   },
-  "packageManager": "pnpm@9.12.0",
-  "//pnpm": {
-    "overrides": {
-      "@platforma-sdk/model": "/Users/elenaerokhina/projects/platforma/sdk/model/package.tgz",
-      "@milaboratories/pl-model-common": "/Users/elenaerokhina/projects/platforma/lib/model/common/package.tgz",
-      "@milaboratories/graph-maker": "/Users/elenaerokhina/projects/visualizations/packages/graph-maker/package.tgz",
-      "@milaboratories/miplots4": "/Users/elenaerokhina/projects/visualizations/packages/miplots4/package.tgz",
-      "@milaboratories/pf-plots": "/Users/elenaerokhina/projects/visualizations/packages/pf-plots/package.tgz"
-    }
-  }
+  "peerDependencies": {
+    "oxfmt": "*",
+    "oxlint": "*"
+  },
+  "packageManager": "pnpm@9.12.0"
 }

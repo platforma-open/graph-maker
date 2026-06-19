@@ -12,3 +12,13 @@ node_modules/
 block-pack
 log/
 .turbo
+.test_auth.json
+dist/
+block-pack/
+dev/
+work/
+vite.config.*.timestamp-*
+software/**/*.tgz
+.DS_Store
+.vscode/sftp.json
+test-dry-run.json

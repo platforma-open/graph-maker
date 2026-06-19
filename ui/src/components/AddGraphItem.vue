@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import '../assets/add-graph.scss';
-import type { GraphCardItem } from '../constants';
+import "../assets/add-graph.scss";
+import type { GraphCardItem } from "../constants";
 //@ts-ignore
-import Contour from '../assets/icons/style_White Stroke.svg?raw';
+import Contour from "../assets/icons/style_White Stroke.svg?raw";
 
 defineProps<{ item: GraphCardItem }>();
 
 defineEmits<{
-  (e: 'selected', id: string): void;
+  (e: "selected", id: string): void;
 }>();
 </script>
 <template>

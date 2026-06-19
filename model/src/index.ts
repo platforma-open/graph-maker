@@ -1,48 +1,30 @@
-import { GraphMakerProps, GraphMakerState } from '@milaboratories/graph-maker';
-import {
-  BlockModel,
-  type InferOutputsType,
-  RenderCtx,
-  createPFrameForGraphs
-} from '@platforma-sdk/model';
+import { BlockModelV3, createPFrameForGraphs, type InferOutputsType } from "@platforma-sdk/model";
+import { blockDataModel } from "./dataModel";
+import type { BlockArgs } from "./types";
 
-export type GraphPageState = {
-  id: string;
-  label: string;
-  state: GraphMakerState,
-  settings: GraphMakerProps
-};
+export { blockDataModel } from "./dataModel";
+export * from "./types";
 
-export type UiState = {
-  graphs: GraphPageState[]
-};
-
-export type BlockArgs = {};
-
-export const platforma = BlockModel.create('Heavy')
-  .withUiState<UiState>({ graphs: [] })
-  .withArgs<BlockArgs>({})
-
+export const platforma = BlockModelV3.create(blockDataModel)
+  .args<BlockArgs>(() => ({}))
   .sections((ctx) => {
-    const graphRoutes = (ctx.uiState?.graphs ?? []).map((gs: GraphPageState) => ({
-      type: 'link' as const,
+    const graphRoutes = ctx.data.graphs.map((gs) => ({
+      type: "link" as const,
       href: `/graph?id=${gs.id}` as const,
-      label: gs.label
+      label: gs.label,
     }));
     return [
       ...graphRoutes,
       {
-        type: 'link',
-        href: '/',
-        appearance: 'add-section',
-        label: 'New Graph'
-      }
+        type: "link" as const,
+        href: "/" as const,
+        appearance: "add-section" as const,
+        label: "New Graph",
+      },
     ];
   })
+  .outputWithStatus("pFrame", (ctx) => createPFrameForGraphs(ctx))
+  .done();
 
-  .outputWithStatus('pFrame', (ctx) => {
-    return createPFrameForGraphs(ctx);
-  })
-  .done(2);
-
+export type Platforma = typeof platforma;
 export type BlockOutputs = InferOutputsType<typeof platforma>;

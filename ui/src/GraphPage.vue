@@ -7,11 +7,11 @@ import { GraphPageState } from "@platforma-open/milaboratories.graph-maker.model
 const app = useApp<`/graph?id=${string}`>();
 
 const graphProps = computed(
-  () => app.model.ui.graphs.find((it) => it.id === app.queryParams.id)?.settings,
+  () => app.model.data.graphs.find((it) => it.id === app.queryParams.id)?.settings,
 );
 const state = computed({
   get() {
-    const graphState = app.model.ui.graphs.find((it) => it.id === app.queryParams.id);
+    const graphState = app.model.data.graphs.find((it) => it.id === app.queryParams.id);
     if (!graphState) {
       return null;
     }
@@ -21,7 +21,7 @@ const state = computed({
     } as GraphMakerState;
   },
   set(nextState: GraphMakerState) {
-    app.model.ui.graphs = app.model.ui.graphs.map((item) => {
+    app.model.data.graphs = app.model.data.graphs.map((item) => {
       return item.id === app.queryParams.id
         ? ({
             id: item.id,
@@ -37,13 +37,13 @@ const state = computed({
 const removeSection = async () => {
   const deletedId = app.queryParams.id;
   let lastId;
-  for (const graph of app.model.ui.graphs) {
+  for (const graph of app.model.data.graphs) {
     if (graph.id !== app.queryParams.id) {
       lastId = graph.id;
     }
   }
 
-  app.model.ui.graphs = app.model.ui.graphs.filter((it) => it.id !== deletedId);
+  app.model.data.graphs = app.model.data.graphs.filter((it) => it.id !== deletedId);
   // @ts-ignore
   await app.navigateTo(lastId ? `/graph?id=${lastId}` : "/");
 };

@@ -1,9 +1,9 @@
 import { platforma } from "@platforma-open/milaboratories.graph-maker.model";
-import { defineApp } from "@platforma-sdk/ui-vue";
+import { defineAppV3 } from "@platforma-sdk/ui-vue";
 import GraphPage from "./GraphPage.vue";
 import MainPage from "./MainPage.vue";
 
-export const sdkPlugin = defineApp(platforma, () => {
+export const sdkPlugin = defineAppV3(platforma, () => {
   return {
     routes: {
       "/": () => MainPage,

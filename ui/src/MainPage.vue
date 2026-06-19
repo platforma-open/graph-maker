@@ -4,15 +4,14 @@ import { GraphMakerProps, GraphMakerState } from "@milaboratories/graph-maker";
 import { PlBlockPage } from "@platforma-sdk/ui-vue";
 import { getChartTypeByTemplate } from "./constants.ts";
 import { computed, ref } from "vue";
-import { UiState } from "@platforma-open/milaboratories.graph-maker.model";
 import EditIcon from "./assets/edit.vue";
 import AddGraph from "./components/AddGraph.vue";
 
 const app = useApp();
 
 const newId = computed(() => {
-  if (app.model.ui && app.model.ui.graphs.length) {
-    return String(Math.max(...app.model.ui.graphs.map((g) => Number(g.id))) + 1);
+  if (app.model.data.graphs.length) {
+    return String(Math.max(...app.model.data.graphs.map((g) => Number(g.id))) + 1);
   }
   return "1";
 });
@@ -29,11 +28,8 @@ const addSection = async (
   const label = graphTitle.value || defaultTitle;
   isLoading.value = true;
 
-  if (!app.model.ui) {
-    app.model.ui = { graphs: [] } as UiState;
-  }
-  app.model.ui.graphs = [
-    ...app.model.ui.graphs,
+  app.model.data.graphs = [
+    ...app.model.data.graphs,
     { id, label, state: { template, title: label }, settings: { chartType } },
   ];
   await app.allSettled();

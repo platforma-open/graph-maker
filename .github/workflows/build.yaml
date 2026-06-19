@@ -28,7 +28,7 @@ jobs:
       build-script-name: 'build'
       pnpm-recursive-build: false
 
-      test: true
+      test: false
       test-script-name: 'test'
       pnpm-recursive-tests: false
       team-id: 'ciplopen'

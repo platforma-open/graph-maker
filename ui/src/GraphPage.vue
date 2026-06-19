@@ -27,7 +27,7 @@ const state = computed({
             id: item.id,
             label: nextState.title,
             state: nextState,
-            settings: graphProps.value,
+            settings: item.settings,
           } as GraphPageState)
         : item;
     });

@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.4.98
+
+### Patch Changes
+
+- 2f09d7c: fix prepublish script
+
 ## 1.4.97
 
 ### Patch Changes

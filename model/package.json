@@ -1,6 +1,7 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker.model",
   "version": "1.2.19",
+  "private": true,
   "description": "Block config",
   "type": "module",
   "main": "dist/index.cjs",
@@ -23,6 +24,7 @@
   },
   "dependencies": {
     "@milaboratories/graph-maker": "catalog:",
+    "@platforma-open/milaboratories.graph-maker.kind": "workspace:*",
     "@platforma-sdk/model": "catalog:"
   },
   "devDependencies": {

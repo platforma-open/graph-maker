@@ -1,7 +1,8 @@
 import { DataModelBuilder } from "@platforma-sdk/model";
 import { kind } from "@platforma-open/milaboratories.graph-maker.kind";
-import type { BlockData, GraphPageState, LegacyBlockArgs, LegacyUiState } from "./types";
 import type { GraphSeed } from "@platforma-open/milaboratories.graph-maker.kind";
+import { optionsStateFromSeed } from "./seedOptions";
+import type { BlockData, GraphPageState, LegacyBlockArgs, LegacyUiState } from "./types";
 
 /**
  * Rebuild a page from its seed: what `MainPage.addSection` writes for a brand-new
@@ -15,7 +16,7 @@ function pageFromSeed(seed: GraphSeed): GraphPageState {
     state: {
       template: seed.template,
       title: seed.label,
-      ...(seed.optionsState ? { optionsState: seed.optionsState } : {}),
+      ...(seed.optionsState ? { optionsState: optionsStateFromSeed(seed.optionsState) } : {}),
     },
     settings: { chartType: seed.chartType },
   };

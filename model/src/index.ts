@@ -1,6 +1,7 @@
 import { BlockModelV3, createPFrameForGraphs, type InferOutputsType } from "@platforma-sdk/model";
 import { kind } from "@platforma-open/milaboratories.graph-maker.kind";
 import { blockDataModel } from "./dataModel";
+import { optionsStateToSeed } from "./seedOptions";
 import type { BlockArgs } from "./types";
 
 export { blockDataModel } from "./dataModel";
@@ -9,16 +10,17 @@ export * from "./types";
 export const platforma = BlockModelV3.create({ dataModel: blockDataModel, kind })
   .args<BlockArgs>(() => ({}))
   // Inverse of `init`'s seed expansion: the fields a page can be re-created from —
-  // the chart, and the data mapping that resolves by column spec rather than by
-  // anything project-local. The rest of `GraphMakerState` is per-view bookkeeping
-  // and does not travel; see `GraphSeed` in the kind.
+  // the chart, and the data mapping, with every source id taken apart so the SDK
+  // can repoint its references at the new project's blocks. The rest of
+  // `GraphMakerState` is per-view bookkeeping and does not travel; see `GraphSeed`
+  // and `SourceId` in the kind.
   .templateParams((data) => ({
     graphs: data.graphs.map((g) => ({
       id: g.id,
       label: g.label,
       chartType: g.settings.chartType,
       template: g.state.template,
-      optionsState: g.state.optionsState,
+      optionsState: g.state.optionsState && optionsStateToSeed(g.state.optionsState),
     })),
   }))
   .sections((ctx) => {

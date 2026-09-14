@@ -4,12 +4,11 @@ import { name, version } from "../package.json" with { type: "json" };
 
 type ChartType = GraphMakerProps["chartType"];
 type LayersTemplate = GraphMakerState["template"];
-type OptionsState = NonNullable<GraphMakerState["optionsState"]>;
-type ComponentState = OptionsState["components"][string];
-type SimpleSelector = Extract<ComponentState, { type: "simple" }>["selectorStates"][number];
-type FilterSelector = Extract<ComponentState, { type: "filter" }>["selectorStates"][number];
+type LiveOptionsState = NonNullable<GraphMakerState["optionsState"]>;
+type LiveComponent = LiveOptionsState["components"][string];
+type LiveFilterSelector = Extract<LiveComponent, { type: "filter" }>["selectorStates"][number];
 
-/** Fails to compile if `T` is anything but `never` — see the two exhaustiveness checks below. */
+/** Fails to compile if `T` is anything but `never` — see the exhaustiveness checks below. */
 type AssertNever<T extends never> = T;
 
 /**
@@ -69,22 +68,70 @@ type _LayersTemplatesExhaustive = AssertNever<
 >;
 
 /**
+ * Which column or axis feeds a chart input.
+ *
+ * Live, graph-maker holds this as one canonical string. A seed carries it taken
+ * apart, and that is the whole point: a column's identity contains the `PlRef`
+ * naming the block that produced it, and on apply the SDK repoints those refs at
+ * the blocks of the project being built. Its relocator descends through objects
+ * and rewrites any reference it recognizes, but a reference sealed inside a
+ * string two layers down is not something it can reach — so a seed that carried
+ * the string verbatim would arrive naming blocks of the project it was exported
+ * from. Split open, the ref sits where the relocator sees it.
+ *
+ * **Carried whole, not field by field.** An identifier IS its canonical form:
+ * drop a field this parser does not know about and the id rebuilt on the way in
+ * names a different column, or nothing at all. So the fields below are checked
+ * and everything else is preserved untouched.
+ *
+ * Axis sources are a known gap. An axis carries its block id inside `domain`
+ * (`pl7.app/vdj/clonotypingRunId`, say), and the relocator leaves domain entries
+ * alone by design — that is what stops a value which merely looks like an id from
+ * being rewritten. Nothing a block can do reaches this: relocation runs before
+ * both this parser and `init`, and neither is handed the block-id map. A page
+ * bound to such an axis therefore still needs re-binding in the new project.
+ */
+export type SourceId = {
+  kind: "column" | "axis";
+  name: string;
+  type: string;
+  domain?: Record<string, string>;
+  /** Any further field an identifier carries: preserved, never interpreted. */
+  [extra: string]: unknown;
+};
+
+/** One chart input's binding, as a seed carries it. */
+export type SeedSimpleSelector = { selectedSource: SourceId };
+
+/** A filtering input's binding: the source plus the filter set on it. */
+export type SeedFilterSelector = SeedSimpleSelector & {
+  type: LiveFilterSelector["type"];
+  selectedFilterRange?: { min: number; max: number };
+  selectedFilterValues?: string[];
+};
+
+export type SeedComponent =
+  | { type: "simple"; selectorStates: SeedSimpleSelector[] }
+  | { type: "filter"; selectorStates: SeedFilterSelector[] };
+
+/** The data mapping, with every source taken apart. Mirrors graph-maker's `optionsState`. */
+export type SeedOptionsState = {
+  type: ChartType;
+  components: Record<string, SeedComponent>;
+  dividedAxes: Record<string, boolean>;
+};
+
+/**
  * One graph page, reduced to what re-creating it actually takes.
  *
  * `template` and `chartType` choose the chart; `optionsState` is the data
- * mapping — which column or axis feeds each input, and the filters on them.
- * The mapping travels because it is not tied to the project it was built in:
- * a selected source is stored as the canonical string of
- * `{ kind, name, type, domain }`, a spec identity that resolves in any project
- * whose pFrame exposes a column with the same spec.
- *
- * `chartType` is kept alongside `template` because it is not derivable from it:
- * the UMAP scatterplot shares template `dots` with the ordinary one.
+ * mapping. `chartType` is kept alongside `template` because it is not derivable
+ * from it: the UMAP scatterplot shares template `dots` with the ordinary one.
  *
  * What stays behind is per-view bookkeeping — zoom, the open tab, lasso
- * polygons, whether the tooltip hint was shown — and the cosmetic layers.
- * A seeded page therefore opens on the right chart, already bound to its data,
- * at the chart type's default styling.
+ * polygons, whether the tooltip hint was shown — and the cosmetic layers. A
+ * seeded page therefore opens on the right chart, bound to what the new project
+ * can resolve, at the chart type's default styling.
  */
 export type GraphSeed = {
   id: string;
@@ -92,13 +139,12 @@ export type GraphSeed = {
   chartType: ChartType;
   template: LayersTemplate;
   /** Absent for a page whose data mapping the reader never touched. */
-  optionsState?: OptionsState;
+  optionsState?: SeedOptionsState;
 };
 
 /**
  * This block's init-params contract — the graph pages a project template seeds a
- * new graph-maker with. Each page arrives on its chart, bound to whatever of its
- * mapping the new project can resolve.
+ * new graph-maker with.
  */
 export type BlockParams = {
   graphs: GraphSeed[];
@@ -108,27 +154,61 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function parseSimpleSelector(value: unknown, at: string): SimpleSelector {
+function isOneOf<const T extends readonly string[]>(
+  value: unknown,
+  allowed: T,
+): value is T[number] {
+  return typeof value === "string" && (allowed as readonly string[]).includes(value);
+}
+
+function parseSourceId(value: unknown, at: string): SourceId {
+  if (!isRecord(value)) {
+    throw new Error(`'${at}' must be an object describing a column or axis.`);
+  }
+  const { kind, name, type, domain, ...rest } = value;
+
+  if (kind !== "column" && kind !== "axis") {
+    throw new Error(`'${at}.kind' must be either "column" or "axis".`);
+  }
+  if (typeof name !== "string") {
+    throw new Error(`'${at}.name' must be a string.`);
+  }
+  if (typeof type !== "string") {
+    throw new Error(`'${at}.type' must be a string.`);
+  }
+  if (domain !== undefined) {
+    if (!isRecord(domain) || Object.values(domain).some((v) => typeof v !== "string")) {
+      throw new Error(`'${at}.domain' must be an object of strings.`);
+    }
+  }
+
+  // `rest` is spread back in: see SourceId — an id is carried whole.
+  return {
+    ...rest,
+    kind,
+    name,
+    type,
+    ...(domain === undefined ? {} : { domain: domain as Record<string, string> }),
+  };
+}
+
+function parseSimpleSelector(value: unknown, at: string): SeedSimpleSelector {
   if (!isRecord(value)) {
     throw new Error(`'${at}' must be an object.`);
   }
-  const { selectedSource } = value;
-  if (typeof selectedSource !== "string") {
-    throw new Error(`'${at}.selectedSource' must be a string.`);
-  }
-  return { selectedSource };
+  return { selectedSource: parseSourceId(value.selectedSource, `${at}.selectedSource`) };
 }
 
 const FILTER_TYPES = [
   "equals",
   "range",
   "subset",
-] as const satisfies readonly FilterSelector["type"][];
+] as const satisfies readonly LiveFilterSelector["type"][];
 type _FilterTypesExhaustive = AssertNever<
-  Exclude<FilterSelector["type"], (typeof FILTER_TYPES)[number]>
+  Exclude<LiveFilterSelector["type"], (typeof FILTER_TYPES)[number]>
 >;
 
-function parseFilterSelector(value: unknown, at: string): FilterSelector {
+function parseFilterSelector(value: unknown, at: string): SeedFilterSelector {
   const { selectedSource } = parseSimpleSelector(value, at);
   const { type, selectedFilterRange, selectedFilterValues } = value as Record<string, unknown>;
 
@@ -136,7 +216,7 @@ function parseFilterSelector(value: unknown, at: string): FilterSelector {
     throw new Error(`'${at}.type' must be one of: ${FILTER_TYPES.join(", ")}.`);
   }
 
-  const parsed: FilterSelector = { selectedSource, type };
+  const parsed: SeedFilterSelector = { selectedSource, type };
 
   if (selectedFilterRange !== undefined) {
     if (
@@ -167,7 +247,7 @@ function parseFilterSelector(value: unknown, at: string): FilterSelector {
   return parsed;
 }
 
-function parseComponentState(value: unknown, at: string): ComponentState {
+function parseComponent(value: unknown, at: string): SeedComponent {
   if (!isRecord(value)) {
     throw new Error(`'${at}' must be an object.`);
   }
@@ -200,7 +280,7 @@ function parseComponentState(value: unknown, at: string): ComponentState {
  * component with no source chosen yet is an ordinary state the editor can be
  * left in, so a half-bound page exports and re-applies unchanged.
  */
-function parseOptionsState(value: unknown, at: string): OptionsState {
+function parseOptionsState(value: unknown, at: string): SeedOptionsState {
   if (!isRecord(value)) {
     throw new Error(`'${at}' must be an object.`);
   }
@@ -216,9 +296,9 @@ function parseOptionsState(value: unknown, at: string): OptionsState {
     throw new Error(`'${at}.dividedAxes' must be an object keyed by axis id.`);
   }
 
-  const parsedComponents: OptionsState["components"] = {};
+  const parsedComponents: Record<string, SeedComponent> = {};
   for (const [key, component] of Object.entries(components)) {
-    parsedComponents[key] = parseComponentState(component, `${at}.components.${key}`);
+    parsedComponents[key] = parseComponent(component, `${at}.components.${key}`);
   }
 
   const parsedDividedAxes: Record<string, boolean> = {};
@@ -234,10 +314,10 @@ function parseOptionsState(value: unknown, at: string): OptionsState {
 
 function parseGraphSeed(value: unknown, index: number): GraphSeed {
   const at = `graphs[${index}]`;
-  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+  if (!isRecord(value)) {
     throw new Error(`'${at}' must be an object describing one graph page.`);
   }
-  const { id, label, chartType, template } = value as Record<string, unknown>;
+  const { id, label, chartType, template, optionsState } = value;
 
   if (typeof id !== "string" || id === "") {
     throw new Error(`'${at}.id' must be a non-empty string.`);
@@ -251,8 +331,6 @@ function parseGraphSeed(value: unknown, index: number): GraphSeed {
   if (!isOneOf(template, LAYERS_TEMPLATES)) {
     throw new Error(`'${at}.template' must be one of: ${LAYERS_TEMPLATES.join(", ")}.`);
   }
-
-  const { optionsState } = value as Record<string, unknown>;
   if (optionsState === undefined) {
     return { id, label, chartType, template };
   }
@@ -264,13 +342,6 @@ function parseGraphSeed(value: unknown, index: number): GraphSeed {
     template,
     optionsState: parseOptionsState(optionsState, `${at}.optionsState`),
   };
-}
-
-function isOneOf<const T extends readonly string[]>(
-  value: unknown,
-  allowed: T,
-): value is T[number] {
-  return typeof value === "string" && (allowed as readonly string[]).includes(value);
 }
 
 /**

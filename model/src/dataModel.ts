@@ -4,15 +4,19 @@ import type { BlockData, GraphPageState, LegacyBlockArgs, LegacyUiState } from "
 import type { GraphSeed } from "@platforma-open/milaboratories.graph-maker.kind";
 
 /**
- * Rebuild a page from its seed. Deliberately identical to what `MainPage.addSection`
- * writes for a brand-new page, so a seeded page and a hand-created one are the same
- * thing: at the chart type's default state, with defaults still to be applied.
+ * Rebuild a page from its seed: what `MainPage.addSection` writes for a brand-new
+ * page, plus the data mapping when the seed carries one. A page seeded without a
+ * mapping is indistinguishable from one the reader just created.
  */
 function pageFromSeed(seed: GraphSeed): GraphPageState {
   return {
     id: seed.id,
     label: seed.label,
-    state: { template: seed.template, title: seed.label },
+    state: {
+      template: seed.template,
+      title: seed.label,
+      ...(seed.optionsState ? { optionsState: seed.optionsState } : {}),
+    },
     settings: { chartType: seed.chartType },
   };
 }

@@ -8,15 +8,17 @@ export * from "./types";
 
 export const platforma = BlockModelV3.create({ dataModel: blockDataModel, kind })
   .args<BlockArgs>(() => ({}))
-  // Inverse of `init`'s seed expansion: the four fields a page can be re-created
-  // from. Everything else in `GraphMakerState` is bound to this project's data and
-  // must not travel — see `GraphSeed` in the kind.
+  // Inverse of `init`'s seed expansion: the fields a page can be re-created from —
+  // the chart, and the data mapping that resolves by column spec rather than by
+  // anything project-local. The rest of `GraphMakerState` is per-view bookkeeping
+  // and does not travel; see `GraphSeed` in the kind.
   .templateParams((data) => ({
     graphs: data.graphs.map((g) => ({
       id: g.id,
       label: g.label,
       chartType: g.settings.chartType,
       template: g.state.template,
+      optionsState: g.state.optionsState,
     })),
   }))
   .sections((ctx) => {

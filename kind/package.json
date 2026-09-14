@@ -22,6 +22,7 @@
     "check": "ts-builder check --target block-kind"
   },
   "dependencies": {
+    "@milaboratories/graph-maker": "catalog:",
     "@platforma-sdk/block-kind": "catalog:"
   },
   "devDependencies": {

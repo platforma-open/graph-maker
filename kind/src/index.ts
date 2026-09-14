@@ -1,42 +1,149 @@
 import { assertParamsObject, defineBlockKind } from "@platforma-sdk/block-kind";
+import type { GraphMakerProps, GraphMakerState } from "@milaboratories/graph-maker";
 import { name, version } from "../package.json" with { type: "json" };
 
+type ChartType = GraphMakerProps["chartType"];
+type LayersTemplate = GraphMakerState["template"];
+
+/** Fails to compile if `T` is anything but `never` — see the two exhaustiveness checks below. */
+type AssertNever<T extends never> = T;
+
 /**
- * This block's init-params contract — the shape a block of this kind receives
- * at creation, and exactly what a project template serializes for it.
- *
- * TODO(block-kind): replace `NEEDS_BLOCK_PARAMS` with the real params shape, then
- * wire the model's `init(({ params }) => …)` to consume them. If this block takes
- * no author-supplied params, set it to `Record<string, never>` deliberately.
- *
- * This is an intentional sentinel: `NEEDS_BLOCK_PARAMS` is an undefined type, so
- * the block fails to typecheck (TS2304) until the contract is chosen on purpose.
- * A scaffolded-but-unmigrated block must never compile with an empty contract by
- * default — see the block-kind migration recipe in the `block-dev` skill.
+ * The chart types a seed may name. Listed rather than derived because a runtime
+ * check needs values, not a type — but the list is held to the type by the
+ * compiler (`satisfies` rejects a stale entry, `AssertNever` rejects a missing
+ * one), so a graph-maker release that adds or drops a chart type breaks this
+ * build instead of silently letting a template through with a chart the editor
+ * cannot open.
  */
-export type BlockParams = NEEDS_BLOCK_PARAMS;
+const CHART_TYPES = [
+  "discrete",
+  "scatterplot",
+  "scatterplot-umap",
+  "heatmap",
+  "dendro",
+  "histogram",
+  "bubble",
+  "selection",
+] as const satisfies readonly ChartType[];
+type _ChartTypesExhaustive = AssertNever<Exclude<ChartType, (typeof CHART_TYPES)[number]>>;
+
+/** The layer templates a seed may name. Held to `LayersTemplate` the same way. */
+const LAYERS_TEMPLATES = [
+  "box",
+  "binnedDots",
+  "jitteredDots",
+  "violin",
+  "bar",
+  "stackedBar",
+  "stackedArea",
+  "line",
+  "errorbar",
+  "sina",
+  "logo",
+  "box_binnedDots",
+  "box_jitteredDots",
+  "violin_binnedDots",
+  "violin_jitteredDots",
+  "line_jitteredDots",
+  "line_binnedDots",
+  "line_errorbar",
+  "bar_line",
+  "bar_errorbar",
+  "dots",
+  "curve",
+  "curve_dots",
+  "heatmap",
+  "heatmapClustered",
+  "dendro",
+  "bins",
+  "bubble",
+  "selection",
+] as const satisfies readonly LayersTemplate[];
+type _LayersTemplatesExhaustive = AssertNever<
+  Exclude<LayersTemplate, (typeof LAYERS_TEMPLATES)[number]>
+>;
+
+/**
+ * One graph page, reduced to what creating it actually takes.
+ *
+ * A live page carries a whole `GraphMakerState`, but almost none of that is
+ * authorable: `optionsState` keys columns of the project it was built in,
+ * and `usedDefaultOptions` is the flag that suppresses re-application of
+ * defaults — carried into a new project, the page would bind to columns that
+ * do not exist and never receive the defaults that would fix it. What remains
+ * is exactly what `MainPage.addSection` writes for a brand-new page, which is
+ * why `init` can rebuild a seed into a page that is indistinguishable from one
+ * the user just created.
+ *
+ * `chartType` is not derivable from `template`: the UMAP scatterplot shares
+ * template `dots` with the ordinary one and differs only in chart type.
+ */
+export type GraphSeed = {
+  id: string;
+  label: string;
+  chartType: ChartType;
+  template: LayersTemplate;
+};
+
+/**
+ * This block's init-params contract — the graph pages a project template seeds a
+ * new graph-maker with. Each page arrives at its chart type's default state,
+ * titled, and unbound; the reader binds it to the new project's data.
+ */
+export type BlockParams = {
+  graphs: GraphSeed[];
+};
+
+function parseGraphSeed(value: unknown, index: number): GraphSeed {
+  const at = `graphs[${index}]`;
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    throw new Error(`'${at}' must be an object describing one graph page.`);
+  }
+  const { id, label, chartType, template } = value as Record<string, unknown>;
+
+  if (typeof id !== "string" || id === "") {
+    throw new Error(`'${at}.id' must be a non-empty string.`);
+  }
+  if (typeof label !== "string") {
+    throw new Error(`'${at}.label' must be a string.`);
+  }
+  if (!isOneOf(chartType, CHART_TYPES)) {
+    throw new Error(`'${at}.chartType' must be one of: ${CHART_TYPES.join(", ")}.`);
+  }
+  if (!isOneOf(template, LAYERS_TEMPLATES)) {
+    throw new Error(`'${at}.template' must be one of: ${LAYERS_TEMPLATES.join(", ")}.`);
+  }
+
+  return { id, label, chartType, template };
+}
+
+function isOneOf<const T extends readonly string[]>(
+  value: unknown,
+  allowed: T,
+): value is T[number] {
+  return typeof value === "string" && (allowed as readonly string[]).includes(value);
+}
 
 /**
  * The same contract at runtime, for params that arrive from a template file rather than
  * from typed code — the only point that can catch a hand-written entry being wrong.
  *
- * TODO(block-kind): read each key `BlockParams` declares and say what it must be, then
- * return them. Plain TypeScript is the default here: a kind owes no schema library, and a
- * check written by hand is held to the contract by the return type. Reach for a validation
- * library only where the shape earns it, and add it to this package's dependencies yourself.
- *
- * Check the fields the contract requires, and stop there. A key the contract does not name
- * needs no rejection: it is dropped by not being read.
- *
- * This is a second intentional sentinel. The function has to return `BlockParams`, so
- * `return {}` stops compiling the moment the contract declares a required field — the check
- * cannot drift from the contract by being left behind. Never satisfy it with a cast: `value
- * as BlockParams` compiles today and checks nothing forever.
+ * `graphs` is optional so a template may seed the block empty, which is also what a
+ * block created by hand gets.
  */
 function parseInitializationParams(value: unknown): BlockParams {
   assertParamsObject(value);
 
-  return {};
+  const { graphs } = value;
+  if (graphs === undefined) {
+    return { graphs: [] };
+  }
+  if (!Array.isArray(graphs)) {
+    throw new Error("'graphs' must be an array of graph pages.");
+  }
+
+  return { graphs: graphs.map(parseGraphSeed) };
 }
 
 // Identity (`name`/`version`) comes from this package's own `package.json`, so

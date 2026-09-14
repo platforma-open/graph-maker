@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
-  "version": "1.4.96",
+  "version": "1.4.99",
   "files": [
     "index.d.ts",
     "index.js"
@@ -9,7 +9,7 @@
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
     "build": "shx rm -rf ./block-pack && block-tools pack",
     "mark-stable": "block-tools mark-stable -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'",
-    "prepublishOnly": "block-tools pack && block-tools publish -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'",
+    "prepublishOnly": "block-tools publish -r s3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1 --registry-serve-url https://blocks.pl-open.science",
     "do-pack": "shx rm -f *.tgz && block-tools pack && pnpm pack && shx mv *.tgz package.tgz"
   },
   "dependencies": {

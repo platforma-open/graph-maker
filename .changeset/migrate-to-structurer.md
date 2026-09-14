@@ -19,7 +19,9 @@ Migrate to the block-tools structurer and to BlockModelV3.
 - Adopt structure v2: the block package becomes a slim facade (block/src/index.ts,
   from-pack-v2 pointer) and the block declares its mandatory kind.
 - Declare the block kind's init-params contract: a project template seeds graph
-  pages by id, label, chart type and layer template. A seeded page is rebuilt
-  exactly as a newly created one, so it opens at its chart type's default state
-  with defaults still to apply. The rest of GraphMakerState is bound to the
-  project it was built in and deliberately does not travel.
+  pages by id, label, chart type, layer template and data mapping. Source ids
+  travel taken apart rather than as canonical strings, so the SDK can repoint the
+  references inside column ids at the new project's blocks; init rebuilds them
+  canonically. The rest of GraphMakerState is per-view bookkeeping and does not
+  travel. Known gap: an axis whose block id sits in a `domain` entry does not
+  relocate, so a page bound to one still needs re-binding after apply.

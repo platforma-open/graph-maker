@@ -100,6 +100,13 @@ export type SourceId = {
   [extra: string]: unknown;
 };
 
+/** One colour mapping, with the column or axis it was chosen for taken apart. */
+export type SeedAesMapping = {
+  source: SourceId;
+  /** graph-maker's own mapping for that source; carried whole, never read here. */
+  mapping: Record<string, unknown>;
+};
+
 /** One chart input's binding, as a seed carries it. */
 export type SeedSimpleSelector = { selectedSource: SourceId };
 
@@ -153,8 +160,15 @@ export type GraphSeed = {
   axesSettings?: GraphMakerState["axesSettings"];
   layersSettings?: GraphMakerState["layersSettings"];
   statisticsSettings?: GraphMakerState["statisticsSettings"];
-  /** Palettes and colour mapping, keyed by the column or axis they were chosen for. */
-  dataBindAes?: GraphMakerState["dataBindAes"];
+  /**
+   * Palettes and colour mapping, one entry per column or axis they were chosen for.
+   *
+   * A list rather than the map graph-maker holds, because that map is keyed BY the source id:
+   * a key is a string, so the reference inside it is past the reach of relocation, and a mapping
+   * carried under the exported-from project's key lands on nothing. Taken apart, the source is
+   * repointed like any other, and the key is rebuilt from it on the way in.
+   */
+  dataBindAes?: SeedAesMapping[];
 };
 
 /**
@@ -342,12 +356,7 @@ function parseSettingsGroup(value: unknown, at: string): Record<string, unknown>
 }
 
 /** The settings groups a seed may carry, each optional and each read as an envelope. */
-const SETTINGS_KEYS = [
-  "axesSettings",
-  "layersSettings",
-  "statisticsSettings",
-  "dataBindAes",
-] as const;
+const SETTINGS_KEYS = ["axesSettings", "layersSettings", "statisticsSettings"] as const;
 
 function parseSettings(value: Record<string, unknown>, at: string) {
   const parsed: Record<string, Record<string, unknown>> = {};
@@ -355,6 +364,16 @@ function parseSettings(value: Record<string, unknown>, at: string) {
     if (value[key] !== undefined) parsed[key] = parseSettingsGroup(value[key], `${at}.${key}`);
   }
   return parsed as Pick<GraphSeed, (typeof SETTINGS_KEYS)[number]>;
+}
+
+function parseAesMapping(value: unknown, at: string): SeedAesMapping {
+  if (!isRecord(value)) {
+    throw new Error(`'${at}' must be an object.`);
+  }
+  return {
+    source: parseSourceId(value.source, `${at}.source`),
+    mapping: parseSettingsGroup(value.mapping, `${at}.mapping`),
+  };
 }
 
 function parseGraphSeed(value: unknown, index: number): GraphSeed {
@@ -378,8 +397,19 @@ function parseGraphSeed(value: unknown, index: number): GraphSeed {
   }
   const settings = parseSettings(value, at);
 
+  const { dataBindAes } = value;
+  if (dataBindAes !== undefined && !Array.isArray(dataBindAes)) {
+    throw new Error(`'${at}.dataBindAes' must be an array of colour mappings.`);
+  }
+  const aes =
+    dataBindAes === undefined
+      ? {}
+      : {
+          dataBindAes: dataBindAes.map((m, i) => parseAesMapping(m, `${at}.dataBindAes[${i}]`)),
+        };
+
   if (optionsState === undefined) {
-    return { id, label, chartType, template, ...settings };
+    return { id, label, chartType, template, ...settings, ...aes };
   }
 
   return {
@@ -389,6 +419,7 @@ function parseGraphSeed(value: unknown, index: number): GraphSeed {
     template,
     optionsState: parseOptionsState(optionsState, `${at}.optionsState`),
     ...settings,
+    ...aes,
   };
 }
 

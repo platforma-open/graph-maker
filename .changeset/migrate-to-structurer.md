@@ -25,7 +25,10 @@ Migrate to the block-tools structurer and to BlockModelV3.
   canonically. The rest of GraphMakerState is per-view bookkeeping and does not
   travel, and neither does per-view bookkeeping — the open tab, the zoom, the lasso,
   or `usedDefaultOptions`, which would stop the new project's defaults being applied.
-  The reader's chart settings (axes, layers, statistics, palettes) travel whole rather
+  The reader's chart settings (axes, layers, statistics) travel whole rather
   than as a difference from the chart type's defaults: those defaults come from a
   graph-maker module a block model cannot bundle, so a seeded page keeps the defaults
-  of the day it was exported.
+  of the day it was exported. Colour mappings travel as a list keyed by the source
+  taken apart, not by the id string graph-maker keys them with, so the column or axis
+  each colour was chosen for is repointed at the new project rather than naming a block
+  that is not there.

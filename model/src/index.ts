@@ -1,7 +1,7 @@
 import { BlockModelV3, createPFrameForGraphs, type InferOutputsType } from "@platforma-sdk/model";
 import { kind } from "@platforma-open/milaboratories.graph-maker.kind";
 import { blockDataModel } from "./dataModel";
-import { optionsStateToSeed } from "./seedOptions";
+import { dataBindAesToSeed, optionsStateToSeed } from "./seedOptions";
 import type { BlockArgs } from "./types";
 
 export { blockDataModel } from "./dataModel";
@@ -28,7 +28,7 @@ export const platforma = BlockModelV3.create({ dataModel: blockDataModel, kind }
       axesSettings: g.state.axesSettings,
       layersSettings: g.state.layersSettings,
       statisticsSettings: g.state.statisticsSettings,
-      dataBindAes: g.state.dataBindAes,
+      dataBindAes: g.state.dataBindAes && dataBindAesToSeed(g.state.dataBindAes),
     })),
   }))
   .sections((ctx) => {

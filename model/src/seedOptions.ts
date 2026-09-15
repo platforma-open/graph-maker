@@ -1,5 +1,6 @@
 import { canonicalizeJson } from "@platforma-sdk/model";
 import type {
+  SeedAesMapping,
   SeedComponent,
   SeedOptionsState,
   SourceId,
@@ -56,4 +57,27 @@ export function optionsStateFromSeed(seed: SeedOptionsState): LiveOptionsState {
     } as LiveComponent;
   }
   return { type: seed.type, components, dividedAxes: { ...seed.dividedAxes } };
+}
+
+type LiveDataBindAes = NonNullable<GraphMakerState["dataBindAes"]>;
+
+/**
+ * The colour mappings, re-keyed for travel.
+ *
+ * graph-maker holds them in a map keyed by the source id, and a key is a string — so the
+ * reference inside it is past the reach of relocation. Each entry travels with its source taken
+ * apart instead, and the key is rebuilt canonically on the way back so it matches the id
+ * graph-maker looks the mapping up by.
+ */
+export function dataBindAesToSeed(live: LiveDataBindAes): SeedAesMapping[] {
+  return Object.entries(live).map(([source, mapping]) => ({
+    source: splitSourceId(source),
+    mapping: mapping as unknown as Record<string, unknown>,
+  }));
+}
+
+export function dataBindAesFromSeed(seed: SeedAesMapping[]): LiveDataBindAes {
+  return Object.fromEntries(
+    seed.map(({ source, mapping }) => [joinSourceId(source), mapping]),
+  ) as unknown as LiveDataBindAes;
 }

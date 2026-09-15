@@ -1,7 +1,7 @@
 import { DataModelBuilder } from "@platforma-sdk/model";
 import { kind } from "@platforma-open/milaboratories.graph-maker.kind";
 import type { GraphSeed } from "@platforma-open/milaboratories.graph-maker.kind";
-import { optionsStateFromSeed } from "./seedOptions";
+import { dataBindAesFromSeed, optionsStateFromSeed } from "./seedOptions";
 import type { BlockData, GraphPageState, LegacyBlockArgs, LegacyUiState } from "./types";
 
 /**
@@ -20,7 +20,7 @@ function pageFromSeed(seed: GraphSeed): GraphPageState {
       ...(seed.axesSettings ? { axesSettings: seed.axesSettings } : {}),
       ...(seed.layersSettings ? { layersSettings: seed.layersSettings } : {}),
       ...(seed.statisticsSettings ? { statisticsSettings: seed.statisticsSettings } : {}),
-      ...(seed.dataBindAes ? { dataBindAes: seed.dataBindAes } : {}),
+      ...(seed.dataBindAes ? { dataBindAes: dataBindAesFromSeed(seed.dataBindAes) } : {}),
     },
     settings: { chartType: seed.chartType },
   };

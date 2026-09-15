@@ -11,7 +11,7 @@ on:
   workflow_dispatch: {}
 jobs:
   init:
-    runs-on: ubuntu-latest
+    runs-on: hz-ubuntu-dind
     steps:
       - uses: milaboratory/github-ci/actions/context/init@v4
         with:
@@ -22,12 +22,15 @@ jobs:
       - init
     uses: milaboratory/github-ci/.github/workflows/node-simple-pnpm.yaml@v4
     with:
-      app-name: 'Block: Graph Builder'
-      app-name-slug: 'block-graph-builder'
-      node-version: '20.x'
-      build-script-name: 'build'
+      app-name: 'Block: Graph Maker'
+      app-name-slug: 'block-graph-maker'
+      node-version: '22.x'
+      gha-runner-label: hz-ubuntu-dind
+      build-script-name: 'build:dev-local'
+      build-before-publish-script-name: 'build:release'
       pnpm-recursive-build: false
-      test: false
+
+      test: true
       test-script-name: 'test'
       pnpm-recursive-tests: false
       team-id: 'ciplopen'
@@ -35,6 +38,11 @@ jobs:
       publish-to-public: 'true'
       package-path: 'block'
       create-tag: 'true'
+
+      # Require the published `block` package to be bumped by a changeset on
+      # PRs (empty changeset or the `skip-changelog` label waives it). Needs
+      # the input to exist on the pinned `@v4` reusable workflow.
+      require-package-path-bump: true
 
       npmrc-config: |
         {
@@ -54,13 +62,22 @@ jobs:
           "PL_CI_TEST_PASSWORD": ${{ toJSON(secrets.PL_CI_TEST_PASSWORD) }},
 
           "AWS_CI_IAM_MONOREPO_SIMPLE_ROLE": ${{ toJSON(secrets.AWS_CI_IAM_MONOREPO_SIMPLE_ROLE) }},
-          "AWS_CI_TURBOREPO_S3_BUCKET": ${{ toJSON(secrets.AWS_CI_TURBOREPO_US_S3_BUCKET) }},
-          
+          "AWS_CI_TURBOREPO_S3_BUCKET": ${{ toJSON(secrets.AWS_CI_TURBOREPO_S3_BUCKET) }},
+
+          "HZ_CI_TURBO_S3_BUCKET": ${{ toJSON(vars.HZ_CI_TURBO_S3_BUCKET) }},
+          "HZ_CI_TURBO_S3_ENDPOINT": ${{ toJSON(vars.HZ_CI_TURBO_S3_ENDPOINT) }},
+          "HZ_CI_TURBO_S3_REGION": ${{ toJSON(vars.HZ_CI_TURBO_S3_REGION) }},
+          "HZ_CI_TURBO_S3_ACCESS_KEY": ${{ toJSON(secrets.HZ_CI_TURBO_S3_ACCESS_KEY) }},
+          "HZ_CI_TURBO_S3_SECRET_KEY": ${{ toJSON(secrets.HZ_CI_TURBO_S3_SECRET_KEY) }},
+          "HZ_CI_CACHE_S3_ACCESS_KEY": ${{ toJSON(secrets.HZ_CI_CACHE_S3_ACCESS_KEY) }},
+          "HZ_CI_CACHE_S3_SECRET_KEY": ${{ toJSON(secrets.HZ_CI_CACHE_S3_SECRET_KEY) }},
+
+          "PL_REGISTRY_PLATFORMA_OPEN_UPLOAD_URL": ${{ toJSON(secrets.PL_REGISTRY_PLOPEN_UPLOAD_URL) }},
           "QUAY_USERNAME": ${{ toJSON(secrets.QUAY_USERNAME) }},
           "QUAY_ROBOT_TOKEN": ${{ toJSON(secrets.QUAY_ROBOT_TOKEN) }} }
 
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       SLACK_CHANNEL: ${{ secrets.SLACK_BLOCKS_CI_CHANNEL }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
       GH_ZEN_APP_ID: ${{ secrets.GH_ZEN_APP_ID }}
       GH_ZEN_APP_PRIVATE_KEY: ${{ secrets.GH_ZEN_APP_PRIVATE_KEY }}

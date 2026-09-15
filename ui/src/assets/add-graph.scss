@@ -1,136 +1,139 @@
 @mixin scrollbar($y: true, $x: false, $over: auto) {
-    &::-webkit-scrollbar {
-        width: 6px;
-        height: 5px;
-        padding-right: 5px;
-        background-color: transparent;
-        display: block;
-    }
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+    padding-right: 5px;
+    background-color: transparent;
+    display: block;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background: var(--color-ic-02);
-        border-radius: 5px;
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-ic-02);
+    border-radius: 5px;
 
-        &:hover {
-            --color-ic-02: var(--border-color-focus);
-        }
+    &:hover {
+      --color-ic-02: var(--border-color-focus);
     }
+  }
 
-    @if $y {
-        overflow-y: $over;
-    }
+  @if $y {
+    overflow-y: $over;
+  }
 
-    @if $x {
-        overflow-x: $over;
-    }
+  @if $x {
+    overflow-x: $over;
+  }
 }
 
 .add-graph {
-    display: grid;
-    grid-template-columns: 320px 320px 320px;
-    gap: 6px;
+  display: grid;
+  grid-template-columns: 320px 320px 320px;
+  gap: 6px;
 
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: 320px 320px;
-    }
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 320px 320px;
+  }
 
-    &__item {
-        cursor: pointer;
-        display: flex;
-        width: 320px;
-        height: 128px;
-        flex-shrink: 0;
-        border-radius: 8px;
-        border: 1px solid var(--border-color-div-grey);
-        background-color: var(--bg-elevated-01);
-        padding: 14px 12px 14px 20px;
-        transition: background-color .2s ease-in-out;
+  &__item {
+    cursor: pointer;
+    display: flex;
+    width: 320px;
+    height: 128px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color-div-grey);
+    background-color: var(--bg-elevated-01);
+    padding: 14px 12px 14px 20px;
+    transition: background-color 0.2s ease-in-out;
 
-        &:hover {
-            background-color: rgba(99, 224, 36, 0.12);
-            transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
-            border-color: var(--border-color-default);
+    &:hover {
+      background-color: rgba(99, 224, 36, 0.12);
+      transition:
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out;
+      border-color: var(--border-color-default);
 
-            .add-graph__description {
-                color: var(--txt-01);
-                transition: color .2s ease-in-out;
-            }
-            .add-graph__icon-hover {
-                opacity: 1;
-                transition: opacity .2s ease-in-out;
-            }
-        }
-    }
-
-    &__text {
-        margin-top: 6px;
-    }
-
-    &__title {
+      .add-graph__description {
         color: var(--txt-01);
-        font-family: Manrope;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 20px;
-        text-transform: capitalize;
+        transition: color 0.2s ease-in-out;
+      }
+      .add-graph__icon-hover {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+      }
     }
+  }
 
-    &__description {
-        color: var(--txt-03);
-        font-family: var(--font-family-base);
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 16px;
-    }
+  &__text {
+    margin-top: 6px;
+  }
 
-    &__icon {
-        width: 100px;
-        height: 100px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        align-self: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
+  &__title {
+    color: var(--txt-01);
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: capitalize;
+  }
 
-    &__icon-hover, &__icon-main {
-        position: absolute;
-        inset: 0;
-        display: block;
-    }
+  &__description {
+    color: var(--txt-03);
+    font-family: var(--font-family-base);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+  }
 
-    &__icon-hover {
-        opacity: 0;
-        transition: opacity .2s ease-in-out;
-    }
+  &__icon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__icon-hover,
+  &__icon-main {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  &__icon-hover {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
 }
 
 .add-graph-search {
-    display: grid;
-    grid-template-columns: calc(323px * 3);
+  display: grid;
+  grid-template-columns: calc(323px * 3);
 
-    .pl-search-field {
-        border-bottom-width: 1px;
+  .pl-search-field {
+    border-bottom-width: 1px;
 
-        input {
-            flex-grow: 1;
-        }
+    input {
+      flex-grow: 1;
     }
+  }
 
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: calc(323px * 2);
-    }
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: calc(323px * 2);
+  }
 }
 
 .add-graph-section {
-    display: grid;
-    grid-template-columns: calc(320px * 3);
-    gap: 24px;
-    @include scrollbar();
+  display: grid;
+  grid-template-columns: calc(320px * 3);
+  gap: 24px;
+  @include scrollbar();
 
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: calc(320px * 2);
-    }
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: calc(320px * 2);
+  }
 }

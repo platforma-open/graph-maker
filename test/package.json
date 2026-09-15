@@ -1,20 +1,26 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker.test",
-  "private": true,
   "version": "1.2.3",
+  "private": true,
   "description": "Block tests",
+  "keywords": [],
+  "files": [],
   "type": "module",
   "scripts": {
-    "test": "vitest --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "fmt": "ts-builder format",
+    "check": "ts-builder check --target block-test"
   },
-  "files": [],
-  "keywords": [],
   "dependencies": {
     "this-block": "workspace:@platforma-open/milaboratories.graph-maker@*"
   },
   "devDependencies": {
+    "@milaboratories/ts-builder": "catalog:",
+    "@milaboratories/ts-configs": "catalog:",
     "@platforma-sdk/test": "catalog:",
-    "vitest": "catalog:",
-    "typescript": "catalog:"
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "*"
   }
 }

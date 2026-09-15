@@ -23,5 +23,9 @@ Migrate to the block-tools structurer and to BlockModelV3.
   travel taken apart rather than as canonical strings, so the SDK can repoint the
   references inside column ids at the new project's blocks; init rebuilds them
   canonically. The rest of GraphMakerState is per-view bookkeeping and does not
-  travel. Known gap: an axis whose block id sits in a `domain` entry does not
-  relocate, so a page bound to one still needs re-binding after apply.
+  travel, and neither does per-view bookkeeping — the open tab, the zoom, the lasso,
+  or `usedDefaultOptions`, which would stop the new project's defaults being applied.
+  The reader's chart settings (axes, layers, statistics, palettes) travel whole rather
+  than as a difference from the chart type's defaults: those defaults come from a
+  graph-maker module a block model cannot bundle, so a seeded page keeps the defaults
+  of the day it was exported.

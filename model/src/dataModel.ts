@@ -17,6 +17,10 @@ function pageFromSeed(seed: GraphSeed): GraphPageState {
       template: seed.template,
       title: seed.label,
       ...(seed.optionsState ? { optionsState: optionsStateFromSeed(seed.optionsState) } : {}),
+      ...(seed.axesSettings ? { axesSettings: seed.axesSettings } : {}),
+      ...(seed.layersSettings ? { layersSettings: seed.layersSettings } : {}),
+      ...(seed.statisticsSettings ? { statisticsSettings: seed.statisticsSettings } : {}),
+      ...(seed.dataBindAes ? { dataBindAes: seed.dataBindAes } : {}),
     },
     settings: { chartType: seed.chartType },
   };

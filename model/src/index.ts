@@ -21,6 +21,14 @@ export const platforma = BlockModelV3.create({ dataModel: blockDataModel, kind }
       chartType: g.settings.chartType,
       template: g.state.template,
       optionsState: g.state.optionsState && optionsStateToSeed(g.state.optionsState),
+      // Carried whole; see `GraphSeed` in the kind for why not as a difference from the
+      // defaults. What is left behind is per-view bookkeeping — the open tab, the zoom, the
+      // lasso, whether the tooltip hint was shown — and `usedDefaultOptions`, which records
+      // which defaults were already applied and would stop the new project's from being.
+      axesSettings: g.state.axesSettings,
+      layersSettings: g.state.layersSettings,
+      statisticsSettings: g.state.statisticsSettings,
+      dataBindAes: g.state.dataBindAes,
     })),
   }))
   .sections((ctx) => {

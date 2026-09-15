@@ -140,6 +140,21 @@ export type GraphSeed = {
   template: LayersTemplate;
   /** Absent for a page whose data mapping the reader never touched. */
   optionsState?: SeedOptionsState;
+  /**
+   * The reader's chart settings, carried whole.
+   *
+   * Whole rather than as a difference from the chart type's defaults, which would be the smaller
+   * thing to carry: the defaults are produced by graph-maker's own `getInitialAxesSettings` and
+   * friends, and that module cannot be reached from a block model — it imports the editor's icon
+   * components, so bundling it into the model fails. The cost of carrying them whole is that a
+   * seeded page keeps the defaults of the day it was exported, and a later change to them does
+   * not reach it.
+   */
+  axesSettings?: GraphMakerState["axesSettings"];
+  layersSettings?: GraphMakerState["layersSettings"];
+  statisticsSettings?: GraphMakerState["statisticsSettings"];
+  /** Palettes and colour mapping, keyed by the column or axis they were chosen for. */
+  dataBindAes?: GraphMakerState["dataBindAes"];
 };
 
 /**
@@ -312,6 +327,36 @@ function parseOptionsState(value: unknown, at: string): SeedOptionsState {
   return { type, components: parsedComponents, dividedAxes: parsedDividedAxes };
 }
 
+/**
+ * One settings group, read as an envelope and carried whole.
+ *
+ * This kind reads none of the fields inside: they are graph-maker's own settings, what one means
+ * is settled where it is applied, and a parser that knew their shape would have to be taught
+ * again every time the editor gains a knob.
+ */
+function parseSettingsGroup(value: unknown, at: string): Record<string, unknown> {
+  if (!isRecord(value)) {
+    throw new Error(`'${at}' must be an object of settings.`);
+  }
+  return value;
+}
+
+/** The settings groups a seed may carry, each optional and each read as an envelope. */
+const SETTINGS_KEYS = [
+  "axesSettings",
+  "layersSettings",
+  "statisticsSettings",
+  "dataBindAes",
+] as const;
+
+function parseSettings(value: Record<string, unknown>, at: string) {
+  const parsed: Record<string, Record<string, unknown>> = {};
+  for (const key of SETTINGS_KEYS) {
+    if (value[key] !== undefined) parsed[key] = parseSettingsGroup(value[key], `${at}.${key}`);
+  }
+  return parsed as Pick<GraphSeed, (typeof SETTINGS_KEYS)[number]>;
+}
+
 function parseGraphSeed(value: unknown, index: number): GraphSeed {
   const at = `graphs[${index}]`;
   if (!isRecord(value)) {
@@ -331,8 +376,10 @@ function parseGraphSeed(value: unknown, index: number): GraphSeed {
   if (!isOneOf(template, LAYERS_TEMPLATES)) {
     throw new Error(`'${at}.template' must be one of: ${LAYERS_TEMPLATES.join(", ")}.`);
   }
+  const settings = parseSettings(value, at);
+
   if (optionsState === undefined) {
-    return { id, label, chartType, template };
+    return { id, label, chartType, template, ...settings };
   }
 
   return {
@@ -341,6 +388,7 @@ function parseGraphSeed(value: unknown, index: number): GraphSeed {
     chartType,
     template,
     optionsState: parseOptionsState(optionsState, `${at}.optionsState`),
+    ...settings,
   };
 }
 

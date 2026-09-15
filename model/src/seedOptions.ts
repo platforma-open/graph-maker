@@ -1,4 +1,5 @@
-import { canonicalizeJson } from "@platforma-sdk/model";
+import { canonicalizeJson, parseJson } from "@platforma-sdk/model";
+import type { CanonicalizedJson } from "@platforma-sdk/model";
 import type {
   SeedAesMapping,
   SeedComponent,
@@ -17,42 +18,37 @@ type LiveComponent = LiveOptionsState["components"][string];
  * apart, so the SDK's reference relocator can reach the `PlRef` inside a column
  * id on the way in. See `SourceId` in the kind for why.
  *
- * The split and the rebuild are inverses, and the rebuild must be canonical:
+ * Taking apart and rebuilding are inverses, and the rebuild must be canonical:
  * an identifier IS its canonical string, so an id reassembled with its keys in
  * another order is a different identifier for the same column and resolves to
  * nothing. `canonicalizeJson` is the same function pf-plots builds these ids
  * with, so the string handed back is the one graph-maker would have computed.
+ *
+ * The cast is only the SDK's brand meeting pf-plots' plain `ColumnOrAxisIdString`;
+ * the kind checks every field of what comes out.
  */
-function splitSourceId(id: string): SourceId {
-  return JSON.parse(id) as SourceId;
-}
-
-function joinSourceId(id: SourceId): string {
-  return canonicalizeJson(id);
-}
-
-export function optionsStateToSeed(live: LiveOptionsState): SeedOptionsState {
+export function convertOptionsStateToSeed(live: LiveOptionsState): SeedOptionsState {
   const components: Record<string, SeedComponent> = {};
   for (const [key, component] of Object.entries(live.components)) {
     components[key] = {
       ...component,
       selectorStates: component.selectorStates.map((s) => ({
         ...s,
-        selectedSource: splitSourceId(s.selectedSource),
+        selectedSource: parseJson(s.selectedSource as CanonicalizedJson<SourceId>),
       })),
     } as SeedComponent;
   }
   return { type: live.type, components, dividedAxes: { ...live.dividedAxes } };
 }
 
-export function optionsStateFromSeed(seed: SeedOptionsState): LiveOptionsState {
+export function getOptionsStateFromSeed(seed: SeedOptionsState): LiveOptionsState {
   const components: Record<string, LiveComponent> = {};
   for (const [key, component] of Object.entries(seed.components)) {
     components[key] = {
       ...component,
       selectorStates: component.selectorStates.map((s) => ({
         ...s,
-        selectedSource: joinSourceId(s.selectedSource),
+        selectedSource: canonicalizeJson(s.selectedSource),
       })),
     } as LiveComponent;
   }
@@ -69,15 +65,15 @@ type LiveDataBindAes = NonNullable<GraphMakerState["dataBindAes"]>;
  * apart instead, and the key is rebuilt canonically on the way back so it matches the id
  * graph-maker looks the mapping up by.
  */
-export function dataBindAesToSeed(live: LiveDataBindAes): SeedAesMapping[] {
+export function convertDataBindAesToSeed(live: LiveDataBindAes): SeedAesMapping[] {
   return Object.entries(live).map(([source, mapping]) => ({
-    source: splitSourceId(source),
+    source: parseJson(source as CanonicalizedJson<SourceId>),
     mapping: mapping as unknown as Record<string, unknown>,
   }));
 }
 
-export function dataBindAesFromSeed(seed: SeedAesMapping[]): LiveDataBindAes {
+export function getDataBindAesFromSeed(seed: SeedAesMapping[]): LiveDataBindAes {
   return Object.fromEntries(
-    seed.map(({ source, mapping }) => [joinSourceId(source), mapping]),
+    seed.map(({ source, mapping }) => [canonicalizeJson(source), mapping]),
   ) as unknown as LiveDataBindAes;
 }

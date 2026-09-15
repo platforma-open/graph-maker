@@ -1,7 +1,7 @@
 import { BlockModelV3, createPFrameForGraphs, type InferOutputsType } from "@platforma-sdk/model";
 import { kind } from "@platforma-open/milaboratories.graph-maker.kind";
 import { blockDataModel } from "./dataModel";
-import { dataBindAesToSeed, optionsStateToSeed } from "./seedOptions";
+import { convertDataBindAesToSeed, convertOptionsStateToSeed } from "./seedOptions";
 import type { BlockArgs } from "./types";
 
 export { blockDataModel } from "./dataModel";
@@ -20,7 +20,7 @@ export const platforma = BlockModelV3.create({ dataModel: blockDataModel, kind }
       label: g.label,
       chartType: g.settings.chartType,
       template: g.state.template,
-      optionsState: g.state.optionsState && optionsStateToSeed(g.state.optionsState),
+      optionsState: g.state.optionsState && convertOptionsStateToSeed(g.state.optionsState),
       // Carried whole; see `GraphSeed` in the kind for why not as a difference from the
       // defaults. What is left behind is per-view bookkeeping — the open tab, the zoom, the
       // lasso, whether the tooltip hint was shown — and `usedDefaultOptions`, which records
@@ -28,7 +28,7 @@ export const platforma = BlockModelV3.create({ dataModel: blockDataModel, kind }
       axesSettings: g.state.axesSettings,
       layersSettings: g.state.layersSettings,
       statisticsSettings: g.state.statisticsSettings,
-      dataBindAes: g.state.dataBindAes && dataBindAesToSeed(g.state.dataBindAes),
+      dataBindAes: g.state.dataBindAes && convertDataBindAesToSeed(g.state.dataBindAes),
     })),
   }))
   .sections((ctx) => {

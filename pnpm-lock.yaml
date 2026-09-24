@@ -1156,17 +1156,11 @@ packages:
   '@milaboratories/pl-model-common@1.46.2':
     resolution: {integrity: sha512-VEeauisApYScvCS8lnK3zpFJ520xuTAodKJmjR8ulHcMrWMyWMfHEdGb7j5OMD0mM/OwTgmQrrJ5eB7Xd+xoOQ==}
 
-  '@milaboratories/pl-model-common@1.49.0':
-    resolution: {integrity: sha512-xTPt0gYwUUQPdqO8jMAqHi7TSkReZdBVN27LLWtsIsF0E2QIcTxdiipAdFxRH7xKbD5X6iXsyWgWrKDCck9Q0g==}
-
   '@milaboratories/pl-model-common@1.51.0':
     resolution: {integrity: sha512-KowoSl3BTUo8N4yUYpFiIdi7JZmtGX2bm4roK9maeoGdB3Tb0SsfySsWgdDSGwWMvxHwQ6cp3DA2dkw1dFlmcg==}
 
   '@milaboratories/pl-model-middle-layer@1.30.7':
     resolution: {integrity: sha512-rs9x3Ron4ujR/UOdEgB8WUB1SvZ8ZAScT1Av/e4or+iiQ/CzhmK9nqtYamHVwKV+JgwIFbXQwxGvIHDVz955dQ==}
-
-  '@milaboratories/pl-model-middle-layer@1.32.1':
-    resolution: {integrity: sha512-MSodImNNOXnzWzQrCZbDdCl6ZbNzZQ1+uywpV7R4vZmuGwnLDym+zjTjB0H+maOLR5DGzG3QvUSP8R6W0zA5Vw==}
 
   '@milaboratories/pl-model-middle-layer@1.33.0':
     resolution: {integrity: sha512-df6VahIm5uOJfg19tbQZsytlu32gmO+tMzgsis+n8Iom+SXqvFEWzcf/uzo+PM9Un+yUcQZKUQDiWZX9RVnU7Q==}
@@ -1174,9 +1168,6 @@ packages:
   '@milaboratories/pl-tree@1.15.4':
     resolution: {integrity: sha512-tKqhArB/LlpPZnB9driSo9vLqF2GP6laN9++IpEqKndYs+irtMVzWPY7KHk2I8A12TDPWVTSCl94pAW51Chsbg==}
     engines: {node: '>=22.19.0'}
-
-  '@milaboratories/ptabler-expression-js@1.2.39':
-    resolution: {integrity: sha512-nhEw7aBnQA0dI69+e2CXQxc1kl+Um8uf9/eXfrd0jsnc/xvYoyAoAzerlgJA707ARWdcAlANpSqgsqeviJalzA==}
 
   '@milaboratories/ptabler-expression-js@1.2.41':
     resolution: {integrity: sha512-GnZAF1PT3XWrFb6SU7twKiWPpyTV7OVu76I3XWB/zpvkHb18O1K+kiXuN0k8JzTWQCUmq6tPlRP6R5CtmhK6Fw==}
@@ -1589,9 +1580,6 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@platforma-open/milaboratories.software-ptabler.schema@1.15.23':
-    resolution: {integrity: sha512-tCrPwxtzYvO33FsgpE3FCZx4aERVKjg77aVUaYC0RNisXW7fgqIqfkN30tQZZQ77v1A7E+PC31/oKsKScehOlw==}
-
   '@platforma-open/milaboratories.software-ptabler.schema@1.15.25':
     resolution: {integrity: sha512-SZww/g+LCsVrsMzdfZv/HnzU29ASuejGTly33gOldmN7INV74ntgL0jgE3chcAAAZQjvnjmE6NUHKZ0HIZsujg==}
 
@@ -1632,10 +1620,6 @@ packages:
 
   '@platforma-sdk/model@1.84.1':
     resolution: {integrity: sha512-UmA9FQzs8rU+vqHAxOvd/uk9CYhej2damyhFNB8uFh8fKjNoUYZkpBa/jvn/G//c+wtFyQdjtxaBSq0PV0Pkag==}
-
-  '@platforma-sdk/model@file:../../worktrees/platforma/fix-pl-ag-data-table-reload-loop/sdk/model/package.tgz':
-    resolution: {integrity: sha512-9haAIgfHrzpHuhMFoWG44s2l4KdT0luygazYk8HkyLxX31VL7R3CeqmB+PjY9fJKRr34Wb1bJh80z8dh+D+q/A==, tarball: file:../../worktrees/platforma/fix-pl-ag-data-table-reload-loop/sdk/model/package.tgz}
-    version: 1.83.17
 
   '@platforma-sdk/package-builder-lib@1.4.0':
     resolution: {integrity: sha512-ORcuPJ5SM1RiQAOUVM7alWDbOWQ/gUTgLDToP/yAs2uHXhKNvXphgDQTamCX6cseMZ0uKdWzTudJAQAJM1Kvwg==}
@@ -8107,14 +8091,6 @@ snapshots:
       canonicalize: 2.1.0
       zod: 3.25.76
 
-  '@milaboratories/pl-model-common@1.49.0':
-    dependencies:
-      '@milaboratories/helpers': 1.14.5
-      '@milaboratories/pl-error-like': 1.12.10
-      canonicalize: 2.1.0
-      es-toolkit: 1.39.10
-      zod: 3.25.76
-
   '@milaboratories/pl-model-common@1.51.0':
     dependencies:
       '@milaboratories/helpers': 1.14.5
@@ -8127,14 +8103,6 @@ snapshots:
     dependencies:
       '@milaboratories/helpers': 1.14.2
       '@milaboratories/pl-model-common': 1.46.2
-      es-toolkit: 1.39.10
-      utility-types: 3.11.0
-      zod: 3.25.76
-
-  '@milaboratories/pl-model-middle-layer@1.32.1':
-    dependencies:
-      '@milaboratories/helpers': 1.14.5
-      '@milaboratories/pl-model-common': 1.49.0
       es-toolkit: 1.39.10
       utility-types: 3.11.0
       zod: 3.25.76
@@ -8156,10 +8124,6 @@ snapshots:
       denque: 2.1.0
       utility-types: 3.11.0
       zod: 3.25.76
-
-  '@milaboratories/ptabler-expression-js@1.2.39':
-    dependencies:
-      '@platforma-open/milaboratories.software-ptabler.schema': 1.15.23
 
   '@milaboratories/ptabler-expression-js@1.2.41':
     dependencies:
@@ -8636,10 +8600,6 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@platforma-open/milaboratories.software-ptabler.schema@1.15.23':
-    dependencies:
-      '@milaboratories/pl-model-common': 1.49.0
-
   '@platforma-open/milaboratories.software-ptabler.schema@1.15.25':
     dependencies:
       '@milaboratories/pl-model-common': 1.51.0
@@ -8712,20 +8672,6 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.25.76
 
-  '@platforma-sdk/model@file:../../worktrees/platforma/fix-pl-ag-data-table-reload-loop/sdk/model/package.tgz':
-    dependencies:
-      '@milaboratories/helpers': 1.14.5
-      '@milaboratories/pl-error-like': 1.12.10
-      '@milaboratories/pl-model-common': 1.49.0
-      '@milaboratories/pl-model-middle-layer': 1.32.1
-      '@milaboratories/ptabler-expression-js': 1.2.39
-      canonicalize: 2.1.0
-      es-toolkit: 1.39.10
-      fast-json-patch: 3.1.1
-      lru-cache: 11.2.2
-      utility-types: 3.11.0
-      zod: 3.25.76
-
   '@platforma-sdk/package-builder-lib@1.4.0':
     dependencies:
       '@aws-sdk/client-s3': 3.859.0
@@ -8755,7 +8701,7 @@ snapshots:
       '@milaboratories/pl-client': 3.17.3
       '@milaboratories/pl-middle-layer': 1.72.0(@bytecodealliance/preview2-shim@0.17.8)(@types/node@24.5.2)
       '@milaboratories/pl-tree': 1.15.4
-      '@platforma-sdk/model': file:../../worktrees/platforma/fix-pl-ag-data-table-reload-loop/sdk/model/package.tgz
+      '@platforma-sdk/model': 1.84.1
       '@vitest/coverage-istanbul': 4.1.5(vitest@3.2.4(@types/node@24.5.2)(lightningcss@1.32.0)(sass@1.89.2)(yaml@2.8.1))
       vitest: 4.1.5(@types/node@24.5.2)(@vitest/coverage-istanbul@4.1.5)(vite@7.1.7(@types/node@24.5.2)(lightningcss@1.32.0)(sass@1.89.2)(yaml@2.8.1))
     transitivePeerDependencies:
@@ -8784,7 +8730,7 @@ snapshots:
       '@milaboratories/pl-client': 3.17.3
       '@milaboratories/pl-middle-layer': 1.72.0(@bytecodealliance/preview2-shim@0.17.8)(@types/node@24.5.2)
       '@milaboratories/pl-tree': 1.15.4
-      '@platforma-sdk/model': file:../../worktrees/platforma/fix-pl-ag-data-table-reload-loop/sdk/model/package.tgz
+      '@platforma-sdk/model': 1.84.1
       '@vitest/coverage-istanbul': 4.1.5(vitest@4.1.5)
       vitest: 4.1.5(@types/node@24.5.2)(@vitest/coverage-istanbul@4.1.5)(vite@8.0.10(@types/node@24.5.2)(sass@1.89.2)(yaml@2.8.1))
     transitivePeerDependencies:

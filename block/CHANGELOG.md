@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.5.2
+
+### Patch Changes
+
+- bee1110: update sdk
+
 ## 1.5.1
 
 ### Patch Changes

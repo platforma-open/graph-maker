@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories..test
 
+## 1.2.4
+
+### Patch Changes
+
+- bee1110: update sdk
+
 ## 1.2.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.model
 
+## 1.3.3
+
+### Patch Changes
+
+- 03096df: update sdk dependencies
+
 ## 1.3.2
 
 ### Patch Changes

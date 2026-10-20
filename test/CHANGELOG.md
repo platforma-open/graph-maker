@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories..test
 
+## 1.2.5
+
+### Patch Changes
+
+- 03096df: update sdk dependencies
+
 ## 1.2.4
 
 ### Patch Changes

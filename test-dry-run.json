@@ -3,14 +3,14 @@
 > env PL_BUILD_CHANNEL=dev PL_BUILD_VARIANT=binary PL_BUILD_LOCATION=local turbo run test --dry-run=json
 
 {
-  "id": "3K8Fkg4lZ9vr6Q8zNWcZsJ6zLs8",
+  "id": "3KxBdovIWLhgdl6dC3TmKBjcWah",
   "version": "1",
   "turboVersion": "2.5.5",
   "monorepo": true,
   "globalCacheInputs": {
     "rootKey": "I can’t see ya, but I know you’re here",
     "files": {},
-    "hashOfExternalDependencies": "374faeaca3e50141",
+    "hashOfExternalDependencies": "778a2e3382269b80",
     "hashOfInternalDependencies": "",
     "environmentVariables": {
       "specified": {
@@ -38,17 +38,17 @@
       "taskId": "@platforma-open/milaboratories.graph-maker#build",
       "task": "build",
       "package": "@platforma-open/milaboratories.graph-maker",
-      "hash": "74a131e92e4c5736",
+      "hash": "e7d6d1deb2a5be31",
       "inputs": {
-        "CHANGELOG.md": "5f867b7993b6580a3d43922baf1a7f05d2a90246",
-        "package.json": "842c7579deeba71d5b921b9373ff25611ff9e89e",
+        "CHANGELOG.md": "e02fb4897248c1b71800c194d31893f7bcc35ed1",
+        "package.json": "77e8a49242738b7a43323cb677a85134804d74de",
         "src/AGENTS.ts": "5cf2589c3bbcb4341b917d751e4957084e26cd79",
         "src/agents-extra.ts": "228811f46246c95f642471c0e2681eaa0c26f8be",
         "src/block-extra.ts": "fc00cdd4b37af729d1a2c27fd25311f328426f49",
         "src/index.ts": "2a3c66e0280238e3aa1a5a14602d48550cf7162b",
         "tsconfig.json": "8b5ec697454a8df07b3f8f55f23098148839beb4"
       },
-      "hashOfExternalDependencies": "3ae28f15bc21fc98",
+      "hashOfExternalDependencies": "62b7ab12728d4206",
       "cache": {
         "local": false,
         "remote": true,
@@ -149,13 +149,13 @@
         ],
         "inferred": [],
         "passthrough": [
-          "AWS_ACCESS_KEY_ID=0a2461cab9b9b874325521c3a9f5f0dc1b25afa90c4da6ae6fbd548f397428a3",
+          "AWS_ACCESS_KEY_ID=6a628f149dd03f6630fa70433e67387418dbde9dc3c560f8ae0b784e84053650",
           "AWS_CI_IAM_MONOREPO_SIMPLE_ROLE=a3970dbd2dd021e13fb8b738a72624a6978136cd29fc517bd8d3f9e298fe9274",
           "AWS_CI_TURBOREPO_S3_BUCKET=9f83a8743e5a6077b060cfb3f1fc1ef8779ad34d1f6cc722aa299e22b1d0267b",
           "AWS_DEFAULT_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
           "AWS_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
-          "AWS_SECRET_ACCESS_KEY=2255d839f7078fdfd7f872f1168d38b3138dc8bc6a336b5f7a2dae06563881f3",
-          "AWS_SESSION_TOKEN=c5ff6f7b47a85b36084eac3373d1e40c47219b3f9044a358f71e33a785c781e2"
+          "AWS_SECRET_ACCESS_KEY=3dcd6b84c223df33c041e3e8987c3da2cbc2a5499693ccbddf0ef8931bada31d",
+          "AWS_SESSION_TOKEN=c06abf81a77f898cc420c4d8aa8292729046d3b0f3e7bab47c6af19db8bf55ed"
         ]
       }
     },
@@ -163,17 +163,17 @@
       "taskId": "@platforma-open/milaboratories.graph-maker#check",
       "task": "check",
       "package": "@platforma-open/milaboratories.graph-maker",
-      "hash": "0ea32fe89dd52f24",
+      "hash": "25ffeef459a4315f",
       "inputs": {
-        "CHANGELOG.md": "5f867b7993b6580a3d43922baf1a7f05d2a90246",
-        "package.json": "842c7579deeba71d5b921b9373ff25611ff9e89e",
+        "CHANGELOG.md": "e02fb4897248c1b71800c194d31893f7bcc35ed1",
+        "package.json": "77e8a49242738b7a43323cb677a85134804d74de",
         "src/AGENTS.ts": "5cf2589c3bbcb4341b917d751e4957084e26cd79",
         "src/agents-extra.ts": "228811f46246c95f642471c0e2681eaa0c26f8be",
         "src/block-extra.ts": "fc00cdd4b37af729d1a2c27fd25311f328426f49",
         "src/index.ts": "2a3c66e0280238e3aa1a5a14602d48550cf7162b",
         "tsconfig.json": "8b5ec697454a8df07b3f8f55f23098148839beb4"
       },
-      "hashOfExternalDependencies": "3ae28f15bc21fc98",
+      "hashOfExternalDependencies": "62b7ab12728d4206",
       "cache": {
         "local": false,
         "remote": true,
@@ -229,17 +229,17 @@
       "taskId": "@platforma-open/milaboratories.graph-maker#test",
       "task": "test",
       "package": "@platforma-open/milaboratories.graph-maker",
-      "hash": "b56ae5cd1e70b230",
+      "hash": "80c9ade0d926f55a",
       "inputs": {
-        "CHANGELOG.md": "5f867b7993b6580a3d43922baf1a7f05d2a90246",
-        "package.json": "842c7579deeba71d5b921b9373ff25611ff9e89e",
+        "CHANGELOG.md": "e02fb4897248c1b71800c194d31893f7bcc35ed1",
+        "package.json": "77e8a49242738b7a43323cb677a85134804d74de",
         "src/AGENTS.ts": "5cf2589c3bbcb4341b917d751e4957084e26cd79",
         "src/agents-extra.ts": "228811f46246c95f642471c0e2681eaa0c26f8be",
         "src/block-extra.ts": "fc00cdd4b37af729d1a2c27fd25311f328426f49",
         "src/index.ts": "2a3c66e0280238e3aa1a5a14602d48550cf7162b",
         "tsconfig.json": "8b5ec697454a8df07b3f8f55f23098148839beb4"
       },
-      "hashOfExternalDependencies": "3ae28f15bc21fc98",
+      "hashOfExternalDependencies": "62b7ab12728d4206",
       "cache": {
         "local": false,
         "remote": false,
@@ -306,7 +306,7 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.kind#build",
       "task": "build",
       "package": "@platforma-open/milaboratories.graph-maker.kind",
-      "hash": "6bd3154919b6cd54",
+      "hash": "37c41427abe172d6",
       "inputs": {
         ".oxfmtrc.json": "7eff5e7af0f22a7f35ea93588fc49e4e334d9673",
         ".oxlintrc.json": "b1a139038f7e380b4c2f2d596bbbc17bb952797b",
@@ -314,7 +314,7 @@
         "src/index.ts": "30489adb3f5244c8d41477562633da5f44451fe1",
         "tsconfig.json": "54112078cf576905176b8ec9fa19b87130d633c4"
       },
-      "hashOfExternalDependencies": "dbdb44483a1bd622",
+      "hashOfExternalDependencies": "12c7d8e24f0c31e6",
       "cache": {
         "local": false,
         "remote": true,
@@ -413,13 +413,13 @@
         ],
         "inferred": [],
         "passthrough": [
-          "AWS_ACCESS_KEY_ID=0a2461cab9b9b874325521c3a9f5f0dc1b25afa90c4da6ae6fbd548f397428a3",
+          "AWS_ACCESS_KEY_ID=6a628f149dd03f6630fa70433e67387418dbde9dc3c560f8ae0b784e84053650",
           "AWS_CI_IAM_MONOREPO_SIMPLE_ROLE=a3970dbd2dd021e13fb8b738a72624a6978136cd29fc517bd8d3f9e298fe9274",
           "AWS_CI_TURBOREPO_S3_BUCKET=9f83a8743e5a6077b060cfb3f1fc1ef8779ad34d1f6cc722aa299e22b1d0267b",
           "AWS_DEFAULT_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
           "AWS_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
-          "AWS_SECRET_ACCESS_KEY=2255d839f7078fdfd7f872f1168d38b3138dc8bc6a336b5f7a2dae06563881f3",
-          "AWS_SESSION_TOKEN=c5ff6f7b47a85b36084eac3373d1e40c47219b3f9044a358f71e33a785c781e2"
+          "AWS_SECRET_ACCESS_KEY=3dcd6b84c223df33c041e3e8987c3da2cbc2a5499693ccbddf0ef8931bada31d",
+          "AWS_SESSION_TOKEN=c06abf81a77f898cc420c4d8aa8292729046d3b0f3e7bab47c6af19db8bf55ed"
         ]
       }
     },
@@ -427,7 +427,7 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.kind#check",
       "task": "check",
       "package": "@platforma-open/milaboratories.graph-maker.kind",
-      "hash": "5faefadebce4bb75",
+      "hash": "37efb693317576c1",
       "inputs": {
         ".oxfmtrc.json": "7eff5e7af0f22a7f35ea93588fc49e4e334d9673",
         ".oxlintrc.json": "b1a139038f7e380b4c2f2d596bbbc17bb952797b",
@@ -435,7 +435,7 @@
         "src/index.ts": "30489adb3f5244c8d41477562633da5f44451fe1",
         "tsconfig.json": "54112078cf576905176b8ec9fa19b87130d633c4"
       },
-      "hashOfExternalDependencies": "dbdb44483a1bd622",
+      "hashOfExternalDependencies": "12c7d8e24f0c31e6",
       "cache": {
         "local": true,
         "remote": false,
@@ -486,7 +486,7 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.kind#test",
       "task": "test",
       "package": "@platforma-open/milaboratories.graph-maker.kind",
-      "hash": "269cb2e6b2fb69cd",
+      "hash": "9cd71c19753cec27",
       "inputs": {
         ".oxfmtrc.json": "7eff5e7af0f22a7f35ea93588fc49e4e334d9673",
         ".oxlintrc.json": "b1a139038f7e380b4c2f2d596bbbc17bb952797b",
@@ -494,7 +494,7 @@
         "src/index.ts": "30489adb3f5244c8d41477562633da5f44451fe1",
         "tsconfig.json": "54112078cf576905176b8ec9fa19b87130d633c4"
       },
-      "hashOfExternalDependencies": "dbdb44483a1bd622",
+      "hashOfExternalDependencies": "12c7d8e24f0c31e6",
       "cache": {
         "local": false,
         "remote": false,
@@ -561,19 +561,19 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.model#build",
       "task": "build",
       "package": "@platforma-open/milaboratories.graph-maker.model",
-      "hash": "83c0e755db921a5a",
+      "hash": "f4b213a1585fbdf5",
       "inputs": {
         ".oxfmtrc.json": "7eff5e7af0f22a7f35ea93588fc49e4e334d9673",
         ".oxlintrc.json": "70ab6b8dc2ea269c627ab5a96ee7fef9e1db1775",
-        "CHANGELOG.md": "3c20ebe28bb17a5bdc518791bcc3be341449aa96",
-        "package.json": "f425ed83f0331346b42347e2832f6c5bc6882907",
+        "CHANGELOG.md": "1032859967fb5d65b5d7b6c488f29ce9848993ae",
+        "package.json": "000f1e5843d9595dd2cb876f015faaf33b89d221",
         "src/dataModel.ts": "9274de0e110da5c9738d49c0f51837fe41f4a432",
         "src/index.ts": "4ae56f60c5087feb9bc46b21cc72b8df68b2e224",
         "src/seedOptions.ts": "06a1059de1e4bd51dadea7f118ed54ff20a0d5b1",
         "src/types.ts": "e4078e85466de4299eaf3465b6676e47ba8ebc3d",
         "tsconfig.json": "ccde31405fe6ea30cb92f3d13c2388b4df582222"
       },
-      "hashOfExternalDependencies": "a5100e9cb37a9d5d",
+      "hashOfExternalDependencies": "416f324ca8a8c66b",
       "cache": {
         "local": false,
         "remote": true,
@@ -673,13 +673,13 @@
         ],
         "inferred": [],
         "passthrough": [
-          "AWS_ACCESS_KEY_ID=0a2461cab9b9b874325521c3a9f5f0dc1b25afa90c4da6ae6fbd548f397428a3",
+          "AWS_ACCESS_KEY_ID=6a628f149dd03f6630fa70433e67387418dbde9dc3c560f8ae0b784e84053650",
           "AWS_CI_IAM_MONOREPO_SIMPLE_ROLE=a3970dbd2dd021e13fb8b738a72624a6978136cd29fc517bd8d3f9e298fe9274",
           "AWS_CI_TURBOREPO_S3_BUCKET=9f83a8743e5a6077b060cfb3f1fc1ef8779ad34d1f6cc722aa299e22b1d0267b",
           "AWS_DEFAULT_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
           "AWS_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
-          "AWS_SECRET_ACCESS_KEY=2255d839f7078fdfd7f872f1168d38b3138dc8bc6a336b5f7a2dae06563881f3",
-          "AWS_SESSION_TOKEN=c5ff6f7b47a85b36084eac3373d1e40c47219b3f9044a358f71e33a785c781e2"
+          "AWS_SECRET_ACCESS_KEY=3dcd6b84c223df33c041e3e8987c3da2cbc2a5499693ccbddf0ef8931bada31d",
+          "AWS_SESSION_TOKEN=c06abf81a77f898cc420c4d8aa8292729046d3b0f3e7bab47c6af19db8bf55ed"
         ]
       }
     },
@@ -687,19 +687,19 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.model#check",
       "task": "check",
       "package": "@platforma-open/milaboratories.graph-maker.model",
-      "hash": "135553e7159e408a",
+      "hash": "e69f89d11f179ea6",
       "inputs": {
         ".oxfmtrc.json": "7eff5e7af0f22a7f35ea93588fc49e4e334d9673",
         ".oxlintrc.json": "70ab6b8dc2ea269c627ab5a96ee7fef9e1db1775",
-        "CHANGELOG.md": "3c20ebe28bb17a5bdc518791bcc3be341449aa96",
-        "package.json": "f425ed83f0331346b42347e2832f6c5bc6882907",
+        "CHANGELOG.md": "1032859967fb5d65b5d7b6c488f29ce9848993ae",
+        "package.json": "000f1e5843d9595dd2cb876f015faaf33b89d221",
         "src/dataModel.ts": "9274de0e110da5c9738d49c0f51837fe41f4a432",
         "src/index.ts": "4ae56f60c5087feb9bc46b21cc72b8df68b2e224",
         "src/seedOptions.ts": "06a1059de1e4bd51dadea7f118ed54ff20a0d5b1",
         "src/types.ts": "e4078e85466de4299eaf3465b6676e47ba8ebc3d",
         "tsconfig.json": "ccde31405fe6ea30cb92f3d13c2388b4df582222"
       },
-      "hashOfExternalDependencies": "a5100e9cb37a9d5d",
+      "hashOfExternalDependencies": "416f324ca8a8c66b",
       "cache": {
         "local": false,
         "remote": true,
@@ -752,19 +752,19 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.model#test",
       "task": "test",
       "package": "@platforma-open/milaboratories.graph-maker.model",
-      "hash": "074c7824933c1048",
+      "hash": "d561f73bfb2dac44",
       "inputs": {
         ".oxfmtrc.json": "7eff5e7af0f22a7f35ea93588fc49e4e334d9673",
         ".oxlintrc.json": "70ab6b8dc2ea269c627ab5a96ee7fef9e1db1775",
-        "CHANGELOG.md": "3c20ebe28bb17a5bdc518791bcc3be341449aa96",
-        "package.json": "f425ed83f0331346b42347e2832f6c5bc6882907",
+        "CHANGELOG.md": "1032859967fb5d65b5d7b6c488f29ce9848993ae",
+        "package.json": "000f1e5843d9595dd2cb876f015faaf33b89d221",
         "src/dataModel.ts": "9274de0e110da5c9738d49c0f51837fe41f4a432",
         "src/index.ts": "4ae56f60c5087feb9bc46b21cc72b8df68b2e224",
         "src/seedOptions.ts": "06a1059de1e4bd51dadea7f118ed54ff20a0d5b1",
         "src/types.ts": "e4078e85466de4299eaf3465b6676e47ba8ebc3d",
         "tsconfig.json": "ccde31405fe6ea30cb92f3d13c2388b4df582222"
       },
-      "hashOfExternalDependencies": "a5100e9cb37a9d5d",
+      "hashOfExternalDependencies": "416f324ca8a8c66b",
       "cache": {
         "local": false,
         "remote": false,
@@ -831,17 +831,17 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.test#build",
       "task": "build",
       "package": "@platforma-open/milaboratories.graph-maker.test",
-      "hash": "6a62bfdc219488d7",
+      "hash": "c7f2239918dd2971",
       "inputs": {
         ".oxfmtrc.json": "6f74854037ade57c5a260243a9d5ca7f9a7d785b",
         ".oxlintrc.json": "55dd4d40f6eddd0c6283f1db3f7a8196c0b853cb",
-        "CHANGELOG.md": "a18ea9055469ada53a7dd9ba302df8a7b082aa63",
-        "package.json": "f0f74e4f109cbab682667f4031e0ebe99865334b",
+        "CHANGELOG.md": "f286935da286f00b99ec130831c0dae6adbeb3de",
+        "package.json": "0f6a5b9677c5e802a244b74f37f1769106074f0a",
         "src/wf.test.ts": "a25a24d050ebf1fd271c59d151faf444842755fc",
         "tsconfig.json": "d7ac02fb732f19ca657d5900b8e0ef2dd1e60e6b",
         "vitest.config.mts": "e8d331a4bc3d23035ee8fe150a4e27454bf4f96b"
       },
-      "hashOfExternalDependencies": "b0f5a2fbbffe5a37",
+      "hashOfExternalDependencies": "d53e94a6f5ab0680",
       "cache": {
         "local": false,
         "remote": false,
@@ -936,13 +936,13 @@
         ],
         "inferred": [],
         "passthrough": [
-          "AWS_ACCESS_KEY_ID=0a2461cab9b9b874325521c3a9f5f0dc1b25afa90c4da6ae6fbd548f397428a3",
+          "AWS_ACCESS_KEY_ID=6a628f149dd03f6630fa70433e67387418dbde9dc3c560f8ae0b784e84053650",
           "AWS_CI_IAM_MONOREPO_SIMPLE_ROLE=a3970dbd2dd021e13fb8b738a72624a6978136cd29fc517bd8d3f9e298fe9274",
           "AWS_CI_TURBOREPO_S3_BUCKET=9f83a8743e5a6077b060cfb3f1fc1ef8779ad34d1f6cc722aa299e22b1d0267b",
           "AWS_DEFAULT_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
           "AWS_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
-          "AWS_SECRET_ACCESS_KEY=2255d839f7078fdfd7f872f1168d38b3138dc8bc6a336b5f7a2dae06563881f3",
-          "AWS_SESSION_TOKEN=c5ff6f7b47a85b36084eac3373d1e40c47219b3f9044a358f71e33a785c781e2"
+          "AWS_SECRET_ACCESS_KEY=3dcd6b84c223df33c041e3e8987c3da2cbc2a5499693ccbddf0ef8931bada31d",
+          "AWS_SESSION_TOKEN=c06abf81a77f898cc420c4d8aa8292729046d3b0f3e7bab47c6af19db8bf55ed"
         ]
       }
     },
@@ -950,17 +950,17 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.test#check",
       "task": "check",
       "package": "@platforma-open/milaboratories.graph-maker.test",
-      "hash": "3a0ab4ab3068ab33",
+      "hash": "6f1e218a7ddd1905",
       "inputs": {
         ".oxfmtrc.json": "6f74854037ade57c5a260243a9d5ca7f9a7d785b",
         ".oxlintrc.json": "55dd4d40f6eddd0c6283f1db3f7a8196c0b853cb",
-        "CHANGELOG.md": "a18ea9055469ada53a7dd9ba302df8a7b082aa63",
-        "package.json": "f0f74e4f109cbab682667f4031e0ebe99865334b",
+        "CHANGELOG.md": "f286935da286f00b99ec130831c0dae6adbeb3de",
+        "package.json": "0f6a5b9677c5e802a244b74f37f1769106074f0a",
         "src/wf.test.ts": "a25a24d050ebf1fd271c59d151faf444842755fc",
         "tsconfig.json": "d7ac02fb732f19ca657d5900b8e0ef2dd1e60e6b",
         "vitest.config.mts": "e8d331a4bc3d23035ee8fe150a4e27454bf4f96b"
       },
-      "hashOfExternalDependencies": "b0f5a2fbbffe5a37",
+      "hashOfExternalDependencies": "d53e94a6f5ab0680",
       "cache": {
         "local": false,
         "remote": true,
@@ -1013,17 +1013,17 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.test#test",
       "task": "test",
       "package": "@platforma-open/milaboratories.graph-maker.test",
-      "hash": "5dc19c84fd4c8445",
+      "hash": "17e5e471f662df3b",
       "inputs": {
         ".oxfmtrc.json": "6f74854037ade57c5a260243a9d5ca7f9a7d785b",
         ".oxlintrc.json": "55dd4d40f6eddd0c6283f1db3f7a8196c0b853cb",
-        "CHANGELOG.md": "a18ea9055469ada53a7dd9ba302df8a7b082aa63",
-        "package.json": "f0f74e4f109cbab682667f4031e0ebe99865334b",
+        "CHANGELOG.md": "f286935da286f00b99ec130831c0dae6adbeb3de",
+        "package.json": "0f6a5b9677c5e802a244b74f37f1769106074f0a",
         "src/wf.test.ts": "a25a24d050ebf1fd271c59d151faf444842755fc",
         "tsconfig.json": "d7ac02fb732f19ca657d5900b8e0ef2dd1e60e6b",
         "vitest.config.mts": "e8d331a4bc3d23035ee8fe150a4e27454bf4f96b"
       },
-      "hashOfExternalDependencies": "b0f5a2fbbffe5a37",
+      "hashOfExternalDependencies": "d53e94a6f5ab0680",
       "cache": {
         "local": false,
         "remote": true,
@@ -1091,13 +1091,13 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.ui#build",
       "task": "build",
       "package": "@platforma-open/milaboratories.graph-maker.ui",
-      "hash": "ca068a6d66da1a51",
+      "hash": "6855ba1137d27147",
       "inputs": {
         ".oxfmtrc.json": "ba9bb8f00da0731ad7aaa6b890a7b6b58b1ef6dc",
         ".oxlintrc.json": "5cb552278874420ef1e73b616be46add8b53f0c1",
-        "CHANGELOG.md": "7ce730036c3bf34d77239a15530bcfe0d33cc430",
+        "CHANGELOG.md": "c5d2f165717c76dcf031888ee42caf9d86d17ed6",
         "index.html": "d840cc8ba54f6a2ec00b6dc250618b177dda879b",
-        "package.json": "61d005f88d1fafb39409663c862687421672c24f",
+        "package.json": "bbc3d8596e504908b3f163bc2c55321e86b54eb0",
         "src/GraphPage.vue": "ec3bf76606469a63e440696364a58420da0d9a90",
         "src/MainPage.vue": "26be427143250a59983ea5fd6f7cf4353150209c",
         "src/app.ts": "28a5ccb9758a2388e3720bd4a775d44a01a029bd",
@@ -1151,7 +1151,7 @@
         "src/main.ts": "0bd3dca207ac4c3a5a84c2bdc301f0827ed88d25",
         "tsconfig.json": "bf561dd728a249a01ede52cd7238e499668257c1"
       },
-      "hashOfExternalDependencies": "b14eafad371041cd",
+      "hashOfExternalDependencies": "94b63b6364a8ed93",
       "cache": {
         "local": false,
         "remote": true,
@@ -1249,13 +1249,13 @@
         ],
         "inferred": [],
         "passthrough": [
-          "AWS_ACCESS_KEY_ID=0a2461cab9b9b874325521c3a9f5f0dc1b25afa90c4da6ae6fbd548f397428a3",
+          "AWS_ACCESS_KEY_ID=6a628f149dd03f6630fa70433e67387418dbde9dc3c560f8ae0b784e84053650",
           "AWS_CI_IAM_MONOREPO_SIMPLE_ROLE=a3970dbd2dd021e13fb8b738a72624a6978136cd29fc517bd8d3f9e298fe9274",
           "AWS_CI_TURBOREPO_S3_BUCKET=9f83a8743e5a6077b060cfb3f1fc1ef8779ad34d1f6cc722aa299e22b1d0267b",
           "AWS_DEFAULT_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
           "AWS_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
-          "AWS_SECRET_ACCESS_KEY=2255d839f7078fdfd7f872f1168d38b3138dc8bc6a336b5f7a2dae06563881f3",
-          "AWS_SESSION_TOKEN=c5ff6f7b47a85b36084eac3373d1e40c47219b3f9044a358f71e33a785c781e2"
+          "AWS_SECRET_ACCESS_KEY=3dcd6b84c223df33c041e3e8987c3da2cbc2a5499693ccbddf0ef8931bada31d",
+          "AWS_SESSION_TOKEN=c06abf81a77f898cc420c4d8aa8292729046d3b0f3e7bab47c6af19db8bf55ed"
         ]
       }
     },
@@ -1263,13 +1263,13 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.ui#check",
       "task": "check",
       "package": "@platforma-open/milaboratories.graph-maker.ui",
-      "hash": "7ad7ef4f05e0313f",
+      "hash": "7dfccdea79594fb5",
       "inputs": {
         ".oxfmtrc.json": "ba9bb8f00da0731ad7aaa6b890a7b6b58b1ef6dc",
         ".oxlintrc.json": "5cb552278874420ef1e73b616be46add8b53f0c1",
-        "CHANGELOG.md": "7ce730036c3bf34d77239a15530bcfe0d33cc430",
+        "CHANGELOG.md": "c5d2f165717c76dcf031888ee42caf9d86d17ed6",
         "index.html": "d840cc8ba54f6a2ec00b6dc250618b177dda879b",
-        "package.json": "61d005f88d1fafb39409663c862687421672c24f",
+        "package.json": "bbc3d8596e504908b3f163bc2c55321e86b54eb0",
         "src/GraphPage.vue": "ec3bf76606469a63e440696364a58420da0d9a90",
         "src/MainPage.vue": "26be427143250a59983ea5fd6f7cf4353150209c",
         "src/app.ts": "28a5ccb9758a2388e3720bd4a775d44a01a029bd",
@@ -1323,7 +1323,7 @@
         "src/main.ts": "0bd3dca207ac4c3a5a84c2bdc301f0827ed88d25",
         "tsconfig.json": "bf561dd728a249a01ede52cd7238e499668257c1"
       },
-      "hashOfExternalDependencies": "b14eafad371041cd",
+      "hashOfExternalDependencies": "94b63b6364a8ed93",
       "cache": {
         "local": false,
         "remote": true,
@@ -1376,13 +1376,13 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.ui#test",
       "task": "test",
       "package": "@platforma-open/milaboratories.graph-maker.ui",
-      "hash": "869382c97ba5a447",
+      "hash": "b0918ff145dbcb3b",
       "inputs": {
         ".oxfmtrc.json": "ba9bb8f00da0731ad7aaa6b890a7b6b58b1ef6dc",
         ".oxlintrc.json": "5cb552278874420ef1e73b616be46add8b53f0c1",
-        "CHANGELOG.md": "7ce730036c3bf34d77239a15530bcfe0d33cc430",
+        "CHANGELOG.md": "c5d2f165717c76dcf031888ee42caf9d86d17ed6",
         "index.html": "d840cc8ba54f6a2ec00b6dc250618b177dda879b",
-        "package.json": "61d005f88d1fafb39409663c862687421672c24f",
+        "package.json": "bbc3d8596e504908b3f163bc2c55321e86b54eb0",
         "src/GraphPage.vue": "ec3bf76606469a63e440696364a58420da0d9a90",
         "src/MainPage.vue": "26be427143250a59983ea5fd6f7cf4353150209c",
         "src/app.ts": "28a5ccb9758a2388e3720bd4a775d44a01a029bd",
@@ -1436,7 +1436,7 @@
         "src/main.ts": "0bd3dca207ac4c3a5a84c2bdc301f0827ed88d25",
         "tsconfig.json": "bf561dd728a249a01ede52cd7238e499668257c1"
       },
-      "hashOfExternalDependencies": "b14eafad371041cd",
+      "hashOfExternalDependencies": "94b63b6364a8ed93",
       "cache": {
         "local": false,
         "remote": false,
@@ -1503,14 +1503,14 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.workflow#build",
       "task": "build",
       "package": "@platforma-open/milaboratories.graph-maker.workflow",
-      "hash": "0733631e83377ead",
+      "hash": "db2a72f49ad40e67",
       "inputs": {
-        "CHANGELOG.md": "d81bf929104e90ea16f271a96c34c35270cd643e",
+        "CHANGELOG.md": "60151d71469d396e22f123b0ef7bb60403c4caac",
         "format.el": "dff4aa786d9440b21abe30b75d0a28ccb2d4354e",
-        "package.json": "6989658f7b68b31670a9e5ab077a71cb9c654c6f",
+        "package.json": "9a72c3ac86debde94da5949dfe67d613ef71f338",
         "src/main.tpl.tengo": "1d6417d46028092aadbbc41e1319a46ca17b76ba"
       },
-      "hashOfExternalDependencies": "aa400d22cbd49f48",
+      "hashOfExternalDependencies": "89ab61afdac505d7",
       "cache": {
         "local": false,
         "remote": true,
@@ -1607,13 +1607,13 @@
         ],
         "inferred": [],
         "passthrough": [
-          "AWS_ACCESS_KEY_ID=0a2461cab9b9b874325521c3a9f5f0dc1b25afa90c4da6ae6fbd548f397428a3",
+          "AWS_ACCESS_KEY_ID=6a628f149dd03f6630fa70433e67387418dbde9dc3c560f8ae0b784e84053650",
           "AWS_CI_IAM_MONOREPO_SIMPLE_ROLE=a3970dbd2dd021e13fb8b738a72624a6978136cd29fc517bd8d3f9e298fe9274",
           "AWS_CI_TURBOREPO_S3_BUCKET=9f83a8743e5a6077b060cfb3f1fc1ef8779ad34d1f6cc722aa299e22b1d0267b",
           "AWS_DEFAULT_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
           "AWS_REGION=bfec395773470d7a3253ac074eb5d02fe942a2bd208ee46bc7ce0e4b39505d50",
-          "AWS_SECRET_ACCESS_KEY=2255d839f7078fdfd7f872f1168d38b3138dc8bc6a336b5f7a2dae06563881f3",
-          "AWS_SESSION_TOKEN=c5ff6f7b47a85b36084eac3373d1e40c47219b3f9044a358f71e33a785c781e2"
+          "AWS_SECRET_ACCESS_KEY=3dcd6b84c223df33c041e3e8987c3da2cbc2a5499693ccbddf0ef8931bada31d",
+          "AWS_SESSION_TOKEN=c06abf81a77f898cc420c4d8aa8292729046d3b0f3e7bab47c6af19db8bf55ed"
         ]
       }
     },
@@ -1621,14 +1621,14 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.workflow#check",
       "task": "check",
       "package": "@platforma-open/milaboratories.graph-maker.workflow",
-      "hash": "8c9b167068889588",
+      "hash": "eda045bad71dea9f",
       "inputs": {
-        "CHANGELOG.md": "d81bf929104e90ea16f271a96c34c35270cd643e",
+        "CHANGELOG.md": "60151d71469d396e22f123b0ef7bb60403c4caac",
         "format.el": "dff4aa786d9440b21abe30b75d0a28ccb2d4354e",
-        "package.json": "6989658f7b68b31670a9e5ab077a71cb9c654c6f",
+        "package.json": "9a72c3ac86debde94da5949dfe67d613ef71f338",
         "src/main.tpl.tengo": "1d6417d46028092aadbbc41e1319a46ca17b76ba"
       },
-      "hashOfExternalDependencies": "aa400d22cbd49f48",
+      "hashOfExternalDependencies": "89ab61afdac505d7",
       "cache": {
         "local": true,
         "remote": false,
@@ -1679,14 +1679,14 @@
       "taskId": "@platforma-open/milaboratories.graph-maker.workflow#test",
       "task": "test",
       "package": "@platforma-open/milaboratories.graph-maker.workflow",
-      "hash": "3a7462e6f9334add",
+      "hash": "1518cacda9284f39",
       "inputs": {
-        "CHANGELOG.md": "d81bf929104e90ea16f271a96c34c35270cd643e",
+        "CHANGELOG.md": "60151d71469d396e22f123b0ef7bb60403c4caac",
         "format.el": "dff4aa786d9440b21abe30b75d0a28ccb2d4354e",
-        "package.json": "6989658f7b68b31670a9e5ab077a71cb9c654c6f",
+        "package.json": "9a72c3ac86debde94da5949dfe67d613ef71f338",
         "src/main.tpl.tengo": "1d6417d46028092aadbbc41e1319a46ca17b76ba"
       },
-      "hashOfExternalDependencies": "aa400d22cbd49f48",
+      "hashOfExternalDependencies": "89ab61afdac505d7",
       "cache": {
         "local": false,
         "remote": false,
@@ -1753,7 +1753,7 @@
   "user": "github-merge-queue[bot]",
   "scm": {
     "type": "git",
-    "sha": "71ba04c7ee03446e6e40f23edb3833a22ca87e83",
+    "sha": "6bda8c46789a3d83b65ca1288b7ce7b4b93ea964",
     "branch": "main"
   }
 }

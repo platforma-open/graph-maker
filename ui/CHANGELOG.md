@@ -1,5 +1,14 @@
 # @platforma-open/milaboratories.graph-maker.ui
 
+## 1.5.4
+
+### Patch Changes
+
+- cf3b131: update sdk dependencies
+- Updated dependencies [cf3b131]
+- Updated dependencies [726ae3f]
+  - @platforma-open/milaboratories.graph-maker.model@1.5.4
+
 ## 0.4.3
 
 ### Patch Changes

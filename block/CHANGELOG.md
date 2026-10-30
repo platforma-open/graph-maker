@@ -1,5 +1,12 @@
 # @platforma-open/milaboratories.graph-maker
 
+## 1.5.4
+
+### Patch Changes
+
+- cf3b131: update sdk dependencies
+- 726ae3f: Accept range filters with only one bound, or none, in template params
+
 ## 1.5.3
 
 ### Patch Changes

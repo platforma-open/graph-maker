@@ -39,25 +39,6 @@ minimumReleaseAgeExclude:
   - "@milaboratories/*"
   - "@platforma-sdk/*"
   - "@platforma-open/*"
-  - '@aws-sdk/checksums@3.1002.0'
-  - '@aws-sdk/core@3.979.0'
-  - '@aws-sdk/credential-provider-env@3.972.79'
-  - '@aws-sdk/credential-provider-http@3.972.81'
-  - '@aws-sdk/credential-provider-ini@3.973.24'
-  - '@aws-sdk/credential-provider-login@3.972.86'
-  - '@aws-sdk/credential-provider-node@3.972.91'
-  - '@aws-sdk/credential-provider-process@3.972.79'
-  - '@aws-sdk/credential-provider-sso@3.973.23'
-  - '@aws-sdk/credential-provider-web-identity@3.972.85'
-  - '@aws-sdk/middleware-sdk-s3@3.972.84'
-  - '@aws-sdk/nested-clients@3.997.53'
-  - '@aws-sdk/token-providers@3.1160.0'
-  - '@babel/parser@7.29.12'
-  - '@grpc/grpc-js@1.14.7'
-  - '@smithy/core@3.38.0'
-  - '@smithy/node-http-handler@4.14.0'
-  - '@smithy/signature-v4@5.7.5'
-  - rolldown@1.2.16
 allowBuilds:
   "@milaboratories/tengo-tester": false
   "@parcel/watcher": false

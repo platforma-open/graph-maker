@@ -2,7 +2,14 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.2/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "fixed": [],
+  "fixed": [
+    [
+      "@platforma-open/milaboratories.graph-maker",
+      "@platforma-open/milaboratories.graph-maker.model",
+      "@platforma-open/milaboratories.graph-maker.ui",
+      "@platforma-open/milaboratories.graph-maker.workflow"
+    ]
+  ],
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",

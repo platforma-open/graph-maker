@@ -110,10 +110,17 @@ export type SeedAesMapping = {
 /** One chart input's binding, as a seed carries it. */
 export type SeedSimpleSelector = { selectedSource: SourceId };
 
+/**
+ * A range filter's bounds. Either may be unset — the editor's range chip starts with
+ * both empty, and pf-plots applies only the bounds that are set — so a seed carries
+ * exactly the ones the reader filled in.
+ */
+export type SeedFilterRange = { min?: number; max?: number };
+
 /** A filtering input's binding: the source plus the filter set on it. */
 export type SeedFilterSelector = SeedSimpleSelector & {
   type: LiveFilterSelector["type"];
-  selectedFilterRange?: { min: number; max: number };
+  selectedFilterRange?: SeedFilterRange;
   selectedFilterValues?: string[];
 };
 
@@ -237,6 +244,17 @@ type _FilterTypesExhaustive = AssertNever<
   Exclude<LiveFilterSelector["type"], (typeof FILTER_TYPES)[number]>
 >;
 
+/** One bound of a range filter. `null` reads as unset: it is what an unset or NaN bound becomes in JSON. */
+function parseRangeBound(value: unknown, at: string): number | undefined {
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    throw new Error(`'${at}' must be a number when set.`);
+  }
+  return value;
+}
+
 function parseFilterSelector(value: unknown, at: string): SeedFilterSelector {
   const { selectedSource } = parseSimpleSelector(value, at);
   const { type, selectedFilterRange, selectedFilterValues } = value as Record<string, unknown>;
@@ -248,18 +266,16 @@ function parseFilterSelector(value: unknown, at: string): SeedFilterSelector {
   const parsed: SeedFilterSelector = { selectedSource, type };
 
   if (selectedFilterRange !== undefined) {
-    if (
-      !isRecord(selectedFilterRange) ||
-      typeof selectedFilterRange.min !== "number" ||
-      typeof selectedFilterRange.max !== "number"
-    ) {
-      throw new Error(
-        `'${at}.selectedFilterRange' must be an object with numeric 'min' and 'max'.`,
-      );
+    if (!isRecord(selectedFilterRange)) {
+      throw new Error(`'${at}.selectedFilterRange' must be an object.`);
     }
+    const min = parseRangeBound(selectedFilterRange.min, `${at}.selectedFilterRange.min`);
+    const max = parseRangeBound(selectedFilterRange.max, `${at}.selectedFilterRange.max`);
+    // Kept even with neither bound set: without a range object the editor's chip
+    // shows 0..0, and editing one bound would then save the other as 0.
     parsed.selectedFilterRange = {
-      min: selectedFilterRange.min,
-      max: selectedFilterRange.max,
+      ...(min === undefined ? {} : { min }),
+      ...(max === undefined ? {} : { max }),
     };
   }
 

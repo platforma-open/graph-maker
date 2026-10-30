@@ -7,31 +7,43 @@ packages:
   - workflow
 
 catalog:
-  '@milaboratories/ts-builder': 1.7.2
+  '@milaboratories/ts-builder': 1.7.3
   '@milaboratories/ts-configs': 1.4.0
   '@milaboratories/build-configs': 2.0.0
-  '@platforma-sdk/tengo-builder': 4.1.11
-  '@platforma-sdk/block-tools': 2.16.15
-  '@platforma-sdk/workflow-tengo': 6.16.0
-  '@platforma-sdk/model': 1.85.2
-  '@platforma-sdk/test': 1.85.2
+  '@platforma-sdk/tengo-builder': 4.1.14
+  '@platforma-sdk/block-tools': 2.17.0
+  '@platforma-sdk/workflow-tengo': 6.17.3
+  '@platforma-sdk/model': 1.86.3
+  '@platforma-sdk/test': 1.86.4
   '@milaboratories/graph-maker': 1.10.3
-  '@platforma-sdk/ui-vue': 1.85.2
-  '@milaboratories/helpers': 1.14.5
+  '@platforma-sdk/ui-vue': 1.86.3
+  '@milaboratories/helpers': 1.14.6
   '@milaboratories/software-pframes-conv': 2.2.9
   '@platforma-sdk/blocks-deps-updater': 2.2.0
 
   'sass': ^1.89.2
 
-  'vue': 3.5.24
+  'vue': 3.5.44
 
   'zod': ^3.23.8
 
   'typescript': 7.0.2
-  'turbo': ^2.5.5
+  'turbo': ~2.11.10
   'vitest': 5.0.5
 
   '@changesets/cli': ^2.29.7
-  "@platforma-sdk/package-builder": 3.16.1
+  "@platforma-sdk/package-builder": 3.16.2
   shx: ~0.4.0
   "@platforma-sdk/block-kind": 1.1.0
+minimumReleaseAgeExclude:
+  - "@milaboratories/*"
+  - "@platforma-sdk/*"
+  - "@platforma-open/*"
+allowBuilds:
+  "@milaboratories/tengo-tester": false
+  "@parcel/watcher": false
+  cpu-features: false
+  esbuild: false
+  protobufjs: false
+  ssh2: false
+  "@milaboratories/pframes-rs-node": true

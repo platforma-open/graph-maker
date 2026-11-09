@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.graph-maker",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "files": [
     "dist",
     "block-pack"

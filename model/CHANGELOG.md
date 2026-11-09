@@ -1,5 +1,7 @@
 # @platforma-open/milaboratories.graph-maker.model
 
+## 1.5.5
+
 ## 1.5.4
 
 ### Patch Changes

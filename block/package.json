@@ -51,7 +51,7 @@
       "support": "mailto:support@milaboratories.com",
       "description": "Visualize the outputs of other blocks.",
       "longDescription": "file:../docs/description.md",
-      "changelog": "file:./CHANGELOG.md",
+      "changelog": "file:CHANGELOG.md",
       "tags": [
         "plot",
         "visualization"

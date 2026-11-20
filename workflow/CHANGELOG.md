@@ -1,5 +1,11 @@
 # @platforma-open/milaboratories.graph-maker.workflow
 
+## 1.5.6
+
+### Patch Changes
+
+- cc4a0b5: Update SDK dependencies
+
 ## 1.5.5
 
 ## 1.5.4
